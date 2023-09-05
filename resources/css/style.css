@@ -9,3 +9,15 @@ body {
 #home_title {
     color: #D45400;
 }
+
+.dropdown-menu {
+    background-color: #8ecae6;
+}
+
+.dropdown-item:hover {
+    color: black;
+}
+
+.navbar-toggler {
+    background-color: #D45400;
+}
