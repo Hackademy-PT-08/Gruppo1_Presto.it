@@ -28,4 +28,3 @@ Route::get('annunci/aggiungi',[AnnouncementController::class,'create'])
 
 Route::post('/annunci/aggiungi',[AnnouncementController::class,'store'])
 ->name('annoucements.store');
-
