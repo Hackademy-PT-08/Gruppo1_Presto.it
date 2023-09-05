@@ -26,6 +26,12 @@
         <input class="form-control me-2" type="search" placeholder="Trova annuncio" aria-label="Search">
         <button class="btn btn-outline-danger" type="submit">Cerca</button>
       </form>
+      <li class="nav-item">
+        <form action="/logout" method="post">
+          @csrf
+          <button class="btn btn-sm btn-secondary">Esci</button>
+        </form>
+      </li>
     </div>
   </div>
 </nav>
