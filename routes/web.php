@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,12 @@ Route::get('/',[HomeController::class,'homepage'])
 ->name('homepage');
 
 //!rotte per accesso
- Route::get('/articoli/aggiungi',[ArticleController::class,'create']);
+Route::get('annunci', [AnnouncementController::class, 'index'])
+->name('annoucements.index');
+
+Route::get('annunci/aggiungi',[AnnouncementController::class,'create'])
+->name('annoucements.create');
+
+Route::post('/annunci/aggiungi',[AnnouncementController::class,'store'])
+->name('annoucements.store');
+
