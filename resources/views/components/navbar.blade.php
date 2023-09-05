@@ -14,11 +14,17 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Accesso
+            Utente
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/register">Registrati</a></li>
             <li><a class="dropdown-item" href="/login">Login</a></li>
+            <li class="nav-item">
+              <form action="/logout" method="post">
+                @csrf
+                <button class="btn btn-sm btn-danger">Esci</button>
+              </form>
+            </li>
           </ul>
         </li>
       </ul>
@@ -26,12 +32,7 @@
         <input class="form-control me-2" type="search" placeholder="Trova annuncio" aria-label="Search">
         <button class="btn btn-outline-danger" type="submit">Cerca</button>
       </form>
-      <li class="nav-item">
-        <form action="/logout" method="post">
-          @csrf
-          <button class="btn btn-sm btn-secondary">Esci</button>
-        </form>
-      </li>
+      
     </div>
   </div>
 </nav>

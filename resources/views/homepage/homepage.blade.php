@@ -8,17 +8,4 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <form action="Presto.it" method="POST">
-                    @csrf
-                    <input type="text" placeholder="Inserisci nome utente">
-                    <input type="submit" value="Invio">
-                </form>
-            </div>
-        </div>
-    </div>
-    
-
 </x-layout>
