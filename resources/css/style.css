@@ -1,0 +1,11 @@
+body {
+    background-color: #003B58;
+}
+
+.bg-primary {
+    background-color: #023047 !important;
+}
+
+#home_title {
+    color: #D45400;
+}
