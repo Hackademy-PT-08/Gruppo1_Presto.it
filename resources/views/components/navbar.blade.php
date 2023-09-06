@@ -20,6 +20,7 @@
         <a class="btn btn-outline-danger" href="/login">Login</a>
         @endguest
         @auth
+        
         <a class="btn btn-outline-danger" href="{{route('annoucements.create')}}">Crea annuncio</a>
         <div class=" dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
