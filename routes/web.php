@@ -19,10 +19,14 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/',[HomeController::class,'homepage'])
 ->name('homepage');
 
-//!rotte per accesso
+// Annunci
 Route::get('annunci', [AnnouncementController::class, 'index'])
 ->name('annoucements.index');
 
+Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
+->name('announcements.single');
+
 Route::get('annunci/aggiungi',[AnnouncementController::class,'create'])
-->name('annoucements.create')
+->name('announcements.create')
 ->middleware(['auth','verified']);
+

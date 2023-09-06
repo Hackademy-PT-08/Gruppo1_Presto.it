@@ -26,11 +26,11 @@
 
                     @endguest
                     @auth
-                        
+
                             <div class="d-flex align-items-center">
                                 <div class=" ">
                                     <a class="btn btn-outline-danger " aria-disabled="true"
-                                        href="{{ route('annoucements.create') }}">Crea annuncio</a>
+                                        href="{{ route('announcements.create') }}">Crea annuncio</a>
                                 </div>
                                 <div class=" ms-3">
                                     <div class=" dropdown ">
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                         </div>
-               
+
 
                 @endauth
             </ul>
