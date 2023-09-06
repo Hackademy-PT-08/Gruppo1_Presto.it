@@ -12,16 +12,24 @@
         <li class="nav-item">
           <a class="nav-link text-light" href="{{route('annoucements.index')}}">Annunci</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="{{route('annoucements.create')}}">Crea</a>
-        </li>
-        <li class="nav-item dropdown">
+      </ul>
+      {{-- TODO - Sistemare questa parte qua sotto e renderla bella visivamente --}}
+      <ul class="profile">
+        @guest
+        <a class="btn btn-outline-danger" href="/register">Registrati</a>
+        <a class="btn btn-outline-danger" href="/login">Login</a>
+        @endguest
+        @auth
+        <a class="btn btn-outline-danger" href="{{route('annoucements.create')}}">Crea annuncio</a>
+        <div class=" dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Utente
+            <div>
+              <img class="rounded-circle" src="https://picsum.photos/50/50" alt="profile_pic">
+            </div>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/register">Registrati</a></li>
-            <li><a class="dropdown-item" href="/login">Login</a></li>
+
+            <li></li>
             <li class="nav-item">
               <form action="/logout" method="post">
                 @csrf
@@ -29,13 +37,15 @@
               </form>
             </li>
           </ul>
-        </li>
+        </div>
+        @endauth
       </ul>
-      <form class="d-flex" role="search">
+
+      {{-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Trova annuncio" aria-label="Search">
         <button class="btn btn-outline-danger" type="submit">Cerca</button>
-      </form>
-      
+      </form> --}}
+
     </div>
   </div>
 </nav>
