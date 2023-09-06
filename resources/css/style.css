@@ -21,3 +21,12 @@ body {
 .navbar-toggler {
     background-color: #D45400;
 }
+
+.btn-outline-danger{
+    color: white;
+}
+
+.btn-outline-danger:hover{
+    background-color: #D45400;
+    
+}

@@ -29,16 +29,7 @@ class AnnouncementController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $announcement= new Announcement;
-        $announcement->title=$request->titolo;
-        $announcement->description=$request->descrizione;
-        $announcement->price=$request->prezzo;
-        $announcement->save();
 
-        return redirect()->route('annoucements.index');
-    }
 
     /**
      * Display the specified resource.

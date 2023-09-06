@@ -16,7 +16,7 @@
       {{-- TODO - Sistemare questa parte qua sotto e renderla bella visivamente --}}
       <ul class="profile">
         @guest
-        <a class="btn btn-outline-danger" href="/register">Registrati</a>
+        <a class="btn" style="background-color:#D45400;color:white" href="/register">Registrati</a>
         <a class="btn btn-outline-danger" href="/login">Login</a>
         @endguest
         @auth
@@ -30,10 +30,11 @@
           <ul class="dropdown-menu">
 
             <li></li>
-            <li class="nav-item">
-              <form action="/logout" method="post">
+            <li>
+              <a href="#" class="dropdown-item" onclick="event.preventDefault();getElementById('form-logout').submit()">Logout</a>
+              <form action="/logout" method="post" id="form-logout" class="d-none">
                 @csrf
-                <button class="btn btn-sm btn-danger">Esci</button>
+                
               </form>
             </li>
           </ul>
