@@ -2,16 +2,17 @@
    <div class="container my-5">
       <div class="row">
           @foreach ($announcements as $announcement)
-            <div class="col-4">
-               <img src="https://picsum.photos/300/300" alt="immagine segna posto">
-               <h1 class="text-light">{{ $announcement->title }}</h1>
-               <p class="text-light">{{ $announcement->description }}</p>
-               <p class="text-light">{{ $announcement->price }}</p>
-               <p class="text-light">categoria :{{ $announcement->category->name }}</p>
 
-            </div>
+          <x-card
+            image="https://picsum.photos/300/300"
+            title="{{ $announcement->title }}"
+            description="{{ $announcement->description }}"
+            price="{{ $announcement->price }}"
+            category="{{ $announcement->category->name }}"
+            hrefSingle="{{ route('announcements.single', $announcement->id) }}"
+          />
          @endforeach
       </div>
    </div>
-   
+
 </x-layout>
