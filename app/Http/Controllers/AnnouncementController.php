@@ -14,7 +14,7 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        $announcements = Announcement::with('category')->get();
+        $announcements = Announcement::with('category')->orderBy('created_at','desc')->get();
 
         return view('announcements.index', ['announcements' => $announcements]);
     }
@@ -65,3 +65,4 @@ class AnnouncementController extends Controller
         //
     }
 }
+
