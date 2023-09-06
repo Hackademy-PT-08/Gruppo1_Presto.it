@@ -46,6 +46,12 @@ class AnnouncementCreate extends Component
         $announcement->category_id=$this->category;
         $announcement->save();
 
+        session()->flash('message', [
+            'title' => 'Annuncio aggiunto con successo',
+            'content' => 'Il tuo annuncio riguardante '. $this->title .' è stato aggiunto con successo',
+            'status' => 'success',
+        ]);
+
         return redirect()->route('annoucements.index');
     }
 }

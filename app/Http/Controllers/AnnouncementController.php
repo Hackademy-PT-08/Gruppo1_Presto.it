@@ -15,7 +15,7 @@ class AnnouncementController extends Controller
     public function index()
     {
         $announcements = Announcement::with('category')->get();
-        
+
         return view('announcements.index', ['announcements' => $announcements]);
     }
 
