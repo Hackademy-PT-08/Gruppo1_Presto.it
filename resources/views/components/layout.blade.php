@@ -28,8 +28,6 @@
         </div>
       </div>
 
-
-
     @endif
     @livewireScripts
 </body>
