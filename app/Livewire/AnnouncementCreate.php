@@ -20,10 +20,12 @@ class AnnouncementCreate extends Component
         $announcement->title=$this->title;
         $announcement->description=$this->description;
         $announcement->price=$this->price;
+        $announcement->user_id=auth()->user()->id;
         $announcement->save();
+
 
         return redirect()->route('annoucements.index');
 
-
+        
     }
 }

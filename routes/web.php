@@ -25,8 +25,4 @@ Route::get('annunci', [AnnouncementController::class, 'index'])
 
 Route::get('annunci/aggiungi',[AnnouncementController::class,'create'])
 ->name('annoucements.create')
-->middleware(['auth']);
-
-// Route::post('/annunci/aggiungi',[AnnouncementController::class,'store'])
-// ->name('annoucements.store')
-// ->middleware(['auth']);
+->middleware(['auth','verified']);
