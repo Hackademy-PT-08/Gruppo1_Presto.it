@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AnnouncementController extends Controller
 {
@@ -13,7 +14,7 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        $announcements = Announcement::all();
+        $announcements = Announcement::with('category')->get();
         
         return view('announcements.index', ['announcements' => $announcements]);
     }
@@ -23,7 +24,8 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-        return view('announcements.create');
+        $categories=Category::all();
+        return view('announcements.create',['categories'=>$categories]);
     }
 
     /**

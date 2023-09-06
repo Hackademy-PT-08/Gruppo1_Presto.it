@@ -3,15 +3,16 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Category;
 use App\Models\Announcement;
 
 class AnnouncementCreate extends Component
 {
-    public $title,$description,$price;
+    public $title,$description,$price,$category;
 
     public function rules() {
         return [
-            'title' => ['required','min:5'],
+            'title' => 'required|min:5',
             'description' => 'required|min:10',
             'price' => 'required|numeric',
         ];
@@ -29,7 +30,8 @@ class AnnouncementCreate extends Component
 
     public function render()
     {
-        return view('livewire.announcement-create');
+        $categories=Category::all();
+        return view('livewire.announcement-create',['categories'=>$categories]);
     }
 
     public function store()
@@ -41,6 +43,7 @@ class AnnouncementCreate extends Component
         $announcement->description=$this->description;
         $announcement->price=$this->price;
         $announcement->user_id=auth()->user()->id;
+        $announcement->category_id=$this->category;
         $announcement->save();
 
         return redirect()->route('annoucements.index');
