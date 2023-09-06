@@ -3,8 +3,8 @@
   <h3 class="text-light mt-5 text-center">Login</h3>
 
   <div class="container">
-    <div class="row">
-      <div class="col-12">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
         <form action="/login" method="POST">
           @csrf
 
