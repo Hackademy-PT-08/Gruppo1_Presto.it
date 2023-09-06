@@ -12,6 +12,7 @@ body {
 
 .dropdown-menu {
     background-color: #8ecae6;
+    width: 5px;
 }
 
 .dropdown-item:hover {
@@ -28,5 +29,8 @@ body {
 
 .btn-outline-danger:hover{
     background-color: #D45400;
-    
+}
+
+.left-initial {
+    left: initial !important;
 }
