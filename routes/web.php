@@ -24,9 +24,6 @@ Route::get('/',[HomeController::class,'homepage'])
 Route::get('annunci', [AnnouncementController::class, 'index'])
 ->name('announcements.index');
 
-Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
-->name('announcements.single');
-
 Route::get('annuncio/aggiungi',[AnnouncementController::class,'create'])
 ->name('announcements.create')
 ->middleware(['auth','verified']);
@@ -34,6 +31,9 @@ Route::get('annuncio/aggiungi',[AnnouncementController::class,'create'])
 Route::get('annuncio/modifica/{id}',[AnnouncementController::class,'edit'])
 ->name('announcements.edit')
 ->middleware(['auth','verified']);
+
+Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
+->name('announcements.single');
 
 
 //! rotte dello User
