@@ -66,8 +66,8 @@
                 </div>
 
                 <br>
-                <button wire:click="update" class="btn btn-primary m-2">Modifica</button>
-                <button wire:click="destroy" class="btn btn-danger m-2">Elimina</button>
+                <button wire:click="update" class="btn btn-primary">Modifica</button>
+                <button wire:click="destroy" class="btn btn-danger ms-2">Elimina</button>
             </div>
         </div>
     </div>
