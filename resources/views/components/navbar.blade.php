@@ -41,6 +41,7 @@
                                         <ul class="dropdown-menu end-0 left-initial">
 
                                             <li><a href="{{route('user.profile')}}" class="dropdown-item">Profilo</a></li>
+                                            <li><a href="{{route('user.announcements')}}" class="dropdown-item">I miei annunci</a></li>
                                             <li>
                                                 <a href="#" class="dropdown-item"
                                                     onclick="event.preventDefault();getElementById('form-logout').submit()">Logout</a>
