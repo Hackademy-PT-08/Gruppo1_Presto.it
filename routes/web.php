@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AnnouncementController;
 
@@ -32,5 +33,13 @@ Route::get('annunci/aggiungi',[AnnouncementController::class,'create'])
 
 Route::get('annunci/modifica/{id}',[AnnouncementController::class,'edit'])
 ->name('announcements.edit')
+->middleware(['auth','verified']);
+
+
+//! rotte dello User
+
+
+Route::get('/utenti/profilo',[UserController::class,'profile'])
+->name('user.profile')
 ->middleware(['auth','verified']);
 

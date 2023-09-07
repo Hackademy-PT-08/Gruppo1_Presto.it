@@ -39,6 +39,8 @@
                                             <img class="rounded-circle" src="https://picsum.photos/50/50" alt="profile_pic">
                                         </a>
                                         <ul class="dropdown-menu end-0 left-initial">
+
+                                            <li><a href="{{route('user.profile')}}" class="dropdown-item">Profilo</a></li>
                                             <li>
                                                 <a href="#" class="dropdown-item"
                                                     onclick="event.preventDefault();getElementById('form-logout').submit()">Logout</a>
