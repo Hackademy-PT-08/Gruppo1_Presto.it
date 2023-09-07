@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementController extends Controller
 {
@@ -49,6 +50,11 @@ class AnnouncementController extends Controller
     public function edit($id)
     {
         $announcement=Announcement::find($id);
+
+        if(!Auth::user() || Auth::user()->id != $announcement->user_id) {
+            return redirect()->route('announcements.single', ['id' => $id]);
+        }
+
         $categories=Category::all();
 
         return view('announcements.edit',['announcement'=>$announcement,'categories'=>$categories]);

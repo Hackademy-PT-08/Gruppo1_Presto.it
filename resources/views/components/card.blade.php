@@ -6,6 +6,10 @@
     <p class="card-text">{{ $description }}</p>
     <p><small>{{ $price }}€</small></p>
     <a href="{{ $hrefSingle }}" class="btn btn-primary">Vedi annuncio</a>
-    <a href="{{ $hrefModify }}" class="btn btn-primary">Modifica</a>
+
+    @if (Auth::user() && Auth::user()->id == $userId)
+      <a href="{{ $hrefModify }}" class="btn btn-primary">Modifica</a>
+    @endif
+    
   </div>
 </div>
