@@ -1,5 +1,5 @@
 <x-layout>
 
-   @livewire('announcement-create')
+    @livewire('announcement-create')
 
 </x-layout>
