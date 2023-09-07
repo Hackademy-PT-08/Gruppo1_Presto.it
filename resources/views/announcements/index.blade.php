@@ -8,8 +8,9 @@
             image="https://picsum.photos/300/300"
             title="{{ $announcement->title }}"
             description="{{ $announcement->description }}"
-            price="{{ $announcement->price }}"
-            category="{{ $announcement->category->name }}"
+            price="{{ $announcement->price}}"
+            category="{{ $announcement->category->name}}"
+            hrefCategory="{{route('searchByCategory',$announcement->category->id)}}"
             hrefSingle="{{ route('announcements.single', $announcement->id) }}"
             hrefModify="{{ route('announcements.edit',$announcement->id) }}"
             />
