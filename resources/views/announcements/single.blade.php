@@ -22,6 +22,7 @@
         </div>
       </div>
       <div class="col-6">
+        <span class="badge text-bg-primary">{{ $announcement->category->name }}</span>
         <h1>{{ $announcement->title }}</h1>
         <p>{{ $announcement->description }}</p>
         <p>{{ $announcement->price }}€</p>

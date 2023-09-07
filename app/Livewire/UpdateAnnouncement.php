@@ -24,6 +24,7 @@ class UpdateAnnouncement extends Component
             'title' => 'required|min:5',
             'description' => 'required|min:10',
             'price' => 'required|numeric',
+            'category' => 'required',
         ];
     }
 
@@ -35,6 +36,7 @@ class UpdateAnnouncement extends Component
             'description.min' => 'Questo campo è troppo corto',
             'price.required' => 'Questo campo è obbligatorio',
             'price.numeric' => 'Questo campo deve essere un numero',
+            'category.required' => 'Questo campo è obbligatorio',
         ];
     }
 
@@ -48,7 +50,8 @@ class UpdateAnnouncement extends Component
 
     public function update(){
 
-        
+        $this->validate();
+
         $announcement=Announcement::find($this->announcement_id);
 
         if ($announcement->category_id!= $this->category) {
@@ -68,7 +71,7 @@ class UpdateAnnouncement extends Component
             'status' => 'success',
         ]);
 
-        return redirect()->route('announcement.edit',$this->announcement_id);
+        return redirect()->route('announcements.edit',$this->announcement_id);
     }
 
 
@@ -77,6 +80,6 @@ class UpdateAnnouncement extends Component
         $announcement=Announcement::find($this->announcement_id);
         $announcement->delete();
 
-        return redirect()->route('annoucements.index');
+        return redirect()->route('announcements.index');
     }
 }

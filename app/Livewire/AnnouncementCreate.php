@@ -54,6 +54,6 @@ class AnnouncementCreate extends Component
             'status' => 'success',
         ]);
 
-        return redirect()->route('annoucements.index');
+        return redirect()->route('announcements.index');
     }
 }
