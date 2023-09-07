@@ -4,16 +4,18 @@
        
         <div class="row">
             @foreach ($user_announcements as $user_announcement)
-            <x-card
-              userId="{{ $user_announcement->user_id }}"
-              image="https://picsum.photos/300/300"
-              title="{{ $user_announcement->title }}"
-              description="{{ $user_announcement->description }}"
-              price="{{ $user_announcement->price }}"
-              category="{{ $user_announcement->category->name }}"
-              hrefSingle="{{ route('announcements.single', $user_announcement->id) }}"
-              hrefModify="{{ route('announcements.edit',$user_announcement->id) }}"
-            />
+            <div class="col-3">
+              <x-card
+                userId="{{ $user_announcement->user_id }}"
+                image="https://picsum.photos/300/300"
+                title="{{ $user_announcement->title }}"
+                description="{{ $user_announcement->description }}"
+                price="{{ $user_announcement->price }}"
+                category="{{ $user_announcement->category->name }}"
+                hrefSingle="{{ route('announcements.single', $user_announcement->id) }}"
+                hrefModify="{{ route('announcements.edit',$user_announcement->id) }}"
+              />
+            </div>
            @endforeach
   
         </div>
