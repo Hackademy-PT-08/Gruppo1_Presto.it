@@ -35,6 +35,14 @@ body {
     left: initial !important;
 }
 
+#card_description {
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: pre-wrap;
+}
+
 #card_price {
     font-size: 200%;
 }
