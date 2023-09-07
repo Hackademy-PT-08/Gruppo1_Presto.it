@@ -35,7 +35,11 @@ body {
     left: initial !important;
 }
 
-#card_description {
+.card-category:hover  {
+    background-color: rgb(200, 22, 22) !important;
+}
+
+.card-description {
     overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -43,6 +47,11 @@ body {
   white-space: pre-wrap;
 }
 
-#card_price {
+.card-price {
     font-size: 200%;
+}
+
+.a-modified {
+    text-decoration: none !important;
+    color: white !important;
 }
