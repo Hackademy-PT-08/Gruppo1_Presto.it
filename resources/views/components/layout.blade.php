@@ -18,6 +18,7 @@
         <div id="liveToast" class="toast show fade" role="alert" aria-live="assertive" aria-atomic="true">
           <div class="toast-header
             @if (session('message')['status'] == 'success') bg-success @endif
+            @if (session('message')['status'] == 'deleted') bg-warning @endif
           ">
             <strong class="me-auto">{{ session('message')['title'] }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>

@@ -80,6 +80,12 @@ class UpdateAnnouncement extends Component
         $announcement=Announcement::find($this->announcement_id);
         $announcement->delete();
 
+        session()->flash('message', [
+            'title' => 'Annuncio eliminato con successo',
+            'content' => 'Il tuo annuncio riguardante '. $this->title .' è stato eliminato con successo',
+            'status' => 'deleted',
+        ]);
+
         return redirect()->route('announcements.index');
     }
 }
