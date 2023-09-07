@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,28 +9,29 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
+
 <body>
-    <x-navbar/>
-    {{$slot}}
+    <x-navbar />
+    {{ $slot }}
 
-    @if(session()->has('message'))
-
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToast" class="toast show fade" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header
+    @if (session()->has('message'))
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast show fade" role="alert" aria-live="assertive" aria-atomic="true">
+                <div
+                    class="toast-header
             @if (session('message')['status'] == 'success') bg-success @endif
             @if (session('message')['status'] == 'deleted') bg-warning @endif
           ">
-            <strong class="me-auto">{{ session('message')['title'] }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body">
-            {{ session('message')['content'] }}
-          </div>
+                    <strong class="me-auto">{{ session('message')['title'] }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    {{ session('message')['content'] }}
+                </div>
+            </div>
         </div>
-      </div>
-
     @endif
     @livewireScripts
 </body>
+
 </html>

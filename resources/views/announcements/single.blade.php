@@ -23,9 +23,9 @@
       </div>
       <div class="col-6">
         <span class="badge text-bg-primary">{{ $announcement->category->name }}</span>
-        <h1>{{ $announcement->title }}</h1>
-        <p>{{ $announcement->description }}</p>
-        <p>{{ $announcement->price }}€</p>
+        <h1 class="text-light">{{ $announcement->title }}</h1>
+        <p class="text-light">{{ $announcement->description }}</p>
+        <p class="text-light">{{ $announcement->price }}€</p>
         @if (Auth::user() && Auth::user()->id == $announcement->user_id)
           <a href="{{ route('announcements.edit',$announcement->id) }}" class="btn btn-primary">Modifica</a>
         @endif

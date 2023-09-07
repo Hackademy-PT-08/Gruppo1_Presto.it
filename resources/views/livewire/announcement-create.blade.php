@@ -14,7 +14,7 @@
                     <input type="text" name="title" placeholder="Titolo annuncio" class="form-control my-3 @error('title') is-invalid @enderror" wire:model="title">
 
                     @error('title') <div class="alert alert-dismissible alert-danger">
-                        
+
                         <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Oh cavolo! </font></font></strong> <a href="#" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ $message }}</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                       </div>@enderror
 
