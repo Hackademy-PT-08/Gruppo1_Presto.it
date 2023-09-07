@@ -39,7 +39,11 @@ Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
 //! rotte dello User
 
 
-Route::get('/utenti/profilo',[UserController::class,'profile'])
+Route::get('/utente/profilo',[UserController::class,'profile'])
 ->name('user.profile')
+->middleware(['auth','verified']);
+
+Route::get('utente/annunci',[UserController::class,'announcements'])
+->name('user.announcements')
 ->middleware(['auth','verified']);
 
