@@ -15,6 +15,7 @@ class AnnouncementCreate extends Component
             'title' => 'required|min:5',
             'description' => 'required|min:10',
             'price' => 'required|numeric',
+            'category' => 'required',
         ];
     }
     public function messages() {
@@ -25,6 +26,7 @@ class AnnouncementCreate extends Component
             'description.min' => 'Questo campo è troppo corto',
             'price.required' => 'Questo campo è obbligatorio',
             'price.numeric' => 'Questo campo deve essere un numero',
+            'category.required' => 'Questo campo è obbligatorio',
         ];
     }
 
@@ -38,7 +40,7 @@ class AnnouncementCreate extends Component
     {
         $this->validate();
 
-        $announcement= new Announcement;
+        $announcement = new Announcement;
         $announcement->title=$this->title;
         $announcement->description=$this->description;
         $announcement->price=$this->price;

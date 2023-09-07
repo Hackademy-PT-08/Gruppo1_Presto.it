@@ -10,7 +10,7 @@
             price="{{ $announcement->price }}"
             category="{{ $announcement->category->name }}"
             hrefSingle="{{ route('announcements.single', $announcement->id) }}"
-            hrefModify="{{route('announcement.edit',$announcement->id)}}"
+            hrefModify="{{route('announcements.edit',$announcement->id)}}"
           />
          @endforeach
       </div>

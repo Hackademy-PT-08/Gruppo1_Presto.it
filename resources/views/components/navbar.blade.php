@@ -14,7 +14,7 @@
                             href="{{ route('homepage') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ route('annoucements.index') }}">Annunci</a>
+                        <a class="nav-link text-light" href="{{ route('announcements.index') }}">Annunci</a>
                     </li>
                 </ul>
                 {{-- TODO - Sistemare questa parte qua sotto e renderla bella visivamente --}}
