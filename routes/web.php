@@ -35,6 +35,9 @@ Route::get('annuncio/modifica/{id}',[AnnouncementController::class,'edit'])
 Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
 ->name('announcements.single');
 
+Route::get('annunci/categoria/{categoryId}',[AnnouncementController::class,'searchByCategory'])
+->name('searchByCategory');
+
 
 //! rotte dello User
 

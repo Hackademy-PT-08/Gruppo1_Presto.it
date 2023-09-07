@@ -29,10 +29,7 @@ class AnnouncementController extends Controller
         return view('announcements.create',['categories'=>$categories]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-
+  
 
     /**
      * Display the specified resource.
@@ -61,13 +58,15 @@ class AnnouncementController extends Controller
     }
 
 
+    public function searchByCategory($categoryId){
+        $categoryToSearch=Category::find($categoryId);
+        $announcements=$categoryToSearch->announcements()->get();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Announcement $announcement)
-    {
-        //
+        return view('announcements.searchByCategory',['categoryToSearch'=>$categoryToSearch,'announcements'=>$announcements]);
     }
+
+
+
+   
 }
 
