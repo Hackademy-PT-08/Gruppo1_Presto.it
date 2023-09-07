@@ -26,6 +26,9 @@
         <h1>{{ $announcement->title }}</h1>
         <p>{{ $announcement->description }}</p>
         <p>{{ $announcement->price }}€</p>
+        @if (Auth::user() && Auth::user()->id == $announcement->user_id)
+          <a href="{{ route('announcements.edit',$announcement->id) }}" class="btn btn-primary">Modifica</a>
+        @endif
       </div>
       </div>
     </div>

@@ -27,11 +27,11 @@ Route::get('annunci', [AnnouncementController::class, 'index'])
 Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
 ->name('announcements.single');
 
-Route::get('annunci/aggiungi',[AnnouncementController::class,'create'])
+Route::get('annuncio/aggiungi',[AnnouncementController::class,'create'])
 ->name('announcements.create')
 ->middleware(['auth','verified']);
 
-Route::get('annunci/modifica/{id}',[AnnouncementController::class,'edit'])
+Route::get('annuncio/modifica/{id}',[AnnouncementController::class,'edit'])
 ->name('announcements.edit')
 ->middleware(['auth','verified']);
 
