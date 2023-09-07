@@ -46,18 +46,15 @@ class AnnouncementController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Announcement $announcement)
+    public function edit($id)
     {
-        //
+        $announcement=Announcement::find($id);
+        $categories=Category::all();
+
+        return view('announcements.edit',['announcement'=>$announcement,'categories'=>$categories]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Announcement $announcement)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.

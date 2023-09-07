@@ -30,3 +30,7 @@ Route::get('annunci/aggiungi',[AnnouncementController::class,'create'])
 ->name('announcements.create')
 ->middleware(['auth','verified']);
 
+Route::get('annunci/modifica/{id}',[AnnouncementController::class,'edit'])
+->name('announcement.edit')
+->middleware(['auth','verified']);
+
