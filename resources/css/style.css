@@ -55,13 +55,12 @@ body {
     text-decoration: none !important;
     color: white !important;
 }
+
 #Hero{
     position: relative;
     height: 80vh;
     display: flex; width: 100%; align-items: center;
     overflow: hidden;
-
-
 }
 
 #Hero .content{
@@ -70,7 +69,6 @@ body {
     z-index: 1;
     display: flex;
     justify-content: center;
-
 }
 
 #myvideo{
@@ -80,9 +78,6 @@ body {
     z-index: -1;
     min-width: 100%;
     min-height: 100%;
-
-
-
 }
 
 #Hero .blur{
@@ -94,5 +89,4 @@ body {
     right: 0;
     bottom: 0;
     z-index: -1;
-
 }
