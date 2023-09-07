@@ -8,4 +8,11 @@
         </div>
     </div>
 
+    @auth
+        <div class="text-center">
+            <a class="btn btn-outline-danger btn-lg" aria-disabled="true" href="{{ route('announcements.create') }}">Crea
+                annuncio</a>
+        </div>
+    @endauth
+
 </x-layout>
