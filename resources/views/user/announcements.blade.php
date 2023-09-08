@@ -8,6 +8,7 @@
                     <x-card userId="{{ $user_announcement->user_id }}" image="https://picsum.photos/300/300"
                         title="{{ $user_announcement->title }}" description="{{ $user_announcement->description }}"
                         price="{{ $user_announcement->price }}" category="{{ $user_announcement->category->name }}"
+                        hrefCategory="{{  route('searchByCategory',$user_announcement->category->id)}}"
                         hrefSingle="{{ route('announcements.single', $user_announcement->id) }}"
                         hrefModify="{{ route('announcements.edit', $user_announcement->id) }}" />
                 </div>
