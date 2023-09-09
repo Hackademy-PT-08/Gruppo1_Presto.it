@@ -52,6 +52,9 @@
 .navbar .dropdown .dropdown-item {
     font-size: .875rem;
 }
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--bs-dropdown-link-hover-bg);
+}
 
 .navbar .navbar-right-side {
     list-style: none;
