@@ -44,7 +44,6 @@ class UpdateAnnouncement extends Component
     {
         $announcement=Announcement::find($this->announcement_id);
 
-        $categories=Category::all();
         return view('livewire.update-announcement',['categories'=>$categories,'announcement'=>$announcement]);
     }
 

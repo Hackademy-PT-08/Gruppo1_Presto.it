@@ -32,8 +32,7 @@ class AnnouncementCreate extends Component
 
     public function render()
     {
-        $categories=Category::all();
-        return view('livewire.announcement-create',['categories'=>$categories]);
+        return view('livewire.announcement-create');
     }
 
     public function store()
