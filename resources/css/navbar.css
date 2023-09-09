@@ -107,7 +107,7 @@
 
 @media (min-width: 992px) {
     .navbar .navbar-tool:hover .navbar-tool-tooltip {
-        opacity: 0.9;
+        opacity: 0.75;
         top: -0.75rem;
     }
 
