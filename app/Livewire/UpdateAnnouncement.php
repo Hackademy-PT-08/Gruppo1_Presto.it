@@ -8,9 +8,19 @@ use App\Models\Announcement;
 
 class UpdateAnnouncement extends Component
 {
-    public $title,$description,$price,$category,$announcement_id,$announcementToUpdate;
+    public
+        $title,
+        $description,
+        $price,
+        $category,
+        $old_announcement,
+        $announcements,
+        $announcement_id,
+        $announcementToUpdate;
 
     public function mount(){
+        $this->old_announcement = Announcement::find($this->announcement_id);
+        $this->announcements = Announcement::find($this->announcement_id);
         $this->announcementToUpdate=Announcement::find($this->announcement_id);
         $this->title=$this->announcementToUpdate->title;
         $this->description=$this->announcementToUpdate->description;
@@ -42,9 +52,7 @@ class UpdateAnnouncement extends Component
 
     public function render()
     {
-        $announcement = Announcement::find($this->announcement_id);
-
-        return view('livewire.update-announcement',['announcement'=>$announcement]);
+        return view('livewire.update-announcement',['announcement'=>$this->old_announcement]);
     }
 
     public function update(){
