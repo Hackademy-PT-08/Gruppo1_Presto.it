@@ -47,6 +47,6 @@ Route::get('/utente/profilo',[UserController::class,'profile'])
 ->middleware(['auth','verified']);
 
 Route::get('utente/annunci',[UserController::class,'announcements'])
-->name('user.announcements')
+->name('user.profile-announcements')
 ->middleware(['auth','verified']);
 
