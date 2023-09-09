@@ -27,13 +27,12 @@
           <ul class="dropdown-menu">
             @auth
               <li><a class="dropdown-item" href="{{ route('user.profile') }}">Profilo</a></li>
-              <li><a class="dropdown-item" href="{{ route('user.announcements') }}">I miei annunci</a></li>
+              <li><a class="dropdown-item" href="{{ route('user.profile-announcements') }}">I miei annunci</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <a class="dropdown-item" href="#"
-                  onclick="event.preventDefault();getElementById('form-logout').submit()">Logout</a>
+                <a class="dropdown-item" href="#" onclick="event.preventDefault();getElementById('form-logout').submit()">Logout</a>
                 <form action="/logout" method="post" id="form-logout" class="d-none">
                   @csrf
                 </form>

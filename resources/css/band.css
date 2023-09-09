@@ -1,0 +1,35 @@
+.page-title-overlap {
+  padding-bottom: 6.375rem;
+}
+.page-title-overlap .img-thumbnail {
+  padding: 0.3125rem;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0.3125rem;
+  box-shadow: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.page-title-overlap .breadcrumb {
+  font-size: 0.8125rem;
+}
+
+.page-title-overlap .breadcrumb-light .breadcrumb-item > a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-title-overlap .breadcrumb-light .breadcrumb-item > a:hover {
+  color: var(--secondary-color);
+}
+.page-title-overlap .breadcrumb-light .breadcrumb-item > a:hover i {
+  color: #fff;
+}
+
+.page-title-overlap .breadcrumb-item + .breadcrumb-item::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  font-weight: 900;
+  color: #fff;
+}

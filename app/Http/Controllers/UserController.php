@@ -18,6 +18,6 @@ class UserController extends Controller
     public function announcements(){
         $current_user_id=auth()->user()->id;
         $user_announcements=User::find($current_user_id)->announcements;
-        return view('user.announcements',['user_announcements'=>$user_announcements]);
+        return view('user.profile-announcements',['user_announcements'=>$user_announcements]);
     }
 }

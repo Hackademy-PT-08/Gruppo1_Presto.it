@@ -50,7 +50,7 @@ class AnnouncementController extends Controller
         }
 
 
-        return view('announcements.edit',['announcement'=>$announcement,'categories'=>$categories]);
+        return view('announcements.edit',['announcement_id'=>$id]);
     }
 
 
