@@ -11,14 +11,12 @@ class IndexAnnouncement extends Component
 {
     public
         $announcements,
-        $categories,
         $query_name,
         $query_category_id;
 
 
     public function mount() {
         $this->announcements = Announcement::with('category')->orderBy('created_at','desc')->get();
-        $this->categories = Category::all();
     }
 
     public function render()

@@ -49,7 +49,6 @@ class AnnouncementController extends Controller
             return redirect()->route('announcements.single', ['id' => $id]);
         }
 
-        $categories=Category::all();
 
         return view('announcements.edit',['announcement'=>$announcement,'categories'=>$categories]);
     }
