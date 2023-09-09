@@ -1,4 +1,4 @@
-<div class="card m-3 p-0" id="card_container" style="width: 18rem; height: fit-content">
+<div class="card p-0" id="card_container" style="width: 18rem; height: fit-content">
     <img src="{{ $image }}" id="img_card" class="card-img-top" alt="...">
     <div class="card-body">
         <span class="badge text-bg-primary mt-1 card-category"><a class="a-modified" href="{{$hrefCategory}}">{{ $category }}</a></span>  
