@@ -1,0 +1,179 @@
+body.login{
+
+    padding-top: 50px;
+    padding-bottom:150px;
+    background:
+    linear-gradient(
+        rgba(251, 139, 166, 0.70),
+        rgba(224, 140, 194, 0.8),
+        rgba(194,139,228, 0.9)
+      );
+    background-size: cover;
+
+  }
+
+  #squareLogin {
+    position: relative;
+      width: 800px;
+      height: 450px;
+    display: block;
+    margin: auto;
+      background: #F3F6F8;
+    z-index: 3;
+  }
+
+  #leftSquareLogin {
+      width: 40%;
+    display: block;
+    margin:  auto;
+      height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+      background:linear-gradient(
+        rgba(251, 139, 166, 0.70),
+        rgba(224, 140, 194, 0.8),
+        rgba(194,139,228, 0.9)
+      ),  url("https://images.pexels.com/photos/1852/dawn-landscape-mountains-nature.jpg?h=350&auto=compress");
+    background-size: cover;
+    border-radius: 0%;
+    z-index: 1;
+  }
+
+  #rightSquareLogin {
+      width: 60%;
+    display: block;
+    margin:  auto;
+      height: 100%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+      background:none;
+    background-size: cover;
+    border-radius: 0%;
+    z-index: 1;
+  }
+
+  #circleLogin{
+      border-radius: 50%;
+      width: 60%;
+      height: 40%;
+      display: block;
+      margin: auto;
+      position: absolute;
+      top: 8%;
+      right: 20%;
+    }
+
+  .brandLogin{
+    position: absolute;
+    display: block;
+    top: 38%;
+    left: 25%;
+    margin: auto;
+    width: 50%;
+    height: 60%;
+    z-index: 1;
+
+  }
+
+  #titleLogin{
+    position: absolute;
+    left: 21%;
+    bottom: 37%;
+    color: white;
+    font-family:"lato";
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    z-index: 3;
+  }
+  #subtitleLogin{
+    position: absolute;
+    left: 7%;
+    bottom: 32%;
+    color: white;
+    font-family:"lato";
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    z-index: 3;
+  }
+
+  #containerLogin{
+
+      margin-top: 15%;
+  }
+
+  .signupLogin{
+    color: rgb(228, 162, 208);
+    font-family:"lato";
+    font-size: 2em;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+
+  .buttonLogin{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    z-index: 3;
+    background: #2BA0EE;
+  }
+
+  #footerLogin{
+    display: block;
+    margin: auto;
+    color: #333333;
+    font-family:"lato";
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+    z-index: 3;
+  }
+
+  #termsLogin{
+    cursor: pointer;
+    color: #FBADC1;
+  }
+
+
+  form{
+
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .optinLogin{
+
+     -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 75%;
+    margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 18px;
+    color: #333333;
+    -webkit-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+    font-weight: 300;
+
+
+  }
+  .optinLogin:hover{
+      background-color: rgba(255, 255, 255, 0.4);
+  }
+  .optinLogin:focus {
+    background-color: white;
+    width: 90%;
+    color: #CD98E3;
+  }
