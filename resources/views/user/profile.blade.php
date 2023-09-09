@@ -1,4 +1,4 @@
-<x-layout-with-band type="annuncio">
+<x-layout-with-band type="profile">
 
   <div class="container profile mb-5 pb-3">
     <div class="bg-light shadow-lg rounded-3 overflow-hidden">
