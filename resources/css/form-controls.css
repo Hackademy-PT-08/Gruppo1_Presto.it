@@ -5,3 +5,27 @@
   outline: 0;
   box-shadow: 0 0 0.5rem rgba(var(--primary-color-rgb), 0.25);
 }
+
+.form-check-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0.5rem 0.2rem rgba(var(--primary-color-rgb), 0.25);
+
+}
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form .form-link {
+  color: var(--secondary-color);
+}
+
+.form .form-link:hover {
+  color: rgba(var(--secondary-color-rgb), 0.8);
+}
+
+.form .form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}

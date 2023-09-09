@@ -1,81 +1,58 @@
 <x-layout>
 
-    <h3 class="mt-5 text-center">Login</h3>
+  <div class="login container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-11 col-sm-10 col-md-8  shadow-lg rounded">
+        <div class="row">
+          <div class="col px-0 d-none d-lg-block">
+            <img src="./media/login-image.jpg">
+          </div>
+          <div class="col py-4 px-4">
+            <h1 class="h2 text-center"> Login </h1>
+            <form class="form" action="/login" method="post">
+              @csrf
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-                <form action="/login" method="POST">
-                    @csrf
-                        <body class="login">
+              <div class="row gy-3">
+                <form>
+                  <div class="col-12">
+                    <label class="form-label" for="name">Email</label>
+                    <input class="form-control" name="email" id="email" type="email"
+                      placeholder="Inserisci la tua email">
+                    @error('email')
+                      <span class="small text-danger"> {{ $message }} </span>
+                    @enderror
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="email">Password</label>
+                    <input class="form-control" name="password" id="password" type="password"
+                      placeholder="Inserisci la tua password">
+                    @error('email')
+                      <span class="small text-danger"> {{ $message }} </span>
+                    @enderror
+                  </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label small" for="flexCheckDefault">
+                    Ricordami
+                  </label>
+                </div>
+                <button class="password-forget form-link small mb-3">Password dimenticata? </a>
 
-                                <div class="animated slideInLeft" id="squareLogin">
-                                <div class="animated bounceInUp" id="leftSquareLogin">
-                                <div class="animated bounceInUp" id="circleLogin">
-                                <img class="brandLogin img-responsive" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/827672/branding.png" />
+              </div>
+              <div class="d-flex flex-sm-row flex-column">
+                <button class="btn btn-primary" type="submit">Accedi</button>
+              </div>
+              <hr>
+              <div class="d-flex flex-sm-row flex-column">
+                <p class="small">Non hai ancora un account? <a class="form-link" href="/register">Registrati</a></p>
+              </div>
 
-                                </div>
-
-                                <h2 id="titleLogin">Benvenuti su Presto</h2>
-                                <h3 id="subtitleLogin">Accedi per comprare evendere i tuoi prodotti preferiti.</h3>
-
-                            </div>
-
-                                <div class="animated bounceInDown" id="rightSquareLogin">
-                                    <div id="containerLogin">
-                                    <h1 class="signupLogin">Sign Up </h1>
-                                    <form className="animated slideInLeft">
-
-                                    <input type="email" name="email" class="optinLogin" id="email" placeholder="email"
-                                         aria-describedby="emailHelp">
-                                     @error('email')
-                                     <p> {{ $message }} </p>
-                                    @enderror
-                                    <input class="optinLogin " type="password" placeholder="password" name="password" id="password" />
-                                    @error('password')
-                                    <p> {{ $message }} </p>
-
-                                     @enderror</form>
-                                     
-                                    <button class="animated infinite pulse buttonLogin btn btn-info" type="submit">
-                                     <span id="twitter">Accedi</span>
-                                    </button>
-                                    <h3 id="footerLogin">By continuing you agree to our <span id="termsLogin">terms & conditions.</span></h3>
-                                    </div>
-
-                            </div>
-
-
-                            </div>
-
-
-                        {{-- </body>
-                    <div class="mb-3">
-                        <label for="email" class="form-label mt-5">Email address</label>
-                        <input type="email" name="email" class="form-control" id="email"
-                            aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Non condivideremo la tua e-mail con nessuno!
-                        </div>
-                        @error('email')
-                            <p> {{ $message }} </p>
-                        @enderror
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password">
-                        @error('password')
-                            <p> {{ $message }} </p>
-                        @enderror
-                    </div>
-                    <button type="submit" class="btn btn-danger">Accedi</button>
-                </form>
-            </div>
+            </form>
+          </div>
         </div>
-    </div> --}}
-
-
-
-
-
+      </div>
+    </div>
 
 </x-layout>
