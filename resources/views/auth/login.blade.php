@@ -23,7 +23,7 @@
                     @enderror
                   </div>
                   <div class="col-12">
-                    <label class="form-label" for="email">Password</label>
+                    <label class="form-label" for="password">Password</label>
                     <input class="form-control" name="password" id="password" type="password"
                       placeholder="Inserisci la tua password">
                     @error('email')
