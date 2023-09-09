@@ -5,7 +5,7 @@
       <div class="col-11 col-sm-10 col-md-8  shadow-lg rounded">
         <div class="row">
           <div class="col px-0 d-none d-lg-block">
-            <img src="./media/login-image.jpg">
+            <img src="/media/login-image.jpg">
           </div>
           <div class="col py-4 px-4">
             <h1 class="h2 text-center"> Registrati </h1>
@@ -13,7 +13,6 @@
               @csrf
 
               <div class="row gy-3">
-                <form>
                   <div class="col-12">
                     <label class="form-label" for="name">Nome</label>
                     <input class="form-control" name="name" id="name" type="text"

@@ -18,6 +18,7 @@
 
 .form .form-link {
   color: var(--secondary-color);
+  text-decoration: none;
 }
 
 .form .form-link:hover {
