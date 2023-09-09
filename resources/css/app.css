@@ -1,2 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&family=Rubik:wght@300;400;500;600;700&display=swap');
 @import 'bootstrap';
 @import 'style.css';
+@import 'navbar.css';
+@import 'buttons.css';
+@import 'form-controls.css';
