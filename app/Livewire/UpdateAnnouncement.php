@@ -42,9 +42,9 @@ class UpdateAnnouncement extends Component
 
     public function render()
     {
-        $announcement=Announcement::find($this->announcement_id);
+        $announcement = Announcement::find($this->announcement_id);
 
-        return view('livewire.update-announcement',['categories'=>$categories,'announcement'=>$announcement]);
+        return view('livewire.update-announcement',['announcement'=>$announcement]);
     }
 
     public function update(){
