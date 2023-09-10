@@ -14,7 +14,7 @@
    {{--!sezione di aggiunta articolo  --}}
    <div class="container mb-5 pt-3 pb-md-5 pb-1">
       <div class="row my-5 pt-5">
-         
+         {{-- !aggiunta immagini --}}
          <div class="mb-md-5 mb-4 pb-md-0 pb-2">
             <h2 class="h3">Inserisci i dati dell'annuncio</h2>
             
