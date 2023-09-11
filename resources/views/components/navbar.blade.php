@@ -28,6 +28,7 @@
             @auth
               <li><a class="dropdown-item" href="{{ route('user.profile') }}">Profilo</a></li>
               <li><a class="dropdown-item" href="{{ route('user.profile-announcements') }}">I miei annunci</a></li>
+              <li><a class="dropdown-item" href="{{ route('dashboard.announcements') }}">Dashboard</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -41,6 +42,7 @@
               @guest
                 <li><a class="dropdown-item" href="/register">Registrati</a></li>
                 <li><a class="dropdown-item" href="/login">Login</a></li>
+                <li><a class="dropdown-item" href="{{ route('dashboard.announcements') }}">Dashboard</a></li>
               @endguest
           </ul>
         </a>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AnnouncementController;
 
 /*
@@ -54,3 +55,10 @@ Route::get('utente/annunci',[UserController::class,'announcements'])
 ->name('user.profile-announcements')
 ->middleware(['auth','verified']);
 
+// Dashboard
+Route::get('/dashboard' , [DashboardController::class, 'redirectToAnnouncements'])->name('dashboard');
+Route::get('/dashboard/announcements' , [DashboardController::class, 'announcements'])->name('dashboard.announcements');
+Route::get('/dashboard/announcements/{id}' , [DashboardController::class, 'single'])->name('dashboard.single');
+Route::get('/dashboard/users' , [DashboardController::class, 'users'])->name('dashboard.users');
+Route::get('/dashboard/user/{id}' , [DashboardController::class, 'user'])->name('dashboard.user');
+Route::get('/dashboard/requests' , [DashboardController::class, 'requests'])->name('dashboard.requests');
