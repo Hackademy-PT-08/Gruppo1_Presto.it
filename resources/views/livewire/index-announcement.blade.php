@@ -9,7 +9,8 @@
             price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
             hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
             hrefSingle="{{ route('announcements.single', $announcement->id) }}"
-            hrefModify="{{ route('announcements.edit', $announcement->id) }}" />
+            hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
+            creator="{{$announcement->user->name}}"/>
         </div>
       @endforeach
 

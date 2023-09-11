@@ -17,8 +17,8 @@
         <a class="d-block text-truncate" href="">Titolo</a>
       </h3>
       <div class="row">
-        <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">Categoria</h4></div>
-        <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">1000€</h4></div>
+        <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">Sport</h4></div>
+        <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">100€</h4></div>
       </div>
       <span class="fs-sm text-muted"></span>
     </div>

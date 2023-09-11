@@ -109,14 +109,25 @@
           </div>
         </div>
       </section>
-    {{-- hero --}}
 
-                        {{-- @auth
-                            {{-- <div class="text-center mt-5">
-                                <a class="btn btn-outline-danger btn-lg" aria-disabled="true"
-                                    href="{{ route('announcements.create') }}">Crea
-                                    annuncio</a>
-                            </div> --}}
-                        {{-- @endauth --}}
+      <section id="latest">
+        
+        <div class="container">
+          <div class="row">
 
+            @foreach ($announcements as $announcement)
+              <div class="col-12 col-md-4 mb-5">
+                <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
+                  title="{{ $announcement->title }}" description="{{ $announcement->description }}"
+                  price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
+                  hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
+                  hrefSingle="{{ route('announcements.single', $announcement->id) }}"
+                  hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
+                  creator="{{$announcement->user->name}}"/>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </section>
+ 
 </x-layout>

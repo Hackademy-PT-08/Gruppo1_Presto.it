@@ -16,15 +16,17 @@
       <h3 class="product-title mb-2 fs-6">
         <a class="d-block text-truncate" href="{{ $hrefSingle }}">{{ $title }}</a>
       </h3>
-      <span class="fs-sm text-muted">{{ $description }}</span>
+      {{-- <span class="fs-sm text-muted text-truncate " style="max-width: 200px">{{ $description }}</span> --}}
+      <p class="text-truncate"> {{$description}}</p>
     </div>
     <div class="card-footer mt-n1 py-0 border-0">
       <div class="d-flex align-items-center justify-content-between position-relative mb-1 py-3 border-top">
         <div class="user">
           <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" width="32" alt="Avatar">
-          <a class="nav-link-style fs-sm stretched-link" href="#">Utente</a>
+          <a class="nav-link-style fs-sm stretched-link" href="#">{{$creator}}</a>
         </div>
         <h4 class="mt-1 mb-0 fs-6 text-darker">{{ $price }}€</h4>
       </div>
     </div>
   </article>
+
