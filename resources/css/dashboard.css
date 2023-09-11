@@ -1,0 +1,46 @@
+.bg-primary.dashboard {
+  background-color: var(--secondary-color) !important;
+}
+
+.dashboard .breadcrumb-item a:hover{
+  color: var(--primary-color) !important;
+}
+
+.dashboard aside a.nav-link-style {
+  color: #000;
+  text-decoration: none;
+}
+.dashboard aside a.nav-link-style:hover,
+.dashboard aside a.nav-link-style:active {
+  color: var(--secondary-color);
+}
+
+
+.dashboard aside a.nav-link-style i {
+  margin-right: 0.5rem;
+}
+
+.dashboard aside a.nav-link-style:hover i,
+.dashboard aside a.nav-link-style:active i{
+  color: #000;
+}
+
+.dashboard .user  {
+  text-decoration: none;
+}
+
+.dashboard .user img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.dashboard .user span,
+.dashboard .creator a {
+  text-decoration: none;
+  color: #000
+}
+
+.dashboard .user span:hover,
+.dashboard .creator span:hover {
+  color: var(--secondary-color)
+}

@@ -1,0 +1,9 @@
+footer {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: white;
+}
