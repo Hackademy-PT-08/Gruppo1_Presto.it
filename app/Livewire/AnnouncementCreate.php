@@ -8,8 +8,9 @@ use App\Models\Announcement;
 
 class AnnouncementCreate extends Component
 {
-    public $title,$description,$price,$category;
+    public $title,$description,$price,$category,$previewData=[];
 
+    
     public function rules() {
         return [
             'title' => 'required|min:5',
@@ -32,7 +33,7 @@ class AnnouncementCreate extends Component
 
     public function render()
     {
-        return view('livewire.announcement-create');
+        return view('livewire.announcement-create',['title'=>$this->title,'price'=>$this->price,'category'=>$this->category]);
     }
 
     public function store()

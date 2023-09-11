@@ -16,15 +16,19 @@
       <h3 class="product-title mb-2 fs-6">
         <a class="d-block text-truncate" href="">Titolo</a>
       </h3>
+      <div class="row">
+        <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">Categoria</h4></div>
+        <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">1000€</h4></div>
+      </div>
       <span class="fs-sm text-muted"></span>
     </div>
     <div class="card-footer mt-n1 py-0 border-0">
       <div class="d-flex align-items-center justify-content-between position-relative mb-1 py-3 border-top">
         <div class="user">
           <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" width="32" alt="Avatar">
-          <a class="nav-link-style fs-sm stretched-link" href="#">Utente</a>
+          <a class="nav-link-style fs-sm stretched-link" href="#">{{auth()->user()->name}}</a>
         </div>
-        <h4 class="mt-1 mb-0 fs-6 text-darker">1000€</h4>
+        
       </div>
     </div>
   </article>

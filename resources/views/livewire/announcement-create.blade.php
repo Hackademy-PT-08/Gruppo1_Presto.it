@@ -21,7 +21,8 @@
             <div class="row create-form mt-4">
                <div class="col-12 col-md-8 shadow">
                   <label for="title">Titolo annuncio</label>
-                  <input type="text" id="title" name="title" class="form-control mb-3  @error('title') is-invalid @enderror" wire:model="title">
+                  <input type="text" id="title" name="title" class="form-control mb-3  @error('title') is-invalid @enderror" wire:model="title" wire:model="previewTitle">
+                  
                   @error('title')
                      <div class="alert alert-dismissible alert-danger">
                         <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Oh cavolo! </font></font></strong> <a href="#" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ $message }}</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
@@ -68,8 +69,8 @@
                   <div class="mt-sm-5 "  style="top:100px">
                      <h4 class="h4 mb-3 text-md-start text-center">Ecco come sarà il tuo annuncio</h4>
                      {{-- !card preview --}}
-
                      <x-preview-card/>
+                     {{-- @livewire('preview-card', ['previewTitle'=>$title,'previewPrice'=>$price,'previewCategory'=>$category]) --}}
                   </div>
                </aside>
             </div>
