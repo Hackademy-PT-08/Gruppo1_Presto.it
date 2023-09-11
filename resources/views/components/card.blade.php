@@ -4,7 +4,7 @@
         <img src="{{ $image }}" alt="Product image">
       </a>
       <!-- Edit button-->
-      @if (Auth::user() && Auth::user()->id == $userId)
+      @if (Auth::user() && Auth::user()->id == $userId && isset($hrefModify))
         <a class="btn-edit btn-sm position-absolute top-0 end-0 m-2" href="{{ $hrefModify }}" data-bs-toggle="tooltip"
           data-bs-placement="left" aria-label="Edit" data-bs-original-title="Edit">
           <i class="fa-regular fa-pen-to-square"></i>
@@ -22,8 +22,11 @@
     <div class="card-footer mt-n1 py-0 border-0">
       <div class="d-flex align-items-center justify-content-between position-relative mb-1 py-3 border-top">
         <div class="user">
-          <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" width="32" alt="Avatar">
-          <a class="nav-link-style fs-sm stretched-link" href="#">{{$creator}}</a>
+
+          <a class="nav-link-style fs-sm" href="#">
+            <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" width="32" alt="Avatar">
+            {{$creator}}
+          </a>
         </div>
         <h4 class="mt-1 mb-0 fs-6 text-darker">{{ $price }}€</h4>
       </div>
