@@ -33,6 +33,7 @@
         </div>
     @endif
     @livewireScripts
+    <x-footer/>
 </body>
 
 </html>
