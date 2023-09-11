@@ -18,8 +18,9 @@ class HomeController extends Controller
 
 
     public function SearchAnnouncements(Request $request){
-        $announcements=Announcement::search($request->searched);
-        return view('announcements.index',compact('announcements'));
+        $announcements=Announcement::search($request->searched)->get();
+        return view('homepage.homepage',compact('announcements'));
+       
     }
     
 }

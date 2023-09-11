@@ -24,7 +24,7 @@ class Announcement extends Model
 
     public function toSearchableArray(){
         $category=$this->category;
-        $array=[
+        return[
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,

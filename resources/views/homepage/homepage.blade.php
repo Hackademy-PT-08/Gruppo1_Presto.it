@@ -115,7 +115,7 @@
         <div class="container">
           <div class="row">
 
-            @forelse ($announcements as $announcement)
+            @foreach ($announcements as $announcement)
               <div class="col-12 col-md-4 mb-5">
                 <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
                   title="{{ $announcement->title }}" description="{{ $announcement->description }}"
@@ -125,17 +125,7 @@
                   hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
                   creator="{{$announcement->user->name}}"/>
               </div>
-
-            @empty  
-
-              <div class="col-12">
-                <div class="alert alert-warning py-3 shadow">
-                  <p class="lead">
-                    Non ci sono annunci per questa ricerca
-                  </p>
-                </div>
-              </div>
-            @endforelse
+            @endforeach
           </div>
         </div>
       </section>
