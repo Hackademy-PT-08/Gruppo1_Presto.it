@@ -83,26 +83,7 @@
                          </div>
                       </div>
                     </div>
-
-
-
-                    {{-- <div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                    </div> --}}
-
                 </div>
-
-
-
-
-
             </div>
             <div class="d-lg-none d-flex flex-sm-row flex-column justify-content-lg-start justify-content-center"><a class="btn btn-lg btn-outline-primary  me-sm-3 mb-sm-3 mb-2" href="{{ route('announcements.index') }}">Esplora tutti gli annunci</a><a class="btn btn-lg btn-outline-primary  me-sm-3 mb-sm-3 mb-2" href="{{ route('announcements.create') }}">Crea il tuo Annuncio</a>
             </div>
@@ -111,7 +92,6 @@
       </section>
 
       <section id="latest">
-        {{-- <h3 class="h3 text-center">Gli ultimi annunci</h3> --}}
         <div class="container">
           <div class="row">
 
@@ -122,12 +102,15 @@
                   price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
                   hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
                   hrefSingle="{{ route('announcements.single', $announcement->id) }}"
-                  hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
+                  hrefModify="{{ route('announcements.edit', $announcement->id) }}"
                   creator="{{$announcement->user->name}}"/>
               </div>
             @endforeach
           </div>
         </div>
       </section>
- 
+
+
+
+
 </x-layout>
