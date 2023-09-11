@@ -66,7 +66,7 @@
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categorie</a>
           <ul class="dropdown-menu">
             @foreach ($categories as $category)
-              <li><a class="dropdown-item" href="#">{{ $category->name }}</a></li>
+              <li><a class="dropdown-item" href="{{route('searchByCategory',$category->id)}}">{{ $category->name }}</a></li>
             @endforeach
           </ul>
         </li>
