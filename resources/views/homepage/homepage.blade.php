@@ -111,11 +111,11 @@
       </section>
 
       <section id="latest">
-        
+        {{-- <h3 class="h3 text-center">Gli ultimi annunci</h3> --}}
         <div class="container">
           <div class="row">
 
-            @foreach ($announcements as $announcement)
+            @forelse ($announcements as $announcement)
               <div class="col-12 col-md-4 mb-5">
                 <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
                   title="{{ $announcement->title }}" description="{{ $announcement->description }}"
@@ -125,7 +125,17 @@
                   hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
                   creator="{{$announcement->user->name}}"/>
               </div>
-            @endforeach
+
+            @empty  
+
+              <div class="col-12">
+                <div class="alert alert-warning py-3 shadow">
+                  <p class="lead">
+                    Non ci sono annunci per questa ricerca
+                  </p>
+                </div>
+              </div>
+            @endforelse
           </div>
         </div>
       </section>

@@ -38,6 +38,10 @@ Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
 Route::get('annunci/categoria/{categoryId}',[AnnouncementController::class,'searchByCategory'])
 ->name('searchByCategory');
 
+//!rotta ricerca annuncio
+
+Route::get('ricerca/annuncio',[HomeController::class,'SearchAnnouncements'])
+->name('announcements.search');
 
 //! rotte dello User
 

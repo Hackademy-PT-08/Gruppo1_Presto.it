@@ -76,11 +76,14 @@
     </div>
   </div>
   <!-- Search collapse-->
-  <div class="search-box collapse" id="searchBox">
-    <div class="container py-2">
-      <div class="input-group"><i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-        <input class="form-control rounded-start" type="text" placeholder="Cosa stavi cercando?">
+  <form action="{{route('announcements.search')}}" method="GET">
+    <div class="search-box collapse" id="searchBox">
+      <div class="container py-2">
+        <div class="input-group"><i class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+          <input class="form-control rounded-start" name="searched" type="text" placeholder="Cosa stavi cercando?">
+          <button type="submit" class="btn btn-primary">Cerca</button>
+        </div>
       </div>
     </div>
-  </div>
+  </form>
 </header>

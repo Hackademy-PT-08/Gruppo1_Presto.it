@@ -15,4 +15,11 @@ class HomeController extends Controller
         $announcements=Announcement::latest()->take(6)->get();
         return view('homepage.homepage',compact('announcements'));
     }
+
+
+    public function SearchAnnouncements(Request $request){
+        $announcements=Announcement::search($request->searched);
+        return view('announcements.index',compact('announcements'));
+    }
+    
 }
