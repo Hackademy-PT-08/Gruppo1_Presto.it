@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->boolean('is_revized')->default(false);
+            $table->boolean('is_revised')->default(false);
+            $table->boolean('deleting')->default(false);
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->dropColumn('is_revized');
+            $table->dropColumn('is_revised');
+            $table->dropColumn('deleting');
             //
         });
     }

@@ -4,7 +4,7 @@
     <div class="bg-light shadow-lg rounded-3 overflow-hidden">
       <div class="row">
         <!-- Sidebar-->
-        <x-dashboard-sidebar />
+        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcement_to_revised_count }}" requestsCount="{{ $requests_count }}" usersCount="{{ $users_count }}" />
         <!-- Content-->
         <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
 
@@ -18,12 +18,18 @@
                 <div class="mb-2 me-sm-3 me-2 d-flex aling-items-center">
                   <p>creato il: {{ $announcement->created_at->format('d/m/Y') }}</p></div>
                 <div>
-                  <button class="btn btn-success mb-2 ms-2" type="button">
+                  <a class="btn btn-success mb-2" onclick="event.preventDefault();getElementById('form-accept-announcement').submit()">
                     <i class="fa-solid fa-check me-2"></i>Accetta
-                  </button>
-                  <button class="btn btn-danger mb-2 ms-2 me-3" type="button">
+                  </a>
+                  <form action="{{ route('dashboard.accept-announcement', $announcement->id) }}" method="post" class="d-none" id="form-accept-announcement">
+                    @csrf
+                  </form>
+                  <a class="btn btn-danger mb-2 ms-2 me-3" onclick="event.preventDefault();getElementById('form-reject-announcement').submit()">
                     <i class="fa-solid fa-xmark me-2"></i>Rifiuta
-                  </button>
+                  </a>
+                  <form action="{{ route('dashboard.reject-announcement', $announcement->id) }}" method="post" class="d-none" id="form-reject-announcement">
+                    @csrf
+                  </form>
                 </div>
                 {{-- <div class="mb-2 me-sm-3 me-2 ps-sm-3 ps-2 border-start"><i class="fas fa-eye me-2"></i>15 views</div>
               <div class="mb-2 me-sm-3 me-2 ps-sm-3 ps-2 border-start"><i class="far fa-heart me-2"></i>4 favorite --}}
