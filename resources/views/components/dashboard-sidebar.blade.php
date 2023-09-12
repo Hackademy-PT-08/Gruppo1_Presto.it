@@ -16,7 +16,7 @@
         @if (Auth::user()->is_admin)
         <li class="border-bottom mb-0">
           <a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{ route('dashboard.requests') }}">
-            <i class="fa-solid fa-envelope"></i>Richieste revisori
+            <i class="fa-solid fa-envelope"></i>Richieste revisionatori
             <span class="text-muted ms-auto small">{{ $requestsCount }}</span>
           </a>
         </li>
