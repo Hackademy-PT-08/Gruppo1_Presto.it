@@ -17,5 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/storage/announcements.index-shm 
+/storage/announcements.index-shm
 /storage/announcements.index-wal
+
