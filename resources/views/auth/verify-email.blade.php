@@ -21,7 +21,7 @@
 
 <x-layout>
 
-  <div class="login container mt-5">
+  <div class="login container mt-5 min-vh-100">
     <div class="row justify-content-center">
       <div class="col-11 col-sm-10 col-md-8  shadow-lg rounded">
         <div class="row">
