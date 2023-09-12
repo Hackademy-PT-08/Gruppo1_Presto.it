@@ -28,7 +28,9 @@
             @auth
               <li><a class="dropdown-item" href="{{ route('user.profile') }}">Profilo</a></li>
               <li><a class="dropdown-item" href="{{ route('user.profile-announcements') }}">I miei annunci</a></li>
+              @if (Auth::user()->is_admin || Auth::user()->is_reviewer)
               <li><a class="dropdown-item" href="{{ route('dashboard.announcements') }}">Dashboard</a></li>
+              @endif
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -42,7 +44,6 @@
               @guest
                 <li><a class="dropdown-item" href="/register">Registrati</a></li>
                 <li><a class="dropdown-item" href="/login">Login</a></li>
-                <li><a class="dropdown-item" href="{{ route('dashboard.announcements') }}">Dashboard</a></li>
               @endguest
           </ul>
         </a>
