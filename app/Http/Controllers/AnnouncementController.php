@@ -15,7 +15,8 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        return view('announcements.index');
+        $announcements=Announcement::all();
+        return view('announcements.index',compact('announcements'));
     }
 
     /**
@@ -59,6 +60,30 @@ class AnnouncementController extends Controller
         $announcements=$categoryToSearch->announcements()->get();
 
         return view('announcements.searchByCategory',['categoryToSearch'=>$categoryToSearch,'announcements'=>$announcements]);
+    }
+
+
+    public function filterbar(Request $request){
+       
+        $query=Announcement::query();
+        if ($request->filled('searched')) {
+            $query->where('title','like','%'. $request->input('searched') . '%');
+        }
+
+        if ($request->filled('category')) {
+        $query->where('category_id',$request->input('category'));
+        }
+
+        if ($request->filled('min_price')) {
+            $query->where('price','>',$request->input('min_price'));
+        }
+
+        if ($request->filled('max_price')) {
+            $query->where('price','<',$request->input('max_price'));
+        }
+
+        $announcements=$query->get();
+        return view('announcements.index', compact('announcements'));
     }
 
 

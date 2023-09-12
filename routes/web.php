@@ -22,27 +22,35 @@ Route::get('/',[HomeController::class,'homepage'])
 ->name('homepage');
 
 // Annunci
-Route::get('annunci', [AnnouncementController::class, 'index'])
+Route::get('/annunci', [AnnouncementController::class, 'index'])
 ->name('announcements.index');
 
-Route::get('annuncio/aggiungi',[AnnouncementController::class,'create'])
+Route::get('/annuncio/aggiungi',[AnnouncementController::class,'create'])
 ->name('announcements.create')
 ->middleware(['auth','verified']);
 
-Route::get('annuncio/modifica/{id}',[AnnouncementController::class,'edit'])
+Route::get('/annuncio/modifica/{id}',[AnnouncementController::class,'edit'])
 ->name('announcements.edit')
 ->middleware(['auth','verified']);
 
-Route::get('annuncio/{id}', [AnnouncementController::class, 'show'])
+Route::get('/annuncio/{id}', [AnnouncementController::class, 'show'])
 ->name('announcements.single');
 
-Route::get('annunci/categoria/{categoryId}',[AnnouncementController::class,'searchByCategory'])
+Route::get('/annunci/categoria/{categoryId}',[AnnouncementController::class,'searchByCategory'])
 ->name('searchByCategory');
 
 //!rotta ricerca annuncio
+Route::get('/ricerca/annunci',[AnnouncementController::class,'filterbar'])
+->name('announcements.filterbar');
 
-Route::get('ricerca/annuncio',[HomeController::class,'SearchAnnouncements'])
+Route::get('/ricerca/annuncio',[HomeController::class,'SearchAnnouncements'])
 ->name('announcements.search');
+
+
+
+
+
+
 
 //! rotte dello User
 
@@ -51,7 +59,7 @@ Route::get('/utente/profilo',[UserController::class,'profile'])
 ->name('user.profile')
 ->middleware(['auth','verified']);
 
-Route::get('utente/annunci',[UserController::class,'announcements'])
+Route::get('/utente/annunci',[UserController::class,'announcements'])
 ->name('user.profile-announcements')
 ->middleware(['auth','verified']);
 

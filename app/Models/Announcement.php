@@ -28,7 +28,8 @@ class Announcement extends Model
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,
-            'category'=>$category
+            'category'=>$category,
+            'price'=>$this->price,
         ];
     }
 }
