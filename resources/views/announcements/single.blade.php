@@ -144,6 +144,7 @@
                     </div>
                   </div>
                 </div>
+                
 
               </div>
               <p class="mb-4 pb-md-2 fs-sm"> {{ $announcement->description }} </p>
