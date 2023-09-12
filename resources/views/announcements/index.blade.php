@@ -21,9 +21,9 @@
     
         @empty  
     
-          <div class="col-12">
+          <div class="col-12" style="width: 100% !important">
             <div class="alert alert-warning py-3 shadow justify-content-center">
-              <p class="">
+              <p class="lead text-center">
                 Non ci sono annunci per questa ricerca
               </p>
             </div>
