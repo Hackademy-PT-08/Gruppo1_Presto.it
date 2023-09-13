@@ -16,6 +16,21 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description');
             $table->float('price');
+
+            $table->foreignId('user_id')
+                ->nullable()
+                ->costrained()
+                ->onDelete('cascade');
+                
+            $table->foreignId('category_id')
+                ->nullable()
+                ->costrained()
+                >onDelete('cascade');
+          
+
+            $table->boolean('is_revised')->default(false);
+            $table->boolean('deleting')->default(false);
+            
             $table->timestamps();
         });
     }
