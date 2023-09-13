@@ -25,7 +25,7 @@ return new class extends Migration
             $table->foreignId('category_id')
                 ->nullable()
                 ->costrained()
-                >onDelete('cascade');
+                ->onDelete('cascade');
           
 
             $table->boolean('is_revised')->default(false);
