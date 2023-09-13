@@ -14,7 +14,8 @@
 <body>
     <x-navbar />
     <x-band
-        type="{{ $type }}"/>
+        type="{{ $type }}"
+        title="{{ $title }}"/>
     {{ $slot }}
 
     @if (session()->has('message'))
