@@ -15,7 +15,7 @@
               <div class="row gy-3">
                   <div class="col-12">
                     <label class="form-label" for="name">Nome</label>
-                    <input class="form-control" name="name" id="name" type="text"
+                    <input class="form-control" name="name" id="name" type="text" value="{{ old('name') }}
                       placeholder="Inserisci il tuo nome">
                     @error('name')
                       <span class="small text-danger"> {{ $message }} </span>
@@ -23,7 +23,7 @@
                   </div>
                   <div class="col-12">
                     <label class="form-label" for="name">Email</label>
-                    <input class="form-control" name="email" id="email" type="email"
+                    <input class="form-control" name="email" id="email" type="email" value="{{ old('email') }}
                       placeholder="Inserisci la tua email">
                     @error('email')
                       <span class="small text-danger"> {{ $message }} </span>
