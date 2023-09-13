@@ -94,21 +94,24 @@
         </div>
       </section>
 
-      <section id="latest">
-        <div class="container">
+      <section class="latest min-vh-100 py-4" style="background-color: var(--primary-color)">
+        <h5 class="h2 text-center mb-4 text-white">Gli ultimi arrivi</h5>
+        <div class="container ">
           <div class="row">
+                <div class="owl-carousel owl-theme">
 
-            @foreach ($announcements as $announcement)
-            <div class="col-12 col-md-4 mb-5">
-              <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
-                title="{{ $announcement->title }}" description="{{ $announcement->description }}"
-                price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
-                hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
-                hrefSingle="{{ route('announcements.single', $announcement->id) }}"
-                hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
-                creator="{{$announcement->user->name}}"/>
-            </div>
-          @endforeach
+                    @foreach ($announcements as $announcement)
+                    <div class="item">
+                        <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
+                            title="{{ $announcement->title }}" description="{{ $announcement->description }}"
+                            price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
+                            hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
+                            hrefSingle="{{ route('announcements.single', $announcement->id) }}"
+                            hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
+                            creator="{{$announcement->user->name}}"/>
+                    </div>
+                  @endforeach
+                </div>
           </div>
         </div>
       </section>
