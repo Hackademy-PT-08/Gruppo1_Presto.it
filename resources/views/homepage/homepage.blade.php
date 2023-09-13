@@ -101,7 +101,7 @@
           <div class="row">
                 <div class="owl-carousel owl-theme">
 
-                    @foreach ($announcements as $announcement)
+                    @foreach ($revised_announcements as $announcement)
                     <div class="item">
                         <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
                             title="{{ $announcement->title }}" description="{{ $announcement->description }}"
