@@ -1,4 +1,8 @@
 <x-layout>
+ 
+
+
+
     <section class="mb-lg-2" style="padding-top: 30px; ">
 
         <div class="container py-4">
@@ -97,7 +101,7 @@
           <div class="row">
                 <div class="owl-carousel owl-theme">
 
-                    @foreach ($revised_announcements as $announcement)
+                    @foreach ($announcements as $announcement)
                     <div class="item">
                         <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
                             title="{{ $announcement->title }}" description="{{ $announcement->description }}"
