@@ -1,6 +1,6 @@
 <aside class="col-lg-3 pe-xl-5">
   <div class="d-block d-lg-none p-4">
-    <a class="btn btn-outline-accent d-block" href="#account-menu" data-bs-toggle="collapse">
+    <a class="btn btn-outline-primary d-block" href="#account-menu" data-bs-toggle="collapse">
       <i class="ci-menu me-2"></i>Account menu
     </a>
   </div>
@@ -13,7 +13,7 @@
       </li>
         <li class="border-bottom mb-0">
           <a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{ route('user.profile-announcements') }}">
-            <i class="fa-solid fa-file-image"></i>I miei annunci<span class="fs-sm text-muted ms-auto">{{ $userAnnouncementsCount }}</span>
+            <i class="fa-solid fa-file-image"></i>I miei annunci<span class="small text-muted ms-auto">{{ $userAnnouncementsCount }}</span>
           </a>
         </li>
         <li class="border-bottom mb-0">
