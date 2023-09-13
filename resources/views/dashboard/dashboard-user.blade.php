@@ -4,7 +4,7 @@
     <div class="bg-light shadow-lg rounded-3 overflow-hidden">
       <div class="row">
         <!-- Sidebar -->
-        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}" requestsCount="{{ $requests_count }}" usersCount="{{ $users_count }}" />
+        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}" requestsCount="{{ $requests_count }}" usersCount="{{ $revisors_count }}" />
         <!-- Content -->
         <section class="content col-lg-9 pt-lg-4 pb-4 mb-3">
 
@@ -15,21 +15,21 @@
               <div class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center">
                 <img class="rounded mb-sm-0 mb-3" src="https://picsum.photos/90/90" width="90" alt="Createx Studio">
                 <div class="ms-n2 ps-sm-4">
-                  @if ($user->is_asking_reviewer)
-                    <a class="btn btn-success mb-2" onclick="event.preventDefault();getElementById('form-accept-reviewer').submit()">
+                  @if ($is_revisor)
+                    <a class="btn btn-sm btn-success mb-2" onclick="event.preventDefault();getElementById('form-accept-reviewer').submit()">
                       <i class="fa-solid fa-check me-2"></i>Accetta Revisore
                     </a>
                     <form action="{{ route('dashboard.accept-reviewer', $user->id) }}" method="post" class="d-none" id="form-accept-reviewer">
                       @csrf
                     </form>
-                    <a class="btn btn-danger mb-2 ms-2 me-3" onclick="event.preventDefault();getElementById('form-reject-reviewer').submit()">
+                    <a class="btn btn-sm btn-danger mb-2 ms-2 me-3" onclick="event.preventDefault();getElementById('form-reject-reviewer').submit()">
                       <i class="fa-solid fa-xmark me-2"></i>Rifiuta Revisore
                     </a>
                     <form action="{{ route('dashboard.reject-reviewer', $user->id) }}" method="post" class="d-none" id="form-reject-reviewer">
                       @csrf
                     </form>
                   @endif
-                  <button class="btn btn-outline-danger mb-2 ms-2" type="button">
+                  <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">
                     <i class="fa-solid fa-ban"></i>Blocca utente
                   </button>
                 </div>

@@ -4,7 +4,7 @@
     <div class="bg-light shadow-lg rounded-3 overflow-hidden">
       <div class="row">
         <!-- Sidebar-->
-        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}" requestsCount="{{ $requests_count }}" usersCount="{{ $users_count }}" />
+        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}" requestsCount="{{ $requests_count }}" usersCount="{{ $revisors_count }}" />
         <!-- Content-->
         <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
           <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
@@ -14,17 +14,17 @@
             <!-- Items grid-->
             <div class="row gy-sm-4 gy-3 gx-3 mb-4">
               <!-- Product-->
-              @forelse ($users as $user)
-                <a class="col-4 user" href="{{ route('dashboard.user', $user->id) }}">
+              @forelse ($revisors as $revisor)
+                <a class="col-4 user" href="{{ route('dashboard.user', $revisor->user->id) }}">
                   <div class="d-flex align-items-center py-2 bg-secondary rounded">
                     <div class="d-flex align-items-center position-relative">
                       <img class="rounded-circle ms-2" src="https://picsum.photos/300/300" width="48"
                         alt="Avatar">
                       <div class="ms-2">
                         <h4 class="mb-0 fs-6">
-                          <span class="nav-link-style" href="nft-vendor.html">{{ $user->name }}</span>
+                          <span class="nav-link-style" href="nft-vendor.html">{{ $revisor->user->name }}</span>
                         </h4>
-                        <span class="small text-muted">{{ $user->email }}</span>
+                        <span class="small text-muted">{{ $revisor->user->email }}</span>
                       </div>
                     </div>
                   </div>
