@@ -26,6 +26,7 @@ class DashboardController extends Controller
 
         $announcements = Announcement::where('is_revised', false)->where('deleting', false)->get();
         $last_announcement = Announcement::where('is_revised', false)->latest('updated_at')->first();
+        
 
         return view('dashboard.dashboard-announcements', [
             'announcements' => $announcements,
