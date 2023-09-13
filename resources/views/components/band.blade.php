@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-@elseif ($type == 'annuncio')
+@elseif ($type == 'breadcrump')
   <div class="page-title-overlap bg-primary pt-4">
     <div
       class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center mb-2 pt-2">
