@@ -27,7 +27,6 @@ return new class extends Migration
                 ->costrained()
                 ->onDelete('cascade');
 
-
             $table->boolean('is_revised')->default(false);
             $table->boolean('deleting')->default(false);
 
