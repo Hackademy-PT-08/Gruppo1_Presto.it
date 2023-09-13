@@ -23,12 +23,15 @@
                                         <input type="submit" class="btn btn-primary" value="Richiedi link">
                                     </div>
                                 </div>
-                            </div>
+                            </div>              </div>
 
-                        </form>
-                    </div>
-                </div>
-            </div>
+
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+
 </x-layout>
+
+
