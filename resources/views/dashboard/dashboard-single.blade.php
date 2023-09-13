@@ -4,7 +4,8 @@
     <div class="bg-light shadow-lg rounded-3 overflow-hidden">
       <div class="row">
         <!-- Sidebar-->
-        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}" requestsCount="{{ $requests_count }}" usersCount="{{ $users_count }}" />
+        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}"
+          requestsCount="{{ $requests_count }}" usersCount="{{ $revisors_count }}" />
         <!-- Content-->
         <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
 
@@ -14,20 +15,35 @@
               <div class="text-center">
                 <h2 class="h3">{{ $announcement->title }}</h2>
               </div>
-              <div class="d-flex aling-items-center justify-content-sm-between justify-content-center flex-wrap mb-sm-4 mb-3 mt-3">
-                <div class="mb-2 me-sm-3 me-2 d-flex aling-items-center">
-                  <p>creato il: {{ $announcement->created_at->format('d/m/Y') }}</p></div>
+              <div
+                class="d-flex aling-items-center justify-content-sm-between justify-content-center flex-wrap mb-sm-4 mb-3 mt-3">
+                <div class="mb-2 me-sm-3 me-2 d-flex aling-items-center small">
+                  <p>
+                    <i class="fa-regular fa-calendar me-2"></i>
+                    <span>{{ $announcement->created_at->format('d/m/Y') }}</span>
+                  </p>
+                  <p>
+                    <a class="border-start ms-2 ps-2 user" href="{{ route('dashboard.user', $announcement->user->id) }}">
+                      <i class="fa-regular fa-user me-2"></i>
+                      <span>{{ $announcement->user->name }}</span>
+                    </a>
+                  </p>
+                </div>
                 <div>
-                  <a class="btn btn-success mb-2" onclick="event.preventDefault();getElementById('form-accept-announcement').submit()">
+                  <a class="btn btn-sm btn-success mb-2"
+                    onclick="event.preventDefault();getElementById('form-accept-announcement').submit()">
                     <i class="fa-solid fa-check me-2"></i>Accetta
                   </a>
-                  <form action="{{ route('dashboard.accept-announcement', $announcement->id) }}" method="post" class="d-none" id="form-accept-announcement">
+                  <form action="{{ route('dashboard.accept-announcement', $announcement->id) }}" method="post"
+                    class="d-none" id="form-accept-announcement">
                     @csrf
                   </form>
-                  <a class="btn btn-danger mb-2 ms-2 me-3" onclick="event.preventDefault();getElementById('form-reject-announcement').submit()">
+                  <a class="btn btn-sm btn-danger mb-2 ms-2 me-3"
+                    onclick="event.preventDefault();getElementById('form-reject-announcement').submit()">
                     <i class="fa-solid fa-xmark me-2"></i>Rifiuta
                   </a>
-                  <form action="{{ route('dashboard.reject-announcement', $announcement->id) }}" method="post" class="d-none" id="form-reject-announcement">
+                  <form action="{{ route('dashboard.reject-announcement', $announcement->id) }}" method="post"
+                    class="d-none" id="form-reject-announcement">
                     @csrf
                   </form>
                 </div>
@@ -47,38 +63,26 @@
               <div class="col">
 
                 <div class="row row-cols-1 gy-3 gx-4 mb-4 pb-md-2">
-                  <div class="col creator">
-                    <a href="{{ route('dashboard.user', $announcement->user->id) }}">
-                      <div class="card position-relative h-100">
-                        <div class="card-body p-3">
-                          <div class="d-flex align-items-center">
 
-                            <img class="rounded-circle me-2" src="https://picsum.photos/300/300" width="36">
-                            <span>{{ $announcement->user->name }}</span>
 
-                          </div>
-                        </div>
-                    </a>
-                  </div>
                 </div>
+                {{-- description --}}
+                <div class="col">
+                  <p class="mb-4 pb-md-2 fs-sm"> {{ $announcement->description }} </p>
+                </div>
+                {{-- price --}}
+                <div class="col">
+                  <h3 class="h6 mb-2 fs-sm text-muted">Prezzo</h3>
+                  <h2 class="h3 mb-1"> € {{ $announcement->price }}</h2>
+                </div>
+                {{-- category --}}
+                <div class="col">
+                  <h3 class="h6 mb-2 fs-sm text-muted">Categoria</h3>
+                  <h2 class="h3 mb-1"> {{ $announcement->category->name }}</h2>
+                </div>
+              </div>
 
-              </div>
-              {{-- description --}}
-              <div class="col">
-                <p class="mb-4 pb-md-2 fs-sm"> {{ $announcement->description }} </p>
-              </div>
-              {{-- price --}}
-              <div class="col">
-                <h3 class="h6 mb-2 fs-sm text-muted">Prezzo</h3>
-                <h2 class="h3 mb-1"> € {{ $announcement->price }}</h2>
-              </div>
-              {{-- category --}}
-              <div class="col">
-                <h3 class="h6 mb-2 fs-sm text-muted">Categoria</h3>
-                <h2 class="h3 mb-1"> {{ $announcement->category->name }}</h2>
-              </div>
             </div>
-
           </div>
       </div>
 

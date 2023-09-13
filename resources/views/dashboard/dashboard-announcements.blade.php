@@ -5,7 +5,7 @@
       <div class="row">
         <!-- Sidebar-->
         <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}"
-          requestsCount="{{ $requests_count }}" usersCount="{{ $users_count }}" />
+          requestsCount="{{ $requests_count }}" usersCount="{{ $revisors_count }}" />
         <!-- Content-->
         <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
           <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
