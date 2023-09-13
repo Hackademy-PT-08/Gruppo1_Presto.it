@@ -3,7 +3,16 @@ footer {
     color: white;
 }
 
-.footer-link {
+footer .footer-link {
     text-decoration: none;
     color: white;
+}
+
+footer .footer-link:hover {
+    color: var(--secondary-color)
+}
+footer .footer-brand {
+    font-family: "Pacifico", cursive;
+    font-size: 2rem;
+    user-select: none;
 }
