@@ -1,4 +1,4 @@
-<x-layout-with-band type="basic" title="Tutti i nostri annunci">
+<x-layout-with-band type="annunciAll">
 
   {{-- @livewire('index-announcement'); --}}
   <x-searchbar />
