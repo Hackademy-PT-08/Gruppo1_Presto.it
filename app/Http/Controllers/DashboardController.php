@@ -12,12 +12,33 @@ class DashboardController extends Controller
     protected
         $announcements_to_revised_count,
         $requests_count,
-        $users_count;
+        $users_count,
+        $last_announcement;
 
     public function __construct(){
-        $this->announcements_to_revised_count = Announcement::where('is_revised', false)->count();
+        $this->announcements_to_revised_count = Announcement::where('is_revised', false)->where('deleting', false)->count();
         $this->requests_count = User::where('is_asking_reviewer', true)->count();
         $this->users_count = User::all()->count();
+
+        $last_announcement_accepted = Announcement::where('is_revised', true)->latest('updated_at')->first();
+        $last_announcement_rejected = Announcement::where('deleting', true)->latest('updated_at')->first();
+
+        if(isset($last_announcement_accepted) && isset($last_announcement_rejected)){
+            if($last_announcement_accepted->updated_at < $last_announcement_rejected->updated_at){
+                $this->last_announcement = $last_announcement_rejected;
+            }
+        }
+        elseif(isset($last_announcement_rejected)){
+            $this->last_announcement = $last_announcement_rejected;
+        }
+        else{
+            $this->last_announcement = $last_announcement_accepted;
+        }
+
+
+
+
+
     }
 
     public function announcements() {
@@ -25,11 +46,10 @@ class DashboardController extends Controller
             return redirect()->route('homepage');
 
         $announcements = Announcement::where('is_revised', false)->where('deleting', false)->get();
-        $last_announcement = Announcement::where('is_revised', false)->latest('updated_at')->first();
 
         return view('dashboard.dashboard-announcements', [
             'announcements' => $announcements,
-            'last_annoucement' => $last_announcement,
+            'last_annoucement' => $this->last_announcement,
             'announcements_to_revised_count' => $this->announcements_to_revised_count,
             'requests_count' => $this->requests_count,
             'users_count' => $this->users_count,
@@ -125,14 +145,13 @@ class DashboardController extends Controller
     }
 
     public function cancelLastReject() {
-        $announcement = Announcement::latest('updated_at')->first();
-
-        $announcement->deleting = false;
-        $announcement->save();
+        $this->last_announcement->deleting = false;
+        $this->last_announcement->is_revised = false;
+        $this->last_announcement->save();
 
         session()->flash('message', [
             'title' => 'Azione annullata',
-            'content' => $announcement->title . ' ora può essere revisionato di nuovo!',
+            'content' => $this->last_announcement->title . ' ora può essere revisionato di nuovo!',
             'status' => 'success',
         ]);
 

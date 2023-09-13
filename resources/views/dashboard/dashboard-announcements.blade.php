@@ -4,14 +4,14 @@
     <div class="bg-light shadow-lg rounded-3 overflow-hidden">
       <div class="row">
         <!-- Sidebar-->
-        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcement_to_revised_count }}"
+        <x-dashboard-sidebar announcementToRevisedCount="{{ $announcements_to_revised_count }}"
           requestsCount="{{ $requests_count }}" usersCount="{{ $users_count }}" />
         <!-- Content-->
         <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
           <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
             <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4">
               <h1 class="h3 mb-sm-0 mb-2 pb-1 text-sm-start text-center">Annunci da revisionare</h1>
-              @if ($last_annoucement->deleting && $last_annoucement->updated_at >= now()->subMinutes(5))
+              @if (isset($last_annoucement) && $last_annoucement->updated_at >= now()->subMinutes(5))
                 <a class="btn btn-sm btn-primary rounded-1 ms-lg-4 ms-2"
                   onclick="event.preventDefault();getElementById('form-cancel-last-reject').submit()">Annulla ultima
                   revisione</a>
