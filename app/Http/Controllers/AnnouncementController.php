@@ -16,7 +16,8 @@ class AnnouncementController extends Controller
     public function index()
     {
         $announcements=Announcement::all();
-        return view('announcements.index',compact('announcements'));
+        $revised_announcements= $announcements->where('is_revised',true);
+        return view('announcements.index',compact('revised_announcements'));
     }
 
     /**
