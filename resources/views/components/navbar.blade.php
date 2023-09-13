@@ -1,4 +1,4 @@
-<header id="navbar_top" class="navbar d-block navbar-sticky navbar-expand-lg bg-light ">
+<header id="navbar_top" class="navbar d-block navbar-sticky navbar-expand-lg bg-light  ">
   <div class="container">
     <a class="navbar-brand" href="{{ route('homepage') }}">Presto.it</a>
     <!-- Sezione di destra -->
