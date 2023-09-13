@@ -3,21 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public
+        $user_annoucements_count,
+        $user;
+
+    public function __construct(){
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::user();
+
+            $this->user_announcements_count = Announcement::where('user_id', $this->user->id)->where('is_revised', true)->where('deleting', false)->count();
+
+            return $next($request);
+        });
+
+    }
+
+
     public function profile(){
-        $user=Auth::user();
-        return view('user.profile',['user'=>$user]);
+        return view('user.profile',[
+            'user' => $this->user,
+            'user_announcements_count' => $this->user_announcements_count,]);
     }
 
 
     public function announcements(){
-        $current_user_id=auth()->user()->id;
-        $user_announcements=User::find($current_user_id)->announcements;
-        return view('user.profile-announcements',['user_announcements'=>$user_announcements]);
+        $user_announcements = Announcement::where('user_id', $this->user->id)->where('is_revised', true)->where('deleting', false)->get();
+        
+        return view('user.profile-announcements',[
+            'user_announcements' => $user_announcements,
+            'user_announcements_count' => $this->user_announcements_count,
+        ]);
     }
 }
