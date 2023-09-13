@@ -21,7 +21,7 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/',[HomeController::class,'homepage'])
 ->name('homepage');
 
-Route::get('/lavora_con_noi',[HomeController::class,'workWithUs'])
+Route::get('/lavora-con-noi',[HomeController::class,'workWithUs'])
 ->name('work');
 
 // Annunci

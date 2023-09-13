@@ -71,7 +71,7 @@
                         Link Utili
                     </h6>
                     <p>
-                        <a class="footer-link" href="#!" class="text-reset">Non sappiamo</a>
+                        <a class="footer-link" href="{{ route('work') }}" class="text-reset">Lavora con noi</a>
                     </p>
                     <p>
                         <a class="footer-link" href="#!" class="text-reset">Cosa mettere</a>
