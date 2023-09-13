@@ -59,8 +59,9 @@ class AnnouncementController extends Controller
     public function searchByCategory($categoryId){
         $categoryToSearch=Category::find($categoryId);
         $announcements=$categoryToSearch->announcements()->get();
+        $revised_announcements=$announcements->where('is_revised',true);
 
-        return view('announcements.searchByCategory',['categoryToSearch'=>$categoryToSearch,'announcements'=>$announcements]);
+        return view('announcements.searchByCategory',compact('categoryToSearch','revised_announcements'));
     }
 
 
@@ -84,7 +85,8 @@ class AnnouncementController extends Controller
         }
 
         $announcements=$query->get();
-        return view('announcements.index', compact('announcements'));
+        $revised_announcements=$announcements->where('is_revised',true);
+        return view('announcements.index', compact('revised_announcements'));
     }
 
 

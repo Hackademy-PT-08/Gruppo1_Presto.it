@@ -21,11 +21,11 @@ return new class extends Migration
                 ->nullable()
                 ->costrained()
                 ->onDelete('cascade');
-                
+
             $table->foreignId('category_id')
                 ->nullable()
                 ->costrained()
-                >onDelete('cascade');
+                ->onDelete('cascade');
           
 
             $table->boolean('is_revised')->default(false);
