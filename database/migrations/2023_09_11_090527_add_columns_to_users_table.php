@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_reviewer')->default(false);
+            $table->boolean('is_asking_reviewer')->default(false);
             $table->longText('biografy')->nullable();
 
         });
@@ -27,6 +28,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('is_admin');
             $table->dropColumn('is_reviewer');
+            $table->boolean('is_asking_reviewer');
             $table->dropColumn('biografy');
         });
     }

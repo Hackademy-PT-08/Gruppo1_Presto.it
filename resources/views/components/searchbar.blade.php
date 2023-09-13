@@ -1,10 +1,10 @@
 <div id="searchbar" class="shadow-lg mt-2 mb-4">
-    <div class="card shadow-none" style="background-color: #373f50;">
+    <div class="card shadow-none" style="background-color: var(--primary-color);">
       <div class="card-body">
         <form action="{{route('announcements.filterbar')}}">
           <div class="row">
             <div class="col-12 col-lg-3 mb-3">
-              <input id="searchInput" type="text" class="form-control form-control-lg mt-2" placeholder="Cerca annunci..." name="searched" value="{{request('searched')}}">
+              <input id="searchInput" type="text" class="form-control form-control-lg mt-2" placeholder="Cosa ti serve?" name="searched" value="{{request('searched')}}">
               
             </div>
             <!-- select -->
@@ -33,7 +33,7 @@
 
                 <div class="row ">
                     <div class="col-12 mb-3 mb-lg-3 py-2">
-                        <input type="submit" class="btn btn-lg btn-light" value="cerca">
+                        <input type="submit" class="btn btn-lg btn-light" value="Cerca annunci">
                     </div>
                 </div>
               
@@ -43,3 +43,5 @@
       </div>
     </div>
   </div>
+
+  

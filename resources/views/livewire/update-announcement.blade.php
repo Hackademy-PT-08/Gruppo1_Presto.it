@@ -28,7 +28,7 @@
                 @enderror
                 
                 <label for="description">Descrizione annuncio</label>
-                <textarea name="description" id="description"  cols="3" rows="3" class="form-control mb-3 input-form @error('description') is-invalid @enderror" wire:model="description">{{ $announcement->description }} </textarea>
+                <textarea name="description" id="description"  cols="" rows="5" class="form-control mb-3 input-form @error('description') is-invalid @enderror" wire:model="description">{{ $announcement->description }} </textarea>
 
                 @error('description')
                    <div class="alert alert-dismissible alert-danger">

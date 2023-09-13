@@ -12,7 +12,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $announcements = Announcement::where('deleted', true)->where('updated_at', '>=', now()->subHours(2)->subMinutes(5))->delete();
+        })->everyFiveMinutes();
     }
 
     /**

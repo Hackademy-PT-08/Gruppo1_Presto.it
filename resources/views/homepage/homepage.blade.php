@@ -1,10 +1,10 @@
 <x-layout>
+    <x-searchbar/>
 
 
     <section class="mb-lg-2" style="padding-top: 30px; ">
-        
+        <h5 class="h2">Cerca tra i nostri annunci</h5>
         <div class="container py-4">
-
           <div class="row align-items-center justify-content-center gy-3 py-3 text-lg-start text-center">
             <div class="col-lg-5 col-md-8 col-sm-10">
               <h1 class="ms-4 mb-2 pb-lg-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Scopri le migliori offerte per te e la tua casa</font></font></h1>
@@ -94,35 +94,27 @@
         </div>
       </section>
 
-      <section id="latest">
-        <div class="container">
+      <section class="latest min-vh-100 py-4" style="background-color: var(--primary-color)">
+        <h5 class="h2 text-center mb-4 text-white">Gli ultimi arrivi</h5>
+        <div class="container ">
           <div class="row">
+                <div class="owl-carousel owl-theme">
 
-            @forelse ($announcements as $announcement)
-            <div class="col-12 col-md-4 mb-5">
-              <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
-                title="{{ $announcement->title }}" description="{{ $announcement->description }}"
-                price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
-                hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
-                hrefSingle="{{ route('announcements.single', $announcement->id) }}"
-                hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
-                creator="{{$announcement->user->name}}"/>
-            </div>
-      
-          @empty  
-      
-            <div class="col-12">
-              <div class="alert alert-warning py-3 shadow">
-                <p class="lead">
-                  Non ci sono annunci per questa ricerca
-                </p>
-              </div>
-            </div>
-          @endforelse
+                    @foreach ($announcements as $announcement)
+                    <div class="item">
+                        <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
+                            title="{{ $announcement->title }}" description="{{ $announcement->description }}"
+                            price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
+                            hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
+                            hrefSingle="{{ route('announcements.single', $announcement->id) }}"
+                            hrefModify="{{ route('announcements.edit', $announcement->id) }}" 
+                            creator="{{$announcement->user->name}}"/>
+                    </div>
+                  @endforeach
+                </div>
           </div>
         </div>
       </section>
-
 
 
 

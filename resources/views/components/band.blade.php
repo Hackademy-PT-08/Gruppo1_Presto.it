@@ -8,8 +8,8 @@
         </div>
         <div class="ps-3">
           <h3 class="h5 mb-2 text-light">{{ Auth::user()->name }}</h3><span
-            class="d-block text-light fs-sm opacity-60">Con noi da
-            {{ Auth::user()->created_at->toFormattedDateString() }}</span>
+            class="d-block text-light small">Con noi dal
+            {{ Auth::user()->created_at->format('d/m/Y') }}</span>
         </div>
       </div>
     </div>

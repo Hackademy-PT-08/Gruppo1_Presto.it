@@ -4,7 +4,7 @@
     <div class="bg-light shadow-lg rounded-3 overflow-hidden">
       <div class="row">
         <!-- Sidebar-->
-        <x-profile-sidebar />
+        <x-profile-sidebar userAnnouncementsCount="{{ $user_announcements_count }}" />
         <!-- Content-->
         <section class="content col-lg-9 pt-lg-4 pb-4 mb-3">
 
@@ -15,13 +15,13 @@
               <div class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center">
                 <img class="rounded mb-sm-0 mb-3" src="https://picsum.photos/90/90" width="90" alt="Createx Studio">
                 <div class="ms-n2 ps-sm-4">
-                  <button class="btn btn-primary mb-2 ms-2" type="button">
+                  <button class="btn btn-sm btn-primary mb-2" type="button">
                     <i class="fa-solid fa-rotate"></i>Cambia immagine
                   </button>
-                  <button class="btn btn-outline-danger mb-2 ms-2" type="button">
+                  <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">
                     <i class="fa-solid fa-trash-can"></i>Cancella immagine
                 </button>
-                  <div class="pt-1 mb-0 fs-sm text-muted">Ti consigliamo di mettere immagini 400x400 :)
+                  <div class="pt-1 mb-0 small text-muted">Ti consigliamo di mettere immagini 400x400 :)
                   </div>
                 </div>
               </div>
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <div class="d-flex flex-sm-row flex-column">
-                <button class="btn btn-primary" type="submit">Aggiorna informazioni</button>
+                <button class="btn btn-sm btn-primary" type="submit">Aggiorna informazioni</button>
               </div>
             </form>
             <hr class="my-5">
@@ -75,7 +75,7 @@
                 </div>
               </div>
               <div class="d-flex flex-sm-row flex-column">
-                <button class="btn btn-primary" type="submit">Aggiorna password</button>
+                <button class="btn btn-sm btn-primary" type="submit">Aggiorna password</button>
               </div>
             </form>
           </div>

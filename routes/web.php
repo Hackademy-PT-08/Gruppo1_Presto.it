@@ -67,9 +67,46 @@ Route::get('/utente/annunci',[UserController::class,'announcements'])
 ->middleware(['auth','verified']);
 
 // Dashboard
-Route::get('/dashboard' , [DashboardController::class, 'redirectToAnnouncements'])->name('dashboard');
-Route::get('/dashboard/announcements' , [DashboardController::class, 'announcements'])->name('dashboard.announcements');
-Route::get('/dashboard/announcements/{id}' , [DashboardController::class, 'single'])->name('dashboard.single');
-Route::get('/dashboard/users' , [DashboardController::class, 'users'])->name('dashboard.users');
-Route::get('/dashboard/user/{id}' , [DashboardController::class, 'user'])->name('dashboard.user');
-Route::get('/dashboard/requests' , [DashboardController::class, 'requests'])->name('dashboard.requests');
+Route::get('/dashboard' , [DashboardController::class, 'redirectToAnnouncements'])
+->name('dashboard')
+->middleware(['auth','verified']);
+
+Route::get('/dashboard/announcements' , [DashboardController::class, 'announcements'])
+->name('dashboard.announcements')
+->middleware(['auth','verified']);
+
+Route::get('/dashboard/announcements/{id}' , [DashboardController::class, 'single'])
+->name('dashboard.single')
+->middleware(['auth','verified']);
+
+Route::get('/dashboard/requests' , [DashboardController::class, 'requests'])
+->name('dashboard.requests')
+->middleware(['auth','verified']);
+
+Route::get('/dashboard/users' , [DashboardController::class, 'users'])
+->name('dashboard.users')
+->middleware(['auth','verified']);
+
+Route::get('/dashboard/user/{id}' , [DashboardController::class, 'user'])
+->name('dashboard.user')
+->middleware(['auth','verified']);
+
+Route::post('/dashboard/accept-reviewer/{id}' , [DashboardController::class, 'acceptReviewer'])
+->name('dashboard.accept-reviewer')
+->middleware(['auth','verified']);
+
+Route::post('/dashboard/reject-reviewer/{id}' , [DashboardController::class, 'rejectReviewer'])
+->name('dashboard.reject-reviewer')
+->middleware(['auth','verified']);
+
+Route::post('/dashboard/accept-announcement/{id}' , [DashboardController::class, 'acceptAnnouncement'])
+->name('dashboard.accept-announcement')
+->middleware(['auth','verified']);
+
+Route::post('/dashboard/reject-announcement/{id}' , [DashboardController::class, 'rejectAnnouncement'])
+->name('dashboard.reject-announcement')
+->middleware(['auth','verified']);
+
+Route::post('/dashboard/cancel-last-reject' , [DashboardController::class, 'cancelLastReject'])
+->name('dashboard.cancel-last-reject')
+->middleware(['auth','verified']);
