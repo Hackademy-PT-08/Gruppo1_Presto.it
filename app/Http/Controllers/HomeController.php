@@ -13,7 +13,8 @@ class HomeController extends Controller
     public function homepage(){
 
         $announcements=Announcement::latest()->take(6)->get();
-        return view('homepage.homepage',compact('announcements'));
+        $revised_announcements= $announcements->where('is_revised',true);
+        return view('homepage.homepage',compact('revised_announcements'));
     }
 
 

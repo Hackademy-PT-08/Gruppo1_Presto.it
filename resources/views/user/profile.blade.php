@@ -42,7 +42,7 @@
                   </div>
 
                 <div class="col-12">
-                  <label class="form-label" for="bio">Piccola descrizione</label>
+                  <label class="form-label" for="bio">Biografia</label>
                   <textarea class="form-control" id="bio" name="bio" rows="4" placeholder="Dici qualcosa su di te con 500 caratteri">@if ( isset($user->description) )
                     value="{{ $user->description }}"
                   @endif</textarea>

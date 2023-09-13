@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Revisor;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,13 +13,13 @@ class DashboardController extends Controller
     protected
         $announcements_to_revised_count,
         $requests_count,
-        $users_count,
+        $revisors_count,
         $last_announcement;
 
     public function __construct(){
         $this->announcements_to_revised_count = Announcement::where('is_revised', false)->where('deleting', false)->count();
-        $this->requests_count = User::where('is_asking_reviewer', true)->count();
-        $this->users_count = User::all()->count();
+        $this->requests_count = Revisor::all()->count();
+        $this->revisors_count = User::all()->count();
 
         $last_announcement_accepted = Announcement::where('is_revised', true)->latest('updated_at')->first();
         $last_announcement_rejected = Announcement::where('deleting', true)->latest('updated_at')->first();
@@ -35,10 +36,6 @@ class DashboardController extends Controller
             $this->last_announcement = $last_announcement_accepted;
         }
 
-
-
-
-
     }
 
     public function announcements() {
@@ -46,14 +43,14 @@ class DashboardController extends Controller
             return redirect()->route('homepage');
 
         $announcements = Announcement::where('is_revised', false)->where('deleting', false)->get();
-        
+
 
         return view('dashboard.dashboard-announcements', [
             'announcements' => $announcements,
             'last_annoucement' => $this->last_announcement,
             'announcements_to_revised_count' => $this->announcements_to_revised_count,
             'requests_count' => $this->requests_count,
-            'users_count' => $this->users_count,
+            'revisors_count' => $this->revisors_count,
         ]);
     }
 
@@ -67,7 +64,7 @@ class DashboardController extends Controller
             'announcement' => $announcement,
             'announcements_to_revised_count' => $this->announcements_to_revised_count,
             'requests_count' => $this->requests_count,
-            'users_count' => $this->users_count,]);
+            'revisors_count' => $this->revisors_count,]);
     }
 
     public function users() {
@@ -80,7 +77,7 @@ class DashboardController extends Controller
             'users' => $users,
             'announcements_to_revised_count' => $this->announcements_to_revised_count,
             'requests_count' => $this->requests_count,
-            'users_count' => $this->users_count,]);
+            'revisors_count' => $this->revisors_count,]);
     }
 
     public function user($id) {
@@ -89,24 +86,34 @@ class DashboardController extends Controller
 
         $user = User::find($id);
 
+
+        $is_revisor = false;
+        if($this->isRevisor($id))
+            $is_revisor = true;
+
+
+
         return view('dashboard.dashboard-user', [
             'user' => $user,
+            'is_revisor' => $is_revisor,
             'announcements_to_revised_count' => $this->announcements_to_revised_count,
             'requests_count' => $this->requests_count,
-            'users_count' => $this->users_count,]);
+            'revisors_count' => $this->revisors_count,]);
     }
 
     public function requests() {
         if(!$this->userIsAdmin())
             return redirect()->route('homepage');
 
-        $users = User::where('is_asking_reviewer', true)->get();
+
+
+        $revisors = Revisor::with('user')->get();
 
         return view('dashboard.dashboard-requests', [
-            'users' => $users,
+            'revisors' => $revisors,
             'announcements_to_revised_count' => $this->announcements_to_revised_count,
             'requests_count' => $this->requests_count,
-            'users_count' => $this->users_count,]);
+            'revisors_count' => $this->revisors_count,]);
     }
 
     public function acceptAnnouncement($id) {
@@ -166,8 +173,9 @@ class DashboardController extends Controller
         $user = User::find($id);
 
         $user->is_reviewer = true;
-        $user->is_asking_reviewer = false;
         $user->save();
+
+        $revisor = Revisor::where('user_id', $id)->delete();
 
         session()->flash('message', [
             'title' => 'Revisore accettato',
@@ -184,8 +192,7 @@ class DashboardController extends Controller
 
         $user = User::find($id);
 
-        $user->is_asking_reviewer = false;
-        $user->save();
+        $revisor = Revisor::where('user_id', $id)->delete();
 
         session()->flash('message', [
             'title' => 'Revisore rifiutato',
@@ -207,6 +214,11 @@ class DashboardController extends Controller
 
     public function userIsReviewer() {
         if(Auth::user()->is_reviewer)
+            return true;
+    }
+
+    public function isRevisor($id) {
+        if(!(Revisor::where('user_id', $id)->get()->isEmpty()))
             return true;
     }
 }

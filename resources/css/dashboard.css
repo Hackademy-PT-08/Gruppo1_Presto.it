@@ -44,3 +44,7 @@
 .dashboard .creator span:hover {
   color: var(--secondary-color)
 }
+
+.dashboard .user > i {
+  color: #000;
+}

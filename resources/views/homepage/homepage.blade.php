@@ -1,9 +1,10 @@
 <x-layout>
-    <x-searchbar/>
+ 
+
 
 
     <section class="mb-lg-2" style="padding-top: 30px; ">
-        <h5 class="h2">Cerca tra i nostri annunci</h5>
+
         <div class="container py-4">
           <div class="row align-items-center justify-content-center gy-3 py-3 text-lg-start text-center">
             <div class="col-lg-5 col-md-8 col-sm-10">
@@ -24,11 +25,11 @@
                                 <div class="pt-2 px-sm-4 bg-white rounded ">
                                   <div class="row gx-5">
                                   <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
-                                    <h6 class="mb-1 fs-sm fw-normal text-muted ">Offerta:</h6><span class="h6 mb-0">0.5 ETH</span>
+                                    <h6 class="mb-1 fs-sm fw-normal text-muted "></h6><span class="h6 mb-0"></span>
                                   </div>
                                   <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
                                     <hr class="hr-vertical position-absolute start-0 top-0 ml-n4">
-                                    <h6 class="mb-1 fs-sm fw-normal text-muted">Finisce tra:</h6><span class="h6 mb-0">18 hours</span>
+                                    <h6 class="mb-1 fs-sm fw-normal text-muted"></h6><span class="h6 mb-0"></span>
                                   </div>
                                   <div class="col-sm-4 position-relative py-sm-3 py-2">
                                     <hr class="hr-vertical position-absolute start-0 top-0 ml-n4 d-sm-block d-none">
@@ -48,11 +49,11 @@
                                 <div class="pt-2 px-sm-4 bg-white rounded ">
                                   <div class="row gx-5">
                                   <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
-                                    <h6 class="mb-1 fs-sm fw-normal text-muted">Offerta:</h6><span class="h6 mb-0">0.5 ETH</span>
+                                    <h6 class="mb-1 fs-sm fw-normal text-muted"></h6><span class="h6 mb-0"></span>
                                   </div>
                                   <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
                                     <hr class="hr-vertical position-absolute start-0 top-0 ml-n4">
-                                    <h6 class="mb-1 fs-sm fw-normal text-muted">Finisce tra:</h6><span class="h6 mb-0">18 hours</span>
+                                    <h6 class="mb-1 fs-sm fw-normal text-muted"></h6><span class="h6 mb-0"></span>
                                   </div>
                                   <div class="col-sm-4 position-relative py-sm-3 py-2">
                                     <hr class="hr-vertical position-absolute start-0 top-0 ml-n4 d-sm-block d-none">
@@ -70,15 +71,15 @@
                                 <div class="pt-2 px-sm-4 bg-white rounded ">
                                   <div class="row gx-5">
                                   <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
-                                    <h6 class="mb-1 fs-sm fw-normal text-muted">Offerta:</h6><span class="h6 mb-0">0.5 ETH</span>
+                                    <h6 class="mb-1 fs-sm fw-normal text-muted"></h6><span class="h6 mb-0"></span>
                                   </div>
                                   <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
                                     <hr class="hr-vertical position-absolute start-0 top-0 ml-n4">
-                                    <h6 class="mb-1 fs-sm fw-normal text-muted">Finisce tra:</h6><span class="h6 mb-0">18 hours</span>
+                                    <h6 class="mb-1 fs-sm fw-normal text-muted"></h6><span class="h6 mb-0"></span>
                                   </div>
                                   <div class="col-sm-4 position-relative py-sm-3 py-2">
                                     <hr class="hr-vertical position-absolute start-0 top-0 ml-n4 d-sm-block d-none">
-                                    <div class="d-flex align-items-center h-100"><a class="btn btn-sm btn-dark w-100" href="nft-single-auction-live.html">Vai all'annuncio</a></div>
+                                    <div class="d-flex align-items-center h-100"><a class="btn btn-sm btn-dark w-100" href="nft-single-auction-live.html"></a></div>
                                   </div>
                                 </div>
                             </div>
@@ -94,13 +95,13 @@
         </div>
       </section>
 
-      <section class="latest min-vh-100 py-4" style="background-color: var(--primary-color)">
+      <section class="latest min-vh-100 py-4 mb-5" style="background-color: var(--primary-color)">
         <h5 class="h2 text-center mb-4 text-white">Gli ultimi arrivi</h5>
         <div class="container ">
           <div class="row">
                 <div class="owl-carousel owl-theme">
 
-                    @foreach ($announcements as $announcement)
+                    @foreach ($revised_announcements as $announcement)
                     <div class="item">
                         <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
                             title="{{ $announcement->title }}" description="{{ $announcement->description }}"

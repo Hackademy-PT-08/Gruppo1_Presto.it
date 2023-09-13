@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('announcements', function (Blueprint $table) {
-            $table->foreignId('category_id')
+        Schema::create('revisors', function (Blueprint $table) {
+            $table->id();
+            $table->longText('about_you');
+            $table->foreignId('user_id')
             ->nullable()
             ->costrained()
             ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -24,8 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('announcements', function (Blueprint $table) {
-            $table->dropForeign('category_id');
-        });
+        Schema::dropIfExists('revisors');
     }
 };
