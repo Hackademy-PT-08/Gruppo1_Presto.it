@@ -18,11 +18,11 @@
     {{-- Section description --}}
 
     <section class="container pb-md-4">
-        <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-3" style="border: 2px solid #d45400" >
+        <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-3" >
             <div class="py-lg-3 py-2 px-lg-3">
                 <div class="row gy-4">
-                    <div class="col-lg-6 mt-5 ">
-                        <div class="position-relative rounded-3 overflow-hidden mb-lg-4 mb-3 mt-5" >
+                    <div class="col-lg-6 my-lg-5 mt-5">
+                        <div class="position-relative rounded-3 overflow-hidden d-flex justify-content-center align-items-center h-100" >
                             <img class="w-100 rounded" src="https://www.divittorio.it/wp-content/uploads/2020/04/lavora-con-noi.png" >
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                             <div class="row row-cols-sm-2 row-cols-1 gy-3 gx-4 mb-4 pb-md-2">
                                 {{-- creators --}}
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
                                         <div class="card-body p-3"  >
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-regular fa-eye fa-2xl mt-3"></i>
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-solid fa-stamp fa-2xl mt-3"></i>
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-solid fa-shield-halved fa-2xl mt-3"></i>
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-solid fa-arrow-down fa-2xl mt-3"></i>
@@ -103,12 +103,11 @@
 
     {{-- Section login revisor --}}
 
-    <section class="my-5">
-        <div class="login container py-2">
+    <section class="my-5 container">
+        <div class="container py-2">
             <div class="row justify-content-center">
-                <div class="col-11 col-sm-10 col-md-8  shadow-lg rounded">
+                <div class="col-12 col-md-8 col-lg-6 shadow rounded">
                     <div class="row">
-
                         <div class="col py-4 px-4">
                             @if (auth()->user()->is_reviewer == 1)
                                 <div class="col-12" style="width: 100% !important">
@@ -121,11 +120,11 @@
                             @else
                                 <h1 class="h2 text-center"> Candidati </h1>
                                 <form class="" action="{{route('revisor.store')}}" method="POST" id="myForm">
-                                                            
+
                                     @csrf
                                     <div class="row">
                                         <textarea name="about_you" class="form-control" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
-                                            cols="30" rows="10"></textarea>
+                                            cols="30" rows="7"></textarea>
                                     </div>
 
                                     <input class="mt-3 ms-0 btn btn-primary" type="submit"
