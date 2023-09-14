@@ -1,5 +1,5 @@
-<x-layout>
+<x-layout-with-band type="annuncio">
 
     @livewire('announcement-create')
 
-</x-layout>
+</x-layout-with-band>

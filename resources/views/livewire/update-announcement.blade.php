@@ -1,79 +1,73 @@
 <div>
 
+   {{-- !sezione di aggiunta articolo  --}}
+   <div class="container mb-5 pb-3">
+     <div class="row">
+       {{-- !aggiunta immagini --}}
+       <div class="mb-md-5 mb-4 pb-md-0 pb-2 d-flex justify-content-center">
+         <div class="row create-form mt-4">
+           <div class="col-12 col-md-8">
+             <div class="row bg-light rounded-3 shadow py-3">
+               <div class="col-12 mb-3">
+                 <label for="title">Titolo annuncio</label>
+                 <input type="text" id="title" name="title"
+                   class="form-control @error('title') is-invalid @enderror" wire:model="title"
+                   wire:model="previewTitle">
+                 @error('title')
+                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
+                 @enderror
+               </div>
 
-       {{--! sezione titolo pagina --}}
-   <div class="page-title-overlap bg-primary-pt-4 bg-crea-annunci">
-    <div class="container dflex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center mb-2 pt-2">
-       <div class="d-flex align-items-center">
-          <div class="h3 text-light pt-5 titolo-crea-annunci">Modifica il tuo annuncio</div>
-       </div>
-    </div>
- </div>
+               <div class="col-12 mb-3">
+                 <label for="description">Descrizione annuncio</label>
+                 <textarea name="description" id="description" cols="3" rows="3"
+                   class="form-control input-form @error('description') is-invalid @enderror" wire:model="description"></textarea>
+                 @error('description')
+                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
+                 @enderror
+               </div>
 
- {{--!sezione di modifica articolo  --}}
- <div class="container mb-5 pt-3 pb-md-5 pb-1">
-    <div class="row my-5 pt-5">
-       
-       <div class="mb-md-5 mb-4 pb-md-0 pb-2">
-          <h2 class="h3">Inserisci i dati dell'annuncio</h2>
-          
-          <div class="row create-form mt-4">
-             <div class="col-12 col-md-8 shadow">
-                <label for="title">Titolo annuncio</label>
-                <input type="text" id="title" name="title" class="form-control mb-3  @error('title') is-invalid @enderror" wire:model="title" value="{{ $announcement->title }}>
-                @error('title')
-                   <div class="alert alert-dismissible alert-danger">
-                      <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Oh cavolo! </font></font></strong> <a href="#" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ $message }}</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                   </div>
-                @enderror
-                
-                <label for="description">Descrizione annuncio</label>
-                <textarea name="description" id="description"  cols="" rows="5" class="form-control mb-3 input-form @error('description') is-invalid @enderror" wire:model="description">{{ $announcement->description }} </textarea>
+               <div class="col-6 mb-3">
+                 <label for="price">Prezzo</label>
+                 <input type="text"
+                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="price"
+                   class="form-control @error('price') is-invalid @enderror" name="price" wire:model="price">
 
-                @error('description')
-                   <div class="alert alert-dismissible alert-danger">
+                 @error('price')
+                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
+                 @enderror
+               </div>
 
-                      <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Oh cavolo! </font></font></strong> <a href="#" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ $message }}</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                   </div>
-                @enderror
-
-                   <label for="price">Prezzo</label>
-                <input type="number" id="price" class="form-control mb-3 @error('price') is-invalid @enderror" name="price" wire:model="price" value="{{ $announcement->price }}">
-
-                @error('price') 
-                   <div class="alert alert-dismissible alert-danger ">
-    
-                      <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Oh cavolo! </font></font></strong> <a href="#" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ $message }}</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                   </div>
-               @enderror
-                
-               <select class="form-select my-3 @error('category') is-invalid @enderror" wire:model="category" name="categoria" id="categoria">
+               <div class="col-6 mb-3">
+                 <select class="form-select mt-4 @error('category') is-invalid @enderror" wire:model="category"
+                   name="categoria" id="categoria">
                    <option value="">Seleziona una categoria</option>
                    @foreach ($categories as $category)
-                      <option value="{{$category->id}}"> {{$category->name}} </option>
+                     <option value="{{ $category->id }}"> {{ $category->name }} </option>
                    @endforeach
-                </select>
+                 </select>
 
-                @error('category')
-                   <div class="alert alert-dismissible alert-danger">
-    
-                   <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Oh cavolo! </font></font></strong> <a href="#" class="alert-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ $message }}</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                   </div>
-                @enderror
+                 @error('category')
+                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
+                 @enderror
+               </div>
 
-                <button wire:click="update" class="btn btn-primary">Modifica</button>
-                <button wire:click="destroy" class="btn btn-danger ms-2">Elimina</button>
+               <div class="d-flex mb-3">
+                  <button wire:click="update" class="btn btn-primary">Modifica</button>
+                  <button wire:click="destroy" class="btn btn-danger ms-2">Elimina</button>
+               </div>
+
              </div>
-             <aside class="col-lg-3 offset-lg-1 col-md-4 position-relative">
-                <div class="mt-sm-5 "  style="top:100px">
-                   <h4 class="h4 mb-3 text-md-start text-center">Ecco come sarà il tuo annuncio</h4>
-                   {{-- !card preview --}}
-
-                   <x-preview-card/>
-                </div>
-             </aside>
-          </div>
+           </div>
+           <aside class="col-lg-3 offset-lg-1 col-md-4 mt-md-0 mt-4 position-relative">
+             <div>
+               {{-- !card preview --}}
+               <x-preview-card />
+               {{-- @livewire('preview-card', ['previewTitle'=>$title,'previewPrice'=>$price,'previewCategory'=>$category]) --}}
+             </div>
+           </aside>
+         </div>
        </div>
-    </div>
+     </div>
+   </div>
  </div>
-</div>

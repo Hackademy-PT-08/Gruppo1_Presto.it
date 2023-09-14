@@ -9,11 +9,21 @@
 .form-check-input:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0.5rem 0.2rem rgba(var(--primary-color-rgb), 0.25);
-
 }
+
 .form-check-input:checked {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
+}
+
+.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+  border-color: var(--bs-form-invalid-border-color);
+  box-shadow: 0 0 0.5rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0.5rem rgba(var(--primary-color-rgb), 0.25);
 }
 
 .form .form-link {

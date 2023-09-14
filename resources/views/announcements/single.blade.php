@@ -1,7 +1,7 @@
 <x-layout-with-band type="breadcrump">
   {{-- sezione articolo --}}
   <section class="container pb-md-4">
-    <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-5">
+    <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 my-5">
       <div class="py-lg-3 py-2 px-lg-3">
         <div class="row gy-4">
           {{-- imag --}}
@@ -37,10 +37,6 @@
               <div class="col">
                 <h3 class="h6 mb-2 fs-sm text-muted">Prezzo</h3>
                 <h2 class="h3 mb-1"> € {{ $announcement->price }}</h2>
-              </div>
-              <div class="col">
-                <h3 class="h6 mb-2 fs-sm text-muted">Categoria</h3>
-                <h2 class="h3 mb-1"> {{ $announcement->category->name }}</h2>
               </div>
             </div>
           </div>
