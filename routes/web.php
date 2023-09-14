@@ -22,8 +22,7 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/',[HomeController::class,'homepage'])
 ->name('homepage');
 
-Route::get('/lavora-con-noi',[HomeController::class,'workWithUs'])
-->name('work');
+
 
 // Annunci
 Route::get('/annunci', [AnnouncementController::class, 'index'])
@@ -119,12 +118,10 @@ Route::post('/richiesta/revisore',[RevisorController::class,'store'])
 ->name('revisor.store')
 ->middleware(['auth','verified']);
 
-// Route::post('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])
-// ->name('becomeRevisor')
-// ->middleware(['auth','verified']);
+Route::get('/lavora-con-noi',[RevisorController::class,'workWithUs'])
+->name('work')
+->middleware(['auth','verified']);
 
-// Route::post('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])
-// ->name('make-revisor');
 
 
 

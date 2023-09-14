@@ -10,10 +10,7 @@ use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
 {
-    public function becomeRevisor(Request $request){
-        Mail::to('guri.sabah@icloud.com')->send(new BecomeRevisor(Auth::user()));
-        return redirect()->back();
-    }
+
 
 
     public function store(Request $request){
@@ -22,12 +19,21 @@ class RevisorController extends Controller
         $revisor->user_id=auth()->user()->id;
         $revisor->about_you=$request->about_you;
         $revisor->save();
+        Mail::to('guri.sabah@icloud.com')->send(new BecomeRevisor(Auth::user()));
         session()->flash('message', [
             'title' => 'Candidatura inviata',
             'content' => "Grazie per aver mandato la tua candidatura.",
             'status' => 'success',
         ]);
         return redirect()->back();
+    }
+
+    public function workWithUs(){
+
+      
+      
+       
+        return view('useful-links.work-whit-us');
     }
 
 }

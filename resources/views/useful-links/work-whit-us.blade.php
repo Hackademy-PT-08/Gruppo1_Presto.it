@@ -102,23 +102,35 @@
                     <div class="row">
 
                         <div class="col py-4 px-4">
-                            <h1 class="h2 text-center"> Candidati </h1>
-                            <form class="form-control" action="{{route('revisor.store')}}" method="POST" id="myForm">
-                                
-                                @csrf
-                                <div class="row">
-                                    <textarea name="about_you" class="form-control" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
-                                        cols="30" rows="10"></textarea>
+                            @if (auth()->user()->is_reviewer==1)
+                            
+                                <div class="col-12" style="width: 100% !important">
+                                    <div class="alert alert-warning py-3 shadow">
+                                        <p class="lead text-center">
+                                            Fai già parte del nostro team di revisori!
+                                        </p>
+                                    </div>
                                 </div>
-
-                                <input class="mt-3 ms-0 btn btn-primary" type="submit" value="Invia la tua richiesta"  >
-
-                            </form>
+                            @else
+                                <h1 class="h2 text-center"> Candidati </h1>
+                                <form class="form-control" action="{{route('revisor.store')}}" method="POST" id="myForm">
+                                                            
+                                    @csrf
+                                    <div class="row">
+                                        <textarea name="about_you" class="form-control" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
+                                            cols="30" rows="10"></textarea>
+                                    </div>
+                            
+                                    <input class="mt-3 ms-0 btn btn-primary" type="submit" value="Invia la tua richiesta" onclick="">
+                            
+                                </form>
+                          @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
 </x-layout>

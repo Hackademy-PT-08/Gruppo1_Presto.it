@@ -25,7 +25,5 @@ class HomeController extends Controller
 
     }
 
-    public function workWithUs(){
-        return view('useful-links.work-whit-us');
-    }
+
 }
