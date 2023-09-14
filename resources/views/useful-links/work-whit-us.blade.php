@@ -18,13 +18,13 @@
     {{-- Section description --}}
 
     <section class="container pb-md-4">
-        <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-3">
+        <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-3" style="border: 2px solid #d45400" >
             <div class="py-lg-3 py-2 px-lg-3">
                 <div class="row gy-4">
-                    <div class="col-lg-6">
-                        <div class="position-relative rounded-3 overflow-hidden mb-lg-4 mb-3 "><img
-                                class="w-100 rounded "
-                                src="https://www.divittorio.it/wp-content/uploads/2020/04/lavora-con-noi.png"></div>
+                    <div class="col-lg-6 mt-5 ">
+                        <div class="position-relative rounded-3 overflow-hidden mb-lg-4 mb-3 mt-5" >
+                            <img class="w-100 rounded" src="https://www.divittorio.it/wp-content/uploads/2020/04/lavora-con-noi.png" >
+                        </div>
                     </div>
 
                     <div class="col-lg-6 mt-5">
@@ -33,10 +33,10 @@
                             <div class="row row-cols-sm-2 row-cols-1 gy-3 gx-4 mb-4 pb-md-2">
                                 {{-- creators --}}
                                 <div class="col">
-                                    <div class="card position-relative h-100">
-                                        <div class="card-body p-3">
+                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
+                                        <div class="card-body p-3"  >
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-regular fa-eye fa-2xl"></i>
+                                                <i class="fa-regular fa-eye fa-2xl mt-3"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">
@@ -47,10 +47,10 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100">
+                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-solid fa-stamp fa-2xl"></i>
+                                                <i class="fa-solid fa-stamp fa-2xl mt-3"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">
@@ -61,10 +61,10 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100">
+                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-solid fa-shield-halved fa-2xl"></i>
+                                                <i class="fa-solid fa-shield-halved fa-2xl mt-3"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">
@@ -75,10 +75,10 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100">
+                                    <div class="card position-relative h-100" style="border: 2px solid #d45400" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-solid fa-arrow-down fa-2xl"></i>
+                                                <i class="fa-solid fa-arrow-down fa-2xl mt-3"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">

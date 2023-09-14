@@ -69,7 +69,9 @@ class UpdateAnnouncement extends Component
         $announcement->title=$this->title;
         $announcement->description=$this->description;
         $announcement->price=$this->price;
+        $announcement->is_revised=false;
         $announcement->save();
+
 
 
         session()->flash('message', [
