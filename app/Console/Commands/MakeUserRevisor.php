@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\User;
 use Illuminate\Console\Command;
 
 class MakeUserRevisor extends Command
@@ -32,7 +33,7 @@ class MakeUserRevisor extends Command
             return;
         }
 
-        $user->is_revisor=true;
+        $user->is_reviewer=true;
         $user->save();
         $this->info("l'utente{$user->name} è ora revisore.");
     }

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Revisor;
 use App\Mail\BecomeRevisor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
@@ -28,11 +30,17 @@ class RevisorController extends Controller
         return redirect()->back();
     }
 
-    public function workWithUs(){
+    public function makeRevisor(Request $request,User $user){
+        Artisan::call('presto:makeUserRevisor',['email'=>$user->email]);
+        session()->flash('message', [
+            'title' => 'Revisore aggiunto',
+            'content' => "Complimenti l'utente ora è revisore",
+            'status' => 'success',
+        ]);
+        return redirect()->route('dashboard.users');
+    }
 
-      
-      
-       
+    public function workWithUs(){
         return view('useful-links.work-whit-us');
     }
 
