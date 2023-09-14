@@ -16,3 +16,8 @@ footer .footer-brand {
     font-size: 2rem;
     user-select: none;
 }
+
+footer a.footer-brand {
+    text-decoration: none;
+    color: #fff;
+}

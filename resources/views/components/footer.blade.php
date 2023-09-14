@@ -35,7 +35,9 @@
         <div class="container text-center text-md-start mt-5">
             <div class="row mt-3">
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <h6 class="footer-brand mb-4">Presto.it</h6>
+                    <a href="{{ route('homepage') }}" class="footer-brand">
+                        <h6 class="footer-brand mb-4">Presto.it</h6>
+                    </a>
                     <p class="small">Per ogni annuncio che inserisci, o guadagno che riesci a fare sulla nostra piattaforma ci devi una commisione del 50%</p>
                 </div>
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-5 d-flex flex-column gap-1">
