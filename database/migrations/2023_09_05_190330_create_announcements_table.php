@@ -26,11 +26,11 @@ return new class extends Migration
                 ->nullable()
                 ->costrained()
                 ->onDelete('cascade');
-          
+         
 
             $table->boolean('is_revised')->default(false);
             $table->boolean('deleting')->default(false);
-            
+
             $table->timestamps();
         });
     }

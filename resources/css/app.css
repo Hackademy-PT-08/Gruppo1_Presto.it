@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&family=Rubik:wght@300;400;500;600;700&display=swap');
 @import 'bootstrap';
 @import 'style.css';
+@import 'owl-carousel.css';
 @import 'navbar.css';
 @import 'buttons.css';
 @import 'form-controls.css';
@@ -8,7 +9,6 @@
 @import 'band.css';
 @import 'user-profile.css';
 @import 'login.css';
-
 @import 'createAnnouncements.css';
 @import 'dashboard.css';
 @import 'footer.css';

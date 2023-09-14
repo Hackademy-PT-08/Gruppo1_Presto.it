@@ -1,21 +1,40 @@
 <x-layout>
- 
 
 
 
-    <section class="mb-lg-2" style="padding-top: 30px; ">
-
-        <div class="container py-4">
-          <div class="row align-items-center justify-content-center gy-3 py-3 text-lg-start text-center">
+  <section class="mb-lg-2 min-vh-100" style="padding-top: 30px; ">
+    <div class="container py-4">
+        <div class="row align-items-center justify-content-center gy-3 py-3 text-lg-start text-center">
             <div class="col-lg-5 col-md-8 col-sm-10">
-              <h1 class="ms-4 mb-2 pb-lg-2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Scopri le migliori offerte per te e la tua casa</font></font></h1>
-              <p class="ms-4 mb-lg-5 mb-4 fs-lg"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registrati e crea i tuoi annunci in maniera completamente gratuita.</font></font></p>
-              <div class="d-lg-flex d-none flex-sm-row flex-column justify-content-lg-start justify-content-center"><a class="btn btn-lg btn-outline-primary  me-sm-3 mb-sm-3 mb-2 " href="{{ route('announcements.index') }}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Esplora tutti gli annunci</font></font></a><a class="btn btn-lg btn_primary btn-outline-primary mb-sm-3 mb-2" href="{{ route('announcements.create') }}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Crea il tuo Annuncio</font></font></a></div>
+                <h1 class="ms-4 mb-2 pb-lg-2">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Scopri le migliori offerte per te e la tua casa</font>
+                    </font>
+                </h1>
+                <p class="ms-4 mb-lg-5 mb-4 fs-lg">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Registrati e crea i tuoi annunci in maniera
+                            completamente gratuita.</font>
+                    </font>
+                </p>
+                <div
+                    class="d-lg-flex d-none flex-sm-row flex-column justify-content-lg-start justify-content-center">
+                    <a class="btn btn-lg btn-outline-primary  me-sm-3 mb-sm-3 mb-2 "
+                        href="{{ route('announcements.index') }}">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Esplora tutti gli annunci</font>
+                        </font>
+                    </a><a class="btn btn-lg btn_primary btn-outline-primary mb-sm-3 mb-2"
+                        href="{{ route('announcements.create') }}">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Crea il tuo Annuncio</font>
+                        </font>
+                    </a></div>
             </div>
             {{-- Carousel items
-                 --}}
-            <div class="col-lg-6  offset-lg-1 ">
-                <div id="carouselExampleInterval" class="carousel slide "  data-bs-ride="carousel">
+          --}}
+          <div class="col-lg-6  offset-lg-1 ">
+              <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
 
                      <div class="carousel-inner px-2" tabindex="-1">
                       <div class="carousel-item active px-2" data-bs-interval="2000">
@@ -116,6 +135,8 @@
           </div>
         </div>
       </section>
+
+  
 
 
 

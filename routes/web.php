@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AnnouncementController;
 
@@ -21,8 +22,7 @@ use App\Http\Controllers\AnnouncementController;
 Route::get('/',[HomeController::class,'homepage'])
 ->name('homepage');
 
-Route::get('/lavora_con_noi',[HomeController::class,'workWithUs'])
-->name('work');
+
 
 // Annunci
 Route::get('/annunci', [AnnouncementController::class, 'index'])
@@ -110,3 +110,18 @@ Route::post('/dashboard/reject-announcement/{id}' , [DashboardController::class,
 Route::post('/dashboard/cancel-last-reject' , [DashboardController::class, 'cancelLastReject'])
 ->name('dashboard.cancel-last-reject')
 ->middleware(['auth','verified']);
+
+
+//! route revisore
+
+Route::post('/richiesta/revisore',[RevisorController::class,'store'])
+->name('revisor.store')
+->middleware(['auth','verified']);
+
+Route::get('/lavora-con-noi',[RevisorController::class,'workWithUs'])
+->name('work')
+->middleware(['auth','verified']);
+
+
+
+

@@ -57,7 +57,7 @@
             $(document).ready(function() {
                 $('.owl-carousel').owlCarousel({
                     loop: true,
-                    margin: 10,
+                    margin: 60,
                     nav: false,
                     autoplay:true,
                     autoplayTimeout:2500,

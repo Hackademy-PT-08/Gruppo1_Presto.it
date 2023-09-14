@@ -43,6 +43,7 @@
 
 .navbar .navbar-brand {
     font-family: "Pacifico", cursive;
+    user-select: none;
 }
 
 .navbar a.navbar-brand:hover {
