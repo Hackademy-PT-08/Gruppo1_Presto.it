@@ -1,4 +1,4 @@
-<x-layout-with-band type="annuncio">
+<x-layout-with-band type="annuncioCreate">
 
     @livewire('announcement-create')
 

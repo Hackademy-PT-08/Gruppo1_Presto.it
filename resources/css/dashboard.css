@@ -2,6 +2,10 @@
   background-color: var(--secondary-color) !important;
 }
 
+.dashboard > div > .row{
+  min-height: 50vh;
+}
+
 .dashboard .breadcrumb-item a:hover{
   color: var(--primary-color) !important;
 }

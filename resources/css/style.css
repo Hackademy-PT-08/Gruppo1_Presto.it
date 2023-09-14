@@ -21,6 +21,10 @@
   background-color: #fff !important;
 }
 
+.all-announcement {
+  min-height: 50vh;
+}
+
 .no-desktop {
   display: none;
 }
