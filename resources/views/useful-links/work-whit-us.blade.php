@@ -35,11 +35,13 @@
                                 <div class="col">
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
-                                            <h3 class="h6 mb-2 fs-sm text-muted">ffffff</h3>
-                                            <div class="d-flex align-items-center">
-                                                <img class="rounded-circle me-2" src="https://picsum.photos/300/300"
-                                                    width="36">
-                                                <a class="ms-2" href="">@foxnet_creator</a>
+                                            <h3 class="h6 mb-2 fs-sm text-center">
+                                                <i class="fa-regular fa-eye fa-beat fa-2xl"></i>
+                                            </h3>
+                                            <div class="d-flex mx-auto p-2">
+                                                <h5 class="text-center">
+                                                    Guarda in anteprima tutti gli annunci
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -47,11 +49,13 @@
                                 <div class="col">
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
-                                            <h3 class="h6 mb-2 fs-sm text-muted">ffffff</h3>
-                                            <div class="d-flex align-items-center">
-                                                <img class="rounded-circle me-2" src="https://picsum.photos/300/300"
-                                                    width="36">
-                                                <a class="ms-2" href="">@foxnet_creator</a>
+                                            <h3 class="h6 mb-2 fs-sm text-center">
+                                                <i class="fa-solid fa-stamp fa-beat fa-2xl"></i>
+                                            </h3>
+                                            <div class="d-flex mx-auto p-2">
+                                                <h5 class="text-center">
+                                                    Verifica e approva l'annuncio
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -59,11 +63,13 @@
                                 <div class="col">
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
-                                            <h3 class="h6 mb-2 fs-sm text-muted">ffffff</h3>
-                                            <div class="d-flex align-items-center">
-                                                <img class="rounded-circle me-2" src="https://picsum.photos/300/300"
-                                                    width="36">
-                                                <a class="ms-2" href="">@foxnet_creator</a>
+                                            <h3 class="h6 mb-2 fs-sm text-center">
+                                                <i class="fa-solid fa-shield-halved fa-beat fa-2xl"></i>
+                                            </h3>
+                                            <div class="d-flex mx-auto p-2">
+                                                <h5 class="text-center">
+                                                    Aiutaci a rendere il sito sicuro
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -71,11 +77,13 @@
                                 <div class="col">
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
-                                            <h3 class="h6 mb-2 fs-sm text-muted">ffffff</h3>
-                                            <div class="d-flex align-items-center">
-                                                <img class="rounded-circle me-2" src="https://picsum.photos/300/300"
-                                                    width="36">
-                                                <a class="ms-2" href="">@foxnet_creator</a>
+                                            <h3 class="h6 mb-2 fs-sm text-center">
+                                                <i class="fa-solid fa-arrow-down fa-beat fa-2xl"></i>
+                                            </h3>
+                                            <div class="d-flex mx-auto p-2">
+                                                <h5 class="text-center">
+                                                    Compila il form di richiesta di seguito
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -102,8 +110,7 @@
                     <div class="row">
 
                         <div class="col py-4 px-4">
-                            @if (auth()->user()->is_reviewer==1)
-                            
+                            @if (auth()->user()->is_reviewer == 1)
                                 <div class="col-12" style="width: 100% !important">
                                     <div class="alert alert-warning py-3 shadow">
                                         <p class="lead text-center">
@@ -120,11 +127,12 @@
                                         <textarea name="about_you" class="form-control" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
                                             cols="30" rows="10"></textarea>
                                     </div>
-                            
-                                    <input class="mt-3 ms-0 btn btn-primary" type="submit" value="Invia la tua richiesta" onclick="">
-                            
+
+                                    <input class="mt-3 ms-0 btn btn-primary" type="submit"
+                                        value="Invia la tua richiesta" onclick="">
+
                                 </form>
-                          @endif
+                            @endif
                         </div>
                     </div>
                 </div>
