@@ -103,15 +103,15 @@
 
                         <div class="col py-4 px-4">
                             <h1 class="h2 text-center"> Candidati </h1>
-                            <form class="form" action="/login" method="post">
+                            <form class="form-control" action="{{route('revisor.store')}}" method="POST" id="myForm">
+                                
                                 @csrf
-
                                 <div class="row">
-                                    <textarea name="Candidati" class="form-control" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
+                                    <textarea name="about_you" class="form-control" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
                                         cols="30" rows="10"></textarea>
                                 </div>
 
-                                <input class="mt-3 ms-0 btn btn-primary" type="submit" value="Invia la tua richiesta">
+                                <input class="mt-3 ms-0 btn btn-primary" type="submit" value="Invia la tua richiesta"  >
 
                             </form>
                         </div>
@@ -119,10 +119,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
     </section>
 
 </x-layout>

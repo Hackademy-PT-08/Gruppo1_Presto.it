@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-12">
-          <input type="submit" class="btn btn-sm btn-primary w-100" value="Cerca annunci">
+          <input type="submit" class="btn btn-sm btn-primary w-100" value="Cerca">
         </div>
       </div>
     </div>

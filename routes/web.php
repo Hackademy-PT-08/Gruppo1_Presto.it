@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AnnouncementController;
 
@@ -110,3 +111,20 @@ Route::post('/dashboard/reject-announcement/{id}' , [DashboardController::class,
 Route::post('/dashboard/cancel-last-reject' , [DashboardController::class, 'cancelLastReject'])
 ->name('dashboard.cancel-last-reject')
 ->middleware(['auth','verified']);
+
+
+//! route revisore
+
+Route::post('/richiesta/revisore',[RevisorController::class,'store'])
+->name('revisor.store')
+->middleware(['auth','verified']);
+
+// Route::post('/richiesta/revisore',[RevisorController::class,'becomeRevisor'])
+// ->name('becomeRevisor')
+// ->middleware(['auth','verified']);
+
+// Route::post('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])
+// ->name('make-revisor');
+
+
+

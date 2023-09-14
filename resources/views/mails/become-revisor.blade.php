@@ -8,13 +8,15 @@
 </head>
 <body>
     <div>
-        <h1>Un utente ha richiesto di lavorare con noi</h1>
+        <h1>Un utente ha richiesto di lavorare con noi</h1> 
         <h2>Ecco i suoi dati</h2>
         <p>Nome:{{$user->name}} </p>
         <p>Email:{{$user->email}} </p>
-        <p> {{$user->revisor->about_you}} </p>
-        <p> Clicca qui le lo vuoi rendere revisore </p>
-        <a href=""></a>
+        <p>Consulta la pagina utenti per ulteriori informazioni</p>
+        <a href="{{route('dashboard.users')}}">Pagina utenti</a>
+      
+        
+       
     </div>
 </body>
 </html>
