@@ -122,6 +122,9 @@ Route::get('/lavora-con-noi',[RevisorController::class,'workWithUs'])
 ->name('work')
 ->middleware(['auth','verified']);
 
+Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])
+->name('make.revisor');
+
 
 
 

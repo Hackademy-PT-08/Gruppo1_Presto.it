@@ -113,7 +113,7 @@
                                 </div>
                             @else
                                 <h1 class="h2 text-center"> Candidati </h1>
-                                <form class="form-control" action="{{route('revisor.store')}}" method="POST" id="myForm">
+                                <form class="" action="{{route('revisor.store')}}" method="POST" id="myForm">
                                                             
                                     @csrf
                                     <div class="row">

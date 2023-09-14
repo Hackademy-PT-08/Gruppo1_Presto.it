@@ -12,8 +12,10 @@
         <h2>Ecco i suoi dati</h2>
         <p>Nome:{{$user->name}} </p>
         <p>Email:{{$user->email}} </p>
-        <p>Consulta la pagina utenti per ulteriori informazioni</p>
-        <a href="{{route('dashboard.users')}}">Pagina utenti</a>
+        <p>Rendi l'utente revisore</p>
+        <a href="{{route('make.revisor',$user)}}">Rendi revisore</a>
+
+       
       
         
        
