@@ -13,8 +13,9 @@ class HomeController extends Controller
     public function homepage(){
 
         $announcements=Announcement::latest()->take(6)->get();
+        $random_announcements=Announcement::inRandomOrder()->take(3)->get();
         $revised_announcements= $announcements->where('is_revised',true);
-        return view('homepage.homepage',compact('revised_announcements'));
+        return view('homepage.homepage',compact('revised_announcements', 'random_announcements'));
     }
 
 

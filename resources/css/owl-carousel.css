@@ -1,0 +1,7 @@
+.owl-carousel .owl-stage-outer {
+  padding: 2rem 0;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: var(--primary-color);
+}
