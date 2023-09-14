@@ -18,7 +18,7 @@
     {{-- Section description --}}
 
     <section class="container pb-md-4">
-        <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-5">
+        <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-3">
             <div class="py-lg-3 py-2 px-lg-3">
                 <div class="row gy-4">
                     <div class="col-lg-6">
@@ -27,7 +27,7 @@
                                 src="https://www.divittorio.it/wp-content/uploads/2020/04/lavora-con-noi.png"></div>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mt-5">
                         <div class="ps-xl-5 ps-lg-3">
 
                             <div class="row row-cols-sm-2 row-cols-1 gy-3 gx-4 mb-4 pb-md-2">
@@ -36,7 +36,7 @@
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-regular fa-eye fa-beat fa-2xl"></i>
+                                                <i class="fa-regular fa-eye fa-2xl"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">
@@ -50,7 +50,7 @@
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-solid fa-stamp fa-beat fa-2xl"></i>
+                                                <i class="fa-solid fa-stamp fa-2xl"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">
@@ -64,7 +64,7 @@
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-solid fa-shield-halved fa-beat fa-2xl"></i>
+                                                <i class="fa-solid fa-shield-halved fa-2xl"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">
@@ -78,7 +78,7 @@
                                     <div class="card position-relative h-100">
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
-                                                <i class="fa-solid fa-arrow-down fa-beat fa-2xl"></i>
+                                                <i class="fa-solid fa-arrow-down fa-2xl"></i>
                                             </h3>
                                             <div class="d-flex mx-auto p-2">
                                                 <h5 class="text-center">
