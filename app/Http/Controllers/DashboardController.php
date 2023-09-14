@@ -73,14 +73,15 @@ class DashboardController extends Controller
 
     public function user($id) {
         $user = User::find($id);
+        $revisor = null;
 
-        $is_revisor = false;
         if($this->isRevisor($id))
-            $is_revisor = true;
+            $revisor = Revisor::where('user_id', $id)->get();
+
 
         return view('dashboard.dashboard-user', [
             'user' => $user,
-            'is_revisor' => $is_revisor,
+            'revisor' => $revisor,
             'announcements_to_revised_count' => $this->announcements_to_revised_count,
             'requests_count' => $this->requests_count,
             'revisors_count' => $this->revisors_count,]);

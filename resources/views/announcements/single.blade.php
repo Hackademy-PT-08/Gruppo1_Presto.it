@@ -1,7 +1,7 @@
-<x-layout-with-band type="breadcrump">
+<x-layout-with-band type="annuncio">
   {{-- sezione articolo --}}
   <section class="container pb-md-4">
-    <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 my-5">
+    <div class="bg-light shadow-lg rounded-3 px-4 py-lg-4 py-3 mb-4">
       <div class="py-lg-3 py-2 px-lg-3">
         <div class="row gy-4">
           {{-- imag --}}
