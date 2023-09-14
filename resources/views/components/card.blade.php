@@ -22,8 +22,8 @@
   <div class="card-footer mt-n1 py-0 border-0">
     <div class="d-flex align-items-center justify-content-between position-relative mb-1 py-3 border-top">
       <div class="user">
-        <a class="nav-link-style d-flex" href="#">
-          <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" style="width: 32px; height: 32px" alt="Avatar"> 
+        <a class="nav-link-style d-flex align-items-center" href="#">
+          <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" style="width: 32px; height: 32px" alt="Avatar">
           <span class="small text-truncate">{{$creator}}</span>
         </a>
       </div>
