@@ -66,50 +66,51 @@ Route::get('/utente/annunci',[UserController::class,'announcements'])
 ->name('user.profile-announcements')
 ->middleware(['auth','verified']);
 
-// Dashboard
+//! Dashboard
 Route::get('/dashboard' , [DashboardController::class, 'redirectToAnnouncements'])
 ->name('dashboard')
-->middleware(['auth','verified']);
+->middleware(['IsRevisor']);
 
 Route::get('/dashboard/announcements' , [DashboardController::class, 'announcements'])
 ->name('dashboard.announcements')
-->middleware(['auth','verified']);
+->middleware(['IsRevisor']);
 
 Route::get('/dashboard/announcements/{id}' , [DashboardController::class, 'single'])
 ->name('dashboard.single')
-->middleware(['auth','verified']);
-
-Route::get('/dashboard/requests' , [DashboardController::class, 'requests'])
-->name('dashboard.requests')
-->middleware(['auth','verified']);
-
-Route::get('/dashboard/users' , [DashboardController::class, 'users'])
-->name('dashboard.users')
-->middleware(['auth','verified']);
-
-Route::get('/dashboard/user/{id}' , [DashboardController::class, 'user'])
-->name('dashboard.user')
-->middleware(['auth','verified']);
-
-Route::post('/dashboard/accept-reviewer/{id}' , [DashboardController::class, 'acceptReviewer'])
-->name('dashboard.accept-reviewer')
-->middleware(['auth','verified']);
-
-Route::post('/dashboard/reject-reviewer/{id}' , [DashboardController::class, 'rejectReviewer'])
-->name('dashboard.reject-reviewer')
-->middleware(['auth','verified']);
+->middleware(['IsRevisor']);
 
 Route::post('/dashboard/accept-announcement/{id}' , [DashboardController::class, 'acceptAnnouncement'])
 ->name('dashboard.accept-announcement')
-->middleware(['auth','verified']);
+->middleware(['IsRevisor']);
 
 Route::post('/dashboard/reject-announcement/{id}' , [DashboardController::class, 'rejectAnnouncement'])
 ->name('dashboard.reject-announcement')
-->middleware(['auth','verified']);
+->middleware(['IsRevisor']);
 
 Route::post('/dashboard/cancel-last-reject' , [DashboardController::class, 'cancelLastReject'])
 ->name('dashboard.cancel-last-reject')
-->middleware(['auth','verified']);
+->middleware(['IsRevisor']);
+
+Route::get('/dashboard/requests' , [DashboardController::class, 'requests'])
+->name('dashboard.requests')
+->middleware(['IsAdmin']);
+
+Route::get('/dashboard/users' , [DashboardController::class, 'users'])
+->name('dashboard.users')
+->middleware(['IsAdmin']);
+
+Route::get('/dashboard/user/{id}' , [DashboardController::class, 'user'])
+->name('dashboard.user')
+->middleware(['IsAdmin']);
+
+Route::post('/dashboard/accept-reviewer/{id}' , [DashboardController::class, 'acceptReviewer'])
+->name('dashboard.accept-reviewer')
+->middleware(['IsAdmin']);
+
+Route::post('/dashboard/reject-reviewer/{id}' , [DashboardController::class, 'rejectReviewer'])
+->name('dashboard.reject-reviewer')
+->middleware(['IsAdmin']);
+
 
 
 //! route revisore

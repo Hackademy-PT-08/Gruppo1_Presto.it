@@ -39,9 +39,6 @@ class DashboardController extends Controller
     }
 
     public function announcements() {
-        if(!($this->userIsReviewer() || $this->userIsAdmin()))
-            return redirect()->route('homepage');
-
         $announcements = Announcement::where('is_revised', false)->where('deleting', false)->get();
 
 
@@ -55,9 +52,6 @@ class DashboardController extends Controller
     }
 
     public function single($id) {
-        if(!($this->userIsReviewer() || $this->userIsAdmin()))
-            return redirect()->route('homepage');
-
         $announcement = Announcement::find($id);
 
         return view('dashboard.dashboard-single', [
@@ -68,9 +62,6 @@ class DashboardController extends Controller
     }
 
     public function users() {
-        if(!$this->userIsAdmin())
-            return redirect()->route('homepage');
-
         $users = User::all();
 
         return view('dashboard.dashboard-users', [
@@ -81,17 +72,11 @@ class DashboardController extends Controller
     }
 
     public function user($id) {
-        if(!$this->userIsAdmin())
-            return redirect()->route('homepage');
-
         $user = User::find($id);
-
 
         $is_revisor = false;
         if($this->isRevisor($id))
             $is_revisor = true;
-
-
 
         return view('dashboard.dashboard-user', [
             'user' => $user,
@@ -102,11 +87,6 @@ class DashboardController extends Controller
     }
 
     public function requests() {
-        if(!$this->userIsAdmin())
-            return redirect()->route('homepage');
-
-
-
         $revisors = Revisor::with('user')->get();
 
         return view('dashboard.dashboard-requests', [
@@ -117,9 +97,6 @@ class DashboardController extends Controller
     }
 
     public function acceptAnnouncement($id) {
-        if(!($this->userIsReviewer() || $this->userIsAdmin()))
-            return redirect()->route('homepage');
-
         $announcement = Announcement::find($id);
 
         $announcement->is_revised = true;
@@ -135,9 +112,6 @@ class DashboardController extends Controller
     }
 
     public function rejectAnnouncement($id) {
-        if(!($this->userIsReviewer() || $this->userIsAdmin()))
-            return redirect()->route('homepage');
-
         $announcement = Announcement::find($id);
 
         $announcement->deleting = true;
@@ -167,8 +141,6 @@ class DashboardController extends Controller
     }
 
     public function acceptReviewer($id) {
-        if(!$this->userIsAdmin())
-            return redirect()->route('homepage');
 
         $user = User::find($id);
 
@@ -187,8 +159,6 @@ class DashboardController extends Controller
     }
 
     public function rejectReviewer($id) {
-        if(!$this->userIsAdmin())
-            return redirect()->route('homepage');
 
         $user = User::find($id);
 
@@ -205,16 +175,6 @@ class DashboardController extends Controller
 
     public function redirectToAnnouncements() {
         return redirect()->route('dashboard.announcements');
-    }
-
-    public function userIsAdmin() {
-        if(Auth::user()->is_admin)
-            return true;
-    }
-
-    public function userIsReviewer() {
-        if(Auth::user()->is_reviewer)
-            return true;
     }
 
     public function isRevisor($id) {
