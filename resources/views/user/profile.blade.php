@@ -41,12 +41,12 @@
                     <input class="form-control" name="email" id="email" type="email" value="{{ $user->email }}">
                   </div>
 
-                <div class="col-12">
+                {{-- <div class="col-12">
                   <label class="form-label" for="bio">Biografia</label>
                   <textarea class="form-control" id="bio" name="bio" rows="4" placeholder="Dici qualcosa su di te con 500 caratteri">@if ( isset($user->description) )
                     value="{{ $user->description }}"
                   @endif</textarea>
-                </div>
+                </div> --}}
               </div>
               <div class="d-flex flex-sm-row flex-column">
                 <button class="btn btn-sm btn-primary" type="submit">Aggiorna informazioni</button>
@@ -58,7 +58,7 @@
             <form>
               @csrf
               @method('PUT')
-              <div class="row gy-3 mb-4 pb-md-3 mb-2">
+              <div class="row gy-3 pb-md-3">
                 <form action="/user/password" method="post">
                   <div class="col-sm-6">
                     <label class="form-label" for="profile-name">Password attuale</label>
