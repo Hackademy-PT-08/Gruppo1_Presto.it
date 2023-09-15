@@ -15,8 +15,7 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        $announcements=Announcement::all();
-        $revised_announcements= $announcements->where('is_revised',true);
+        $revised_announcements= Announcement::where('is_revised',true)->paginate(8);
         return view('announcements.index',compact('revised_announcements'));
     }
 
@@ -68,6 +67,7 @@ class AnnouncementController extends Controller
     public function SearchAnnouncements(Request $request){
         $announcements=Announcement::search($request->searched)->get();
         $revised_announcements=$announcements->where('is_revised',true);
+        
         return view('announcements.index',compact('revised_announcements'));
 
     }
