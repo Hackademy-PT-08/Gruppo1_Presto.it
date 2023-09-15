@@ -49,8 +49,8 @@ class AnnouncementCreate extends Component
         $announcement->save();
 
         session()->flash('message', [
-            'title' => 'Annuncio aggiunto con successo',
-            'content' => 'Il tuo annuncio riguardante '. $this->title .' è stato aggiunto con successo',
+            'title' => 'Annuncio in attesa di approvazione',
+            'content' => 'Il tuo annuncio riguardante '. $this->title .' è stato mandato ad un revisore',
             'status' => 'success',
         ]);
 
