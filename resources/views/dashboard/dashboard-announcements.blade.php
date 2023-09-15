@@ -18,6 +18,7 @@
                 <form action="{{ route('dashboard.cancel-last-reject') }}" method="post" class="d-none"
                   id="form-cancel-last-reject">
                   @csrf
+                  @method('PATCH')
                 </form>
               @endif
             </div>

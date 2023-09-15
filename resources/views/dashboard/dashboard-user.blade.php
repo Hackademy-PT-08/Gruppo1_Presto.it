@@ -24,6 +24,7 @@
                     <form action="{{ route('dashboard.accept-reviewer', $user->id) }}" method="post" class="d-none"
                       id="form-accept-reviewer">
                       @csrf
+                      @method('PATCH')
                     </form>
                     <a class="btn btn-sm btn-danger mb-2 ms-2 me-3"
                       onclick="event.preventDefault();getElementById('form-reject-reviewer').submit()">
@@ -32,6 +33,7 @@
                     <form action="{{ route('dashboard.reject-reviewer', $user->id) }}" method="post" class="d-none"
                       id="form-reject-reviewer">
                       @csrf
+                      @method('PATCH')
                     </form>
                   @endif
                   <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">

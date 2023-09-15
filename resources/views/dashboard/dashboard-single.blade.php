@@ -37,6 +37,7 @@
                   <form action="{{ route('dashboard.accept-announcement', $announcement->id) }}" method="post"
                     class="d-none" id="form-accept-announcement">
                     @csrf
+                    @method('PATCH')
                   </form>
                   <a class="btn btn-sm btn-danger mb-2 ms-2 me-3"
                     onclick="event.preventDefault();getElementById('form-reject-announcement').submit()">
@@ -45,6 +46,7 @@
                   <form action="{{ route('dashboard.reject-announcement', $announcement->id) }}" method="post"
                     class="d-none" id="form-reject-announcement">
                     @csrf
+                    @method('PATCH')
                   </form>
                 </div>
                 {{-- <div class="mb-2 me-sm-3 me-2 ps-sm-3 ps-2 border-start"><i class="fas fa-eye me-2"></i>15 views</div>
