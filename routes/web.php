@@ -87,7 +87,7 @@ Route::patch('/dashboard/reject-announcement/{id}' , [DashboardController::class
 ->name('dashboard.reject-announcement')
 ->middleware(['IsRevisor']);
 
-Route::post('/dashboard/cancel-last-reject' , [DashboardController::class, 'cancelLastReject'])
+Route::patch('/dashboard/cancel-last-reject' , [DashboardController::class, 'cancelLastReject'])
 ->name('dashboard.cancel-last-reject')
 ->middleware(['IsRevisor']);
 
@@ -103,11 +103,11 @@ Route::get('/dashboard/user/{id}' , [DashboardController::class, 'user'])
 ->name('dashboard.user')
 ->middleware(['IsAdmin']);
 
-Route::post('/dashboard/accept-reviewer/{id}' , [DashboardController::class, 'acceptReviewer'])
+Route::patch('/dashboard/accept-reviewer/{id}' , [DashboardController::class, 'acceptReviewer'])
 ->name('dashboard.accept-reviewer')
 ->middleware(['IsAdmin']);
 
-Route::post('/dashboard/reject-reviewer/{id}' , [DashboardController::class, 'rejectReviewer'])
+Route::patch('/dashboard/reject-reviewer/{id}' , [DashboardController::class, 'rejectReviewer'])
 ->name('dashboard.reject-reviewer')
 ->middleware(['IsAdmin']);
 
