@@ -46,7 +46,7 @@ Route::get('/annunci/categoria/{categoryId}',[AnnouncementController::class,'sea
 Route::get('/ricerca/annunci',[AnnouncementController::class,'filterbar'])
 ->name('announcements.filterbar');
 
-Route::get('/ricerca/annuncio',[HomeController::class,'SearchAnnouncements'])
+Route::get('/ricerca/annuncio',[AnnouncementController::class,'SearchAnnouncements'])
 ->name('announcements.search');
 
 

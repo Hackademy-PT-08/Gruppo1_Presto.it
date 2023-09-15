@@ -65,6 +65,14 @@ class AnnouncementController extends Controller
     }
 
 
+    public function SearchAnnouncements(Request $request){
+        $announcements=Announcement::search($request->searched)->get();
+        $revised_announcements=$announcements->where('is_revised',true);
+        return view('announcements.index',compact('revised_announcements'));
+
+    }
+
+
     public function filterbar(Request $request){
        
         $query=Announcement::query();

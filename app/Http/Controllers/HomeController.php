@@ -19,11 +19,7 @@ class HomeController extends Controller
     }
 
 
-    public function SearchAnnouncements(Request $request){
-        $announcements=Announcement::search($request->searched)->get();
-        return view('announcements.index',compact('announcements'));
 
-    }
 
 
 }
