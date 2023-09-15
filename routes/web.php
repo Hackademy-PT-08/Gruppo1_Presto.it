@@ -79,11 +79,11 @@ Route::get('/dashboard/announcements/{id}' , [DashboardController::class, 'singl
 ->name('dashboard.single')
 ->middleware(['IsRevisor']);
 
-Route::post('/dashboard/accept-announcement/{id}' , [DashboardController::class, 'acceptAnnouncement'])
+Route::patch('/dashboard/accept-announcement/{id}' , [DashboardController::class, 'acceptAnnouncement'])
 ->name('dashboard.accept-announcement')
 ->middleware(['IsRevisor']);
 
-Route::post('/dashboard/reject-announcement/{id}' , [DashboardController::class, 'rejectAnnouncement'])
+Route::patch('/dashboard/reject-announcement/{id}' , [DashboardController::class, 'rejectAnnouncement'])
 ->name('dashboard.reject-announcement')
 ->middleware(['IsRevisor']);
 
