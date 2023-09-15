@@ -2,8 +2,8 @@
 
     <div class="page-title-overlap bg-primary pt-4">
         <div class="container">
-            <div class=" text-center">
-                <h1 class=" text-light">Vuoi lavorare con noi?</h1>
+            <div class="text-center text-md-start">
+                <h1 class="text-light">Vuoi lavorare con noi?</h1>
                 <div class="row text-light">
                     <div>
                         <p>
