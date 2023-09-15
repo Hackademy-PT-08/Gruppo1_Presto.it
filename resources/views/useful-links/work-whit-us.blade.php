@@ -123,13 +123,19 @@
 
                                     @csrf
                                     <div class="row">
-                                        <textarea name="about_you" class="form-control" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
+                                        <div class="col-12">
+                                            <textarea name="about_you" class="form-control @error('about_you') is-invalid @enderror" placeholder="Perchè vuoi lavorare con noi?" id="Candidati"
                                             cols="30" rows="7"></textarea>
+                                            @error('about_you')
+                                                <span class="small text-danger"> {{ $message }} </span>
+                                            @enderror
+                                        </div>
+
+
+                                        <div class="d-flex flex-sm-row flex-column">
+                                            <input class="mt-3 ms-0 btn btn-primary" type="submit" value="Invia la tua richiesta" onclick="">
+                                        </div>
                                     </div>
-
-                                    <input class="mt-3 ms-0 btn btn-primary" type="submit"
-                                        value="Invia la tua richiesta" onclick="">
-
                                 </form>
                             @endif
                         </div>

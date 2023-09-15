@@ -12,10 +12,16 @@ use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
-
-
-
     public function store(Request $request){
+        $request->validate([
+            'about_you' => 'required|min:30',
+        ],
+        [
+            'about_you.required' => 'Questo campo è obbligatorio',
+            'about_you.min' => 'Questo campo deve avere almeno 30 caratteri',
+        ],
+    );
+
         $revisor=new Revisor;
 
         $revisor->user_id=auth()->user()->id;
