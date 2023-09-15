@@ -20,7 +20,7 @@
                   <div class="">COSA? Non hai ricevuto il link? Richiedi un nuovo link allora!
                   </div>
                   <div class="d-flex flex-sm-row flex-column mt-3">
-                    <input type="submit" class="btn btn-primary" value="Richiedi link">
+                    <input type="submit" class="btn btn-sm btn-primary" value="Richiedi link">
                   </div>
                 </div>
               </div>

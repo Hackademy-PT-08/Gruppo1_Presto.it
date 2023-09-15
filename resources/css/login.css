@@ -10,3 +10,7 @@
   border: 0;
   background-color: transparent;
 }
+
+.login {
+  min-height: 50vh;
+}

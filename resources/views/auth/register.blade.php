@@ -44,7 +44,7 @@
                   </div>
               </div>
               <div class="d-flex flex-sm-row flex-column mt-3">
-                <button class="btn btn-primary" type="submit">Registrati</button>
+                <button class="btn btn-sm btn-primary" type="submit">Registrati</button>
               </div>
               <hr>
               <div class="d-flex flex-sm-row flex-column">

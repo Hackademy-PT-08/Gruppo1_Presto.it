@@ -10,7 +10,7 @@ class AnnouncementCreate extends Component
 {
     public $title,$description,$price,$category,$previewData=[];
 
-    
+
     public function rules() {
         return [
             'title' => 'required|min:5',
@@ -22,9 +22,9 @@ class AnnouncementCreate extends Component
     public function messages() {
         return [
             'title.required' => 'Questo campo è obbligatorio',
-            'title.min' => 'Questo campo è troppo corto',
+            'title.min' => 'Questo campo deve avere almeno 8 caratteri',
             'description.required' => 'Questo campo è obbligatorio',
-            'description.min' => 'Questo campo è troppo corto',
+            'description.min' => 'Questo campo deve avere almeno 8 caratteri',
             'price.required' => 'Questo campo è obbligatorio',
             'price.numeric' => 'Questo campo deve essere un numero',
             'category.required' => 'Questo campo è obbligatorio',
