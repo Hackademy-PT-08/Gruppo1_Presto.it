@@ -45,6 +45,15 @@
               <div class="d-flex flex-sm-row flex-column">
                 <button class="btn btn-sm btn-primary" type="submit">Accedi</button>
               </div>
+              <div class="d-flex flex-sm-row flex-column mt-2 justify-content-between">
+                <a class="small" href="auth/github/redirect">Accedi con github</a>
+                <a class="small" href="auth/google/redirect">Accedi con google</a>
+              </div>
+              <div class="d-flex flex-sm-row flex-column mt-2">
+                @error('socialEmailError')
+                  <a target="_blank" href="https://github.com/settings/profile" class="small text-danger"> {{ $message }} </a>
+                @enderror
+              </div>
               <hr>
               <div class="d-flex flex-sm-row flex-column">
                 <p class="small">Non hai ancora un account? <a class="form-link" href="/register">Registrati</a></p>

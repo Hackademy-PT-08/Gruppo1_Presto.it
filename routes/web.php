@@ -7,6 +7,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\Auth\LoginWithSocialsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::get('/',[HomeController::class,'homepage'])
 
 
 
-// Annunci
+//! Annunci
 Route::get('/annunci', [AnnouncementController::class, 'index'])
 ->name('announcements.index');
 
@@ -42,7 +43,7 @@ Route::get('/annuncio/{id}', [AnnouncementController::class, 'show'])
 Route::get('/annunci/categoria/{categoryId}',[AnnouncementController::class,'searchByCategory'])
 ->name('searchByCategory');
 
-//!rotta ricerca annuncio
+//! Ricerca annunci
 Route::get('/ricerca/annunci',[AnnouncementController::class,'filterbar'])
 ->name('announcements.filterbar');
 
@@ -50,14 +51,7 @@ Route::get('/ricerca/annuncio',[AnnouncementController::class,'SearchAnnouncemen
 ->name('announcements.search');
 
 
-
-
-
-
-
-//! rotte dello User
-
-
+//! User
 Route::get('/utente/profilo',[UserController::class,'profile'])
 ->name('user.profile')
 ->middleware(['auth','verified']);
@@ -111,10 +105,7 @@ Route::patch('/dashboard/reject-reviewer/{id}' , [DashboardController::class, 'r
 ->name('dashboard.reject-reviewer')
 ->middleware(['IsAdmin']);
 
-
-
 //! route revisore
-
 Route::post('/richiesta/revisore',[RevisorController::class,'store'])
 ->name('revisor.store')
 ->middleware(['auth','verified']);
@@ -126,6 +117,6 @@ Route::get('/lavora-con-noi',[RevisorController::class,'workWithUs'])
 Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])
 ->name('make.revisor');
 
-
-
-
+//! Login con socials
+Route::get('/auth/{provider}/redirect',[LoginWithSocialsController::class, 'redirect'])->name("login");
+Route::get('/auth/{provider}/callback',[LoginWithSocialsController::class, 'callback'])->name("login");
