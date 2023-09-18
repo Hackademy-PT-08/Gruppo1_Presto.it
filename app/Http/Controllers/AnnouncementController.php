@@ -65,8 +65,7 @@ class AnnouncementController extends Controller
 
 
     public function SearchAnnouncements(Request $request){
-        $announcements=Announcement::search($request->searched)->get();
-        $revised_announcements=$announcements->where('is_revised',true);
+        $revised_announcements=Announcement::search($request->searched)->where('is_revised',true)->get();
         
         return view('announcements.index',compact('revised_announcements'));
 
