@@ -8,7 +8,7 @@ use App\Models\Announcement;
 
 class AnnouncementCreate extends Component
 {
-    public $title,$description,$price,$category,$previewData=[];
+    public $title,$description,$price,$category;
 
 
     public function rules() {
@@ -33,7 +33,7 @@ class AnnouncementCreate extends Component
 
     public function render()
     {
-        return view('livewire.announcement-create',['title'=>$this->title,'price'=>$this->price,'category'=>$this->category]);
+        return view('livewire.announcement-create');
     }
 
     public function store()
@@ -54,6 +54,6 @@ class AnnouncementCreate extends Component
             'status' => 'success',
         ]);
 
-        return redirect()->route('announcements.index');
+        return redirect()->route('announcements.create');
     }
 }
