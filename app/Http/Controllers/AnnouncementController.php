@@ -93,7 +93,7 @@ class AnnouncementController extends Controller
 
         $announcements=$query->get();
         $revised_announcements=$announcements->where('is_revised',true);
-        return view('announcements.index', compact('revised_announcements'));
+        return view('announcements.searchByCategory', compact('revised_announcements'));
     }
 
 
