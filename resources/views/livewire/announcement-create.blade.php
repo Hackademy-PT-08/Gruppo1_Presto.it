@@ -51,6 +51,13 @@
                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
                 @enderror
               </div>
+              <label for="images">Titolo annuncio</label>
+              <input type="file" id="images" name="images" multiple
+                class="form-control @error('temporary_images') is-invalid @enderror" wire:model="temporary_images">
+              @error('temporary_images')
+                <span class="small text-danger">Oh cavolo! {{ $message }} </span>
+              @enderror
+            </div>
 
               <div class="col-2 mb-3">
                 <button wire:click="store" class="btn btn-primary m-2 mx-auto">Aggiungi</button>

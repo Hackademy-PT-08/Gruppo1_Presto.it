@@ -2,13 +2,16 @@
 
 namespace App\Livewire;
 
+use App\Models\Image;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
+use Livewire\WithFileUploads;
 
 class AnnouncementCreate extends Component
 {
-    public $title,$description,$price,$category;
+    use WithFileUploads;
+    public $title,$description,$price,$category,$temporary_images,$images=[];
 
 
     public function rules() {
@@ -17,6 +20,8 @@ class AnnouncementCreate extends Component
             'description' => 'required|min:10',
             'price' => 'required|numeric',
             'category' => 'required',
+            'images.*'=>"image|max:1024",
+            'temporary_images.*'=>'image|max:1024'
         ];
     }
     public function messages() {
@@ -28,13 +33,28 @@ class AnnouncementCreate extends Component
             'price.required' => 'Questo campo è obbligatorio',
             'price.numeric' => 'Questo campo deve essere un numero',
             'category.required' => 'Questo campo è obbligatorio',
+            'temporary_images.*.image'=>'Devi inserire un file di tipo immagine',
+            'temporary_images.*.max'=>'La dimensione dell\'immagine inserita supera il limite consetito di 1mb',
         ];
     }
 
-    public function render()
+    public function updatedTemporaryImages()
     {
-        return view('livewire.announcement-create');
+        if ($this->validate(['temporary_images.*'=>'image|max:1024'])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[]=$image;
+            }
+        }
     }
+
+    public function removeImage($key)
+    {
+        if (in_array($key,array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
+
+
 
     public function store()
     {
@@ -48,12 +68,27 @@ class AnnouncementCreate extends Component
         $announcement->category_id=$this->category;
         $announcement->save();
 
+        foreach ($this->images as $image) {
+            
+           $newFileName="announcements/{$announcement->id}";
+           $path=$image->store($newFileName,'public');
+           $newImage=$announcement->images()->create(['path'=>$path]);
+           
+
+        }
+
+
         session()->flash('message', [
             'title' => 'Annuncio in attesa di approvazione',
             'content' => 'Il tuo annuncio riguardante '. $this->title .' è stato mandato ad un revisore',
             'status' => 'success',
         ]);
 
-        return redirect()->route('announcements.create');
+        return redirect()->route('announcements.index');
+    }
+
+    public function render()
+    {
+        return view('livewire.announcement-create');
     }
 }
