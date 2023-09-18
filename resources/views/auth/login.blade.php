@@ -16,7 +16,7 @@
                 <div class="col-12">
                   <label class="form-label" for="name">Email</label>
                   <input class="form-control @error('email') is-invalid @enderror" name="email" id="email" type="email" value="{{ old('email') }}"
-                    placeholder="Inserisci la tua email">
+                    placeholder="es. mario.rossi@mail.com">
                   @error('email')
                     <span class="small text-danger"> {{ $message }} </span>
                   @enderror
@@ -24,7 +24,7 @@
                 <div class="col-12">
                   <label class="form-label" for="password">Password</label>
                   <input class="form-control @error('password') is-invalid @enderror" name="password" id="password" type="password"
-                    placeholder="Inserisci la tua password">
+                    placeholder="es. abc!123">
                   @error('password')
                     <span class="small text-danger"> {{ $message }} </span>
                   @enderror

@@ -22,7 +22,7 @@
               <div class="row mb-3">
                 <div class="col-12">
                   <label class="form-label" for="name">Email</label>
-                  <input class="form-control @error('email') is-invalid @enderror" name="email" id="email" type="email" value="{{ old('email') }}" placeholder="Inserisci email">
+                  <input class="form-control @error('email') is-invalid @enderror" name="email" id="email" type="email" value="{{ old('email') }}" placeholder="es. mario.rossi@mail.com">
                   @error('email')
                     <span class="small text-danger"> {{ $message }} </span>
                   @enderror
@@ -32,7 +32,7 @@
               <div class="row mb-3">
                 <div class="col-12">
                   <label class="form-label" for="name">Nuova Password</label>
-                  <input class="form-control @error('password') is-invalid @enderror" name="password" id="password" type="password" placeholder="Inserisci password">
+                  <input class="form-control @error('password') is-invalid @enderror" name="password" id="password" type="password" placeholder="es abc!123">
                   @error('password')
                     <span class="small text-danger"> {{ $message }} </span>
                   @enderror
@@ -42,7 +42,7 @@
               <div class="row mb-3">
                 <div class="col-12">
                   <label class="form-label" for="name">Conferma Password</label>
-                  <input class="form-control" name="password_confirmation" id="password_confirmation" type="password" placeholder="Conferma password">
+                  <input class="form-control" name="password_confirmation" id="password_confirmation" type="password" placeholder="es. abc!123">
                 </div>
               </div>
 

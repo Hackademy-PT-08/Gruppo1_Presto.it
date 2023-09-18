@@ -20,7 +20,7 @@
               <div class="row mb-3">
                 <div class="col-12">
                   <label class="form-label" for="name">Email</label>
-                  <input class="form-control @error('email') is-invalid @enderror" name="email" id="email" type="email" value="{{ old('email') }}" placeholder="Inserisci la tua email">
+                  <input class="form-control @error('email') is-invalid @enderror" name="email" id="email" type="email" value="{{ old('email') }}" placeholder="es mario.rossi@mail.com">
                   @error('email')
                     <span class="small text-danger"> {{ $message }} </span>
                   @enderror

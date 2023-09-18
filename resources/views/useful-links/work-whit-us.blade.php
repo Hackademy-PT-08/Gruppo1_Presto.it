@@ -101,15 +101,19 @@
 
     </section>
 
-    {{-- Section login revisor --}}
-
+    {{-- Section  revisor --}}
+    @if (auth()->user()->is_admin==1)
+        
+    @else
     <section class="my-5 container">
         <div class="container py-2">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6 shadow rounded">
                     <div class="row">
                         <div class="col py-4 px-4">
-                            @if (auth()->user()->is_reviewer == 1)
+
+
+                            @if (auth()->user()->is_reviewer == 1 )
                                 <div class="col-12" style="width: 100% !important">
                                     <div class="alert alert-warning py-3 shadow">
                                         <p class="lead text-center">
@@ -144,6 +148,8 @@
             </div>
         </div>
 
-    </section>
+    </section> 
+    @endif
+
 
 </x-layout>
