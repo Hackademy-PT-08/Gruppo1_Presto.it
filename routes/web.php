@@ -127,5 +127,6 @@ Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])
 ->name('make.revisor');
 
 
-
+Route::post('/lingua/{lang}', [HomeController::class,'setLanguage'])
+->name('set_language_locale');
 
