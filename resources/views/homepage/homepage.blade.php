@@ -23,7 +23,7 @@
             <div class="carousel-inner px-2" tabindex="-1">
               @foreach ($random_announcements as $random_announcement)
                 <div class="carousel-item @if($loop->first) active @endif px-2" data-bs-interval="2000">
-                  <img src="https://picsum.photos/300/200" class="d-block w-100 rounded" alt="...">
+                  <img src="{{  $random_announcement->images()->first()->getUrl(400,300)}}" class="d-block w-100 rounded" alt="...">
                   <div class="position-relative">
                     <div class="position-absolute bottom-0 w-100 mb-6  p-sm-4 p-3">
                       <div class="pt-2 px-sm-4 bg-white rounded ">
@@ -65,7 +65,7 @@
 
           @foreach ($revised_announcements as $announcement)
             <div class="item">
-              <x-card userId="{{ $announcement->user_id }}" image="https://picsum.photos/300/300"
+              <x-card userId="{{ $announcement->user_id }}" image="{{$announcement->images()->first()->getUrl(400,300)}}"
                 title="{{ $announcement->title }}" description="{{ $announcement->description }}"
                 price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
                 hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"

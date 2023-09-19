@@ -11,8 +11,10 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/scout": "^10.3",
+        "laravel/socialite": "^5.9",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.0",
+        "spatie/image": "*",
         "teamtnt/laravel-scout-tntsearch-driver": "^13.2",
         "teamtnt/tntsearch": "^4.2"
     },
