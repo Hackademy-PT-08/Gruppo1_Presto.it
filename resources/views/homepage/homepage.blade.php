@@ -8,13 +8,11 @@
     <div class="container py-4">
       <div class="row align-items-center justify-content-center gy-3 py-3 text-lg-start text-center">
         <div class="col-lg-5 col-md-8 col-sm-10">
-          <h1 class="mb-2 pb-lg-2">Scopri le migliori offerte per te e la tua casa</h1>
-          <p class="mb-lg-5 mb-4 fs-lg">Registrati e crea i tuoi annunci in maniera completamente gratuita.</p>
+          <h1 class="mb-2 pb-lg-2">{{__('home.title')}}</h1>
+          <p class="mb-lg-5 mb-4 fs-lg">{{__('home.subtitle')}}</p>
           <div class="d-lg-flex d-none flex-sm-row flex-column justify-content-lg-start justify-content-center">
-            <a class="btn btn-primary me-sm-3 mb-sm-3 mb-2 " href="{{ route('announcements.index') }}">Esplora tutti gli
-              annunci</a>
-            <a class="btn btn-outline-primary mb-sm-3 mb-2" href="{{ route('announcements.create') }}">Crea il tuo
-              Annuncio</a>
+            <a class="btn btn-primary me-sm-3 mb-sm-3 mb-2 " href="{{ route('announcements.index') }}">{{__('home.explore')}}</a>
+            <a class="btn btn-outline-primary mb-sm-3 mb-2" href="{{ route('announcements.create') }}">{{__('home.create')}}</a>
           </div>
         </div>
         {{-- Carousel items
@@ -31,16 +29,16 @@
                       <div class="pt-2 px-sm-4 bg-white rounded ">
                         <div class="row gx-5">
                           <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
-                            <h6 class="mb-1 text-muted small">Titolo</h6><span class="h6 mb-0">{{ $random_announcement->title }}</span>
+                            <h6 class="mb-1 text-muted small">{{__('home.card_title')}}</h6><span class="h6 mb-0">{{ $random_announcement->title }}</span>
                           </div>
                           <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
                             <hr class="hr-vertical position-absolute start-0 top-0 ml-n4">
-                            <h6 class="mb-1 text-muted small">Categoria</h6><span class="h6 mb-0">{{ $random_announcement->category->name }}</span>
+                            <h6 class="mb-1 text-muted small">{{__('home.card_category')}}</h6><span class="h6 mb-0">{{ $random_announcement->category->name }}</span>
                           </div>
                           <div class="col-sm-4 position-relative py-sm-3 py-2">
                             <hr class="hr-vertical position-absolute start-0 top-0 ml-n4 d-sm-block d-none">
                             <div class="d-flex align-items-center h-100">
-                              <a class="btn btn-sm btn-primary w-100" href="{{ route('announcements.single', $random_announcement->id) }}">Vai all'annuncio</a></div>
+                              <a class="btn btn-sm btn-primary w-100" href="{{ route('announcements.single', $random_announcement->id) }}">{{__('home.card_view')}}</a></div>
                           </div>
                         </div>
                       </div>
@@ -52,10 +50,8 @@
           </div>
         </div>
         <div class="d-lg-none d-flex flex-sm-row flex-column justify-content-lg-start justify-content-center">
-          <a class="btn btn-primary me-sm-3 mb-sm-3 mb-2" href="{{ route('announcements.index') }}">Esplora tutti gli
-            annunci</a>
-          <a class="btn btn-outline-primary me-sm-3 mb-sm-3 mb-2" href="{{ route('announcements.create') }}">Crea il tuo
-            Annuncio</a>
+          <a class="btn btn-primary me-sm-3 mb-sm-3 mb-2" href="{{ route('announcements.index') }}">{{__('home.explore')}}</a>
+          <a class="btn btn-outline-primary me-sm-3 mb-sm-3 mb-2" href="{{ route('announcements.create') }}">{{__('home.create')}}</a>
         </div>
       </div>
     </div>
@@ -63,7 +59,7 @@
 
   <section class="bg-secondary py-4">
     <div class="container">
-    <h2>Gli ultimi arrivi</h5>
+    <h2>{{__('home.last')}}</h5>
       <div class="row">
         <div class="owl-carousel owl-theme">
 

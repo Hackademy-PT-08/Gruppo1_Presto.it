@@ -14,32 +14,42 @@ class DashboardController extends Controller
         $announcements_to_revised_count,
         $requests_count,
         $revisors_count,
-        $last_announcement;
+        $last_announcement,
+        $logged_user,
+        $last_announcement_accepted,
+        $last_announcement_rejected;
 
     public function __construct(){
-        $this->announcements_to_revised_count = Announcement::where('is_revised', false)->where('deleting', false)->count();
-        $this->requests_count = Revisor::all()->count();
-        $this->revisors_count = User::all()->count();
+        $this->middleware(function ($request, $next) {
+            $this->logged_user = Auth::user();
 
-        $last_announcement_accepted = Announcement::where('is_revised', true)->latest('updated_at')->first();
-        $last_announcement_rejected = Announcement::where('deleting', true)->latest('updated_at')->first();
+            $this->announcements_to_revised_count = Announcement::where('is_revised', false)->where('deleting', false)->where('user_id', '!=', $this->logged_user->id)->count();
 
-        if(isset($last_announcement_accepted) && isset($last_announcement_rejected)){
-            if($last_announcement_accepted->updated_at < $last_announcement_rejected->updated_at){
+            $last_announcement_accepted = Announcement::where('is_revised', true)->where('user_id', '!=', $this->logged_user->id)->latest('updated_at')->first();
+            $last_announcement_rejected = Announcement::where('deleting', true)->where('user_id', '!=', $this->logged_user->id)->latest('updated_at')->first();
+
+            if(isset($last_announcement_accepted) && isset($last_announcement_rejected)){
+                if($last_announcement_accepted->updated_at < $last_announcement_rejected->updated_at){
+                    $this->last_announcement = $last_announcement_rejected;
+                }
+            }
+            elseif(isset($last_announcement_rejected)){
                 $this->last_announcement = $last_announcement_rejected;
             }
-        }
-        elseif(isset($last_announcement_rejected)){
-            $this->last_announcement = $last_announcement_rejected;
-        }
-        else{
-            $this->last_announcement = $last_announcement_accepted;
-        }
+            else{
+                $this->last_announcement = $last_announcement_accepted;
+            }
+
+            return $next($request);
+        });
+
+        $this->requests_count = Revisor::all()->count();
+        $this->revisors_count = User::all()->count();
 
     }
 
     public function announcements() {
-        $announcements = Announcement::where('is_revised', false)->where('deleting', false)->get();
+        $announcements = Announcement::where('is_revised', false)->where('deleting', false)->where('user_id', '!=', $this->logged_user->id)->get();
 
 
         return view('dashboard.dashboard-announcements', [

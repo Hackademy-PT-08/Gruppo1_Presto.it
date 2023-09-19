@@ -120,3 +120,7 @@ Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])
 //! Login con socials
 Route::get('/auth/{provider}/redirect',[LoginWithSocialsController::class, 'redirect']);
 Route::get('/auth/{provider}/callback',[LoginWithSocialsController::class, 'callback']);
+
+Route::post('/lingua/{lang}', [HomeController::class,'setLanguage'])
+->name('set_language_locale');
+
