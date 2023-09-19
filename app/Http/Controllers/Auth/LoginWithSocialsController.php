@@ -31,6 +31,7 @@ class LoginWithSocialsController extends Controller
             if($user){
                 $user->update([
                     $provider.'_id' => $socialUser->id,
+                    'email_verified_at' => date("Y-m-d h:i:s"),
                 ]);
             }
 
@@ -41,6 +42,7 @@ class LoginWithSocialsController extends Controller
                     'name' => $socialUser->name == null ? $socialUser->nickname : $socialUser->name,
                     'email' => $socialUser->email,
                     'password' => Hash::make(Str::random(20)),
+                    'email_verified_at' => date("Y-m-d h:i:s"),
                 ]);
             }
 
