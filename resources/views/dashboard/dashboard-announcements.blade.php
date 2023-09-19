@@ -22,12 +22,9 @@
                 </form>
               @endif
             </div>
-          
+
             <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 gy-sm-4 gy-3 gx-3 mb-4">
               @forelse ($announcements as $announcement)
-                @if (auth()->user()->id==$announcement->user_id)
-
-                @else
                 <div class="col mb-2">
                   <x-card userId="{{ $announcement->id }}" image="https://picsum.photos/300/300"
                     title="{{ $announcement->title }}" description="{{ $announcement->description }}"
@@ -35,9 +32,7 @@
                     hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
                     hrefSingle="{{ route('dashboard.single', $announcement->id) }}"
                     creator="{{ $announcement->user->name }}" />
-                </div>  
-                @endif
-
+                </div>
               @empty
                 <span class="h6 w-100 text-sm-start text-center">Cavoli! Non ci sono annunci da revisionare</span>
               @endforelse
