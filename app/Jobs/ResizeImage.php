@@ -25,7 +25,7 @@ class ResizeImage implements ShouldQueue
     public function __construct($filePath,$w,$h)
     {
         $this->filePath=dirname($filePath); //! funzione che ci da la cartella dove verrano contenuti i file
-        $this->fileName=basename($filePath); //! il nome del file 
+        $this->fileName=basename($filePath); //! il nome del file
         $this->w=$w;
         $this->h=$h;
 
@@ -38,11 +38,11 @@ class ResizeImage implements ShouldQueue
     {
         $w=$this->w;
         $h=$this->h;
-        $searchPath=storage_path() .'/app/public/' .  $this->filePath . '/'.$this->fileName; //!path per la ricerca
-        $destPath=storage_path() . '/app/public/' .  $this->filePath . "/crop_{$w}x{$h}_".$this->fileName;//!path  dove verrano salvati
+        $searchPath=storage_path() .'/app/public/' .  $this->filePath . '/'. $this->fileName; //!path per la ricerca
+        $destPath=storage_path() . '/app/public/' .  $this->filePath . "/". pathinfo($this->fileName)['filename'] . "-{$w}x{$h}." . pathinfo($this->fileName)['extension'];//!path  dove verrano salvati
 
         $croppedImage=Image::load($searchPath)
-                        ->crop(Manipulations::CROP_CENTER,$w,$h)
+                        ->fit(Manipulations::FIT_CONTAIN,$w,$h)
                         ->save($destPath);
     }
 }

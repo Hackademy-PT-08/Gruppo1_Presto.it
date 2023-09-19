@@ -26,7 +26,7 @@ class AnnouncementCreate extends Component
     ];
 
     protected $messages=
-    [ 
+    [
         'title.required' => 'Questo campo è obbligatorio',
         'title.min' => 'Questo campo deve avere almeno 8 caratteri',
         'description.required' => 'Questo campo è obbligatorio',
@@ -69,20 +69,19 @@ class AnnouncementCreate extends Component
         $announcement->save();
 
         if (count($this->images)) {
-            foreach ($this->images as $image) 
+            foreach ($this->images as $image)
             {
-            
+
                 $newFileName="announcements/{$announcement->id}";
                 $path=$image->store($newFileName,'public');
                 $newImage=$announcement->images()->create(['path'=>$path]);
-                
 
                 dispatch(new ResizeImage($newImage->path,400,300));
-     
+
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
-     
+
         }
 
         session()->flash('message', [
