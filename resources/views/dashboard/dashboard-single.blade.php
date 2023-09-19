@@ -56,10 +56,24 @@
 
             <div class="row row-cols-md-2 row-cols-1 gy-3 gx-4 mb-4 pb-md-2">
 
-              <div class="col">
-                <div class="position-relative rounded-3 overflow-hidden mb-lg-4 mb-3 ">
-                  <img class="w-100 rounded" src="https://picsum.photos/400/300">
+              <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner">
+
+                  @foreach ($announcement->images as $key=> $image)
+                  <div class="carousel-item @if($loop->first) active @endif">
+                    <img src="{{$image->getUrl(400,300)}} " class="d-block w-100" alt="immagine {{ $key + 1 }}">
+                  </div>
+                  @endforeach
+
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
               {{-- creator --}}
               <div class="col">
