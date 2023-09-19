@@ -5,6 +5,8 @@ namespace App\Livewire;
 use App\Models\Image;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
+use Illuminate\Support\Facades\File;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 
@@ -66,15 +68,22 @@ class AnnouncementCreate extends Component
         $announcement->category_id=$this->category;
         $announcement->save();
 
-        foreach ($this->images as $image) {
+        if (count($this->images)) {
+            foreach ($this->images as $image) 
+            {
             
-           $newFileName="announcements/{$announcement->id}";
-           $path=$image->store($newFileName,'public');
-           $newImage=$announcement->images()->create(['path'=>$path]);
-           
+                $newFileName="announcements/{$announcement->id}";
+                $path=$image->store($newFileName,'public');
+                $newImage=$announcement->images()->create(['path'=>$path]);
+                
 
+                dispatch(new ResizeImage($newImage->path,400,300));
+     
+            }
+
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
+     
         }
-
 
         session()->flash('message', [
             'title' => 'Annuncio in attesa di approvazione',
