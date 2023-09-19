@@ -51,27 +51,48 @@
                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
                 @enderror
               </div>
-              <label for="images">Titolo annuncio</label>
-              <input type="file" id="images" name="images" multiple
-                class="form-control @error('temporary_images.*') is-invalid @enderror" wire:model="temporary_images">
-              @error('temporary_images.*')
-                <span class="small text-danger">Oh cavolo! {{ $message }} </span>
-              @enderror
-            </div>
-
-              <div class="col-2 mb-3">
-                <button wire:click="store" class="btn btn-primary m-2 mx-auto">Aggiungi</button>
+              <div class="col-12 mb-3">
+                <label for="images">Titolo annuncio</label>
+                <input type="file" id="images" name="images" multiple
+                  class="form-control @error('temporary_images.*') is-invalid @enderror" wire:model="temporary_images">
+                @error('temporary_images.*')
+                  <span class="small text-danger">Oh cavolo! {{ $message }} </span>
+                @enderror
               </div>
-
-
             </div>
+
+            @if (!empty($images))
+                
+              <div class="row">
+                <div class="col-12">
+                  <p>Preview</p>
+                  <div class="row border border-4 border-info rounded shadow py-4">
+                    @foreach ($images as $key=>$image)
+                        <div class="col my-3">
+                          <div class="mx-auto shadow rounded preview-images" style="background-image: url({{$image->temporaryUrl()}})">
+
+                          </div>
+                          <input type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})" value="Cancella">
+                        </div>
+                    @endforeach
+                  </div>
+                </div>
+              </div>
+                
+            @endif
+
+            <div class="col-2 mb-3">
+              <button wire:click="store" class="btn btn-primary m-2 mx-auto">Aggiungi</button>
+            </div>
+
+
+          
           </div>
+
+
           <aside class="col-lg-3 offset-lg-1 col-md-4 mt-md-0 mt-4 position-relative">
-            <div>
-              {{-- !card preview --}}
-              <x-preview-card />
-              {{-- @livewire('preview-card', ['previewTitle'=>$title,'previewPrice'=>$price,'previewCategory'=>$category]) --}}
-            </div>
+            <x-preview-card/>
+      
           </aside>
         </div>
       </div>
