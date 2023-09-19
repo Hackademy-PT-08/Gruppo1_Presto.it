@@ -14,29 +14,53 @@ class AnnouncementCreate extends Component
     public $title,$description,$price,$category,$temporary_images,$images=[];
 
 
-    public function rules() {
-        return [
-            'title' => 'required|min:5',
-            'description' => 'required|min:10',
-            'price' => 'required|numeric',
-            'category' => 'required',
-            'images.*'=>"image|max:1024",
-            'temporary_images.*'=>'image|max:1024'
-        ];
-    }
-    public function messages() {
-        return [
-            'title.required' => 'Questo campo è obbligatorio',
-            'title.min' => 'Questo campo deve avere almeno 8 caratteri',
-            'description.required' => 'Questo campo è obbligatorio',
-            'description.min' => 'Questo campo deve avere almeno 8 caratteri',
-            'price.required' => 'Questo campo è obbligatorio',
-            'price.numeric' => 'Questo campo deve essere un numero',
-            'category.required' => 'Questo campo è obbligatorio',
-            'temporary_images.*.image'=>'Devi inserire un file di tipo immagine',
-            'temporary_images.*.max'=>'La dimensione dell\'immagine inserita supera il limite consetito di 1mb',
-        ];
-    }
+    // public function rules() {
+    //     return [
+    //         'title' => 'required|min:5',
+    //         'description' => 'required|min:10',
+    //         'price' => 'required|numeric',
+    //         'category' => 'required',
+    //         'images.*'=>"image|max:1024",
+    //         'temporary_images.*'=>'image|max:1024'
+    //     ];
+    // }
+
+    protected $rules=
+    [
+        'title' => 'required|min:5',
+        'description' => 'required|min:10',
+        'price' => 'required|numeric',
+        'category' => 'required',
+        'images.*'=>"image|max:1024",
+        'temporary_images.*'=>'image|max:1024'
+    ];
+
+    // public function messages() {
+    //     return [
+    //         'title.required' => 'Questo campo è obbligatorio',
+    //         'title.min' => 'Questo campo deve avere almeno 8 caratteri',
+    //         'description.required' => 'Questo campo è obbligatorio',
+    //         'description.min' => 'Questo campo deve avere almeno 8 caratteri',
+    //         'price.required' => 'Questo campo è obbligatorio',
+    //         'price.numeric' => 'Questo campo deve essere un numero',
+    //         'category.required' => 'Questo campo è obbligatorio',
+    //         'temporary_images.*.image'=>'Devi inserire un file di tipo immagine',
+    //         'temporary_images.*.max'=>'La dimensione dell\'immagine inserita supera il limite consetito di 1mb',
+    //     ];
+    // }
+
+    protected $messages=
+    [ 
+        'title.required' => 'Questo campo è obbligatorio',
+        'title.min' => 'Questo campo deve avere almeno 8 caratteri',
+        'description.required' => 'Questo campo è obbligatorio',
+        'description.min' => 'Questo campo deve avere almeno 8 caratteri',
+        'price.required' => 'Questo campo è obbligatorio',
+        'price.numeric' => 'Questo campo deve essere un numero',
+        'category.required' => 'Questo campo è obbligatorio',
+        'temporary_images.*.image'=>'Devi inserire un file di tipo immagine',
+        'temporary_images.*.max'=>'La dimensione dell\'immagine inserita supera il limite consetito di 1mb',
+    ];
 
     public function updatedTemporaryImages()
     {

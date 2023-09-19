@@ -53,8 +53,8 @@
               </div>
               <label for="images">Titolo annuncio</label>
               <input type="file" id="images" name="images" multiple
-                class="form-control @error('temporary_images') is-invalid @enderror" wire:model="temporary_images">
-              @error('temporary_images')
+                class="form-control @error('temporary_images.*') is-invalid @enderror" wire:model="temporary_images">
+              @error('temporary_images.*')
                 <span class="small text-danger">Oh cavolo! {{ $message }} </span>
               @enderror
             </div>
