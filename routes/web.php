@@ -118,5 +118,5 @@ Route::get('/rendi/revisore/{user}',[RevisorController::class,'makeRevisor'])
 ->name('make.revisor');
 
 //! Login con socials
-Route::get('/auth/{provider}/redirect',[LoginWithSocialsController::class, 'redirect'])->name("login");
-Route::get('/auth/{provider}/callback',[LoginWithSocialsController::class, 'callback'])->name("login");
+Route::get('/auth/{provider}/redirect',[LoginWithSocialsController::class, 'redirect']);
+Route::get('/auth/{provider}/callback',[LoginWithSocialsController::class, 'callback']);
