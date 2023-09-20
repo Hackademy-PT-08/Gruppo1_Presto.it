@@ -42,7 +42,7 @@ class ResizeImage implements ShouldQueue
         $destPath=storage_path() . '/app/public/' .  $this->filePath . "/". pathinfo($this->fileName)['filename'] . "-{$w}x{$h}." . pathinfo($this->fileName)['extension'];//!path  dove verrano salvati
 
         $croppedImage=Image::load($searchPath)
-                        ->fit(Manipulations::FIT_CONTAIN,$w,$h)
+                        ->fit(Manipulations::FIT_CROP,$w,$h)
                         ->save($destPath);
     }
 }
