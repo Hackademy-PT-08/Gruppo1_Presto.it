@@ -13,7 +13,7 @@ class Image extends Model
     protected $fillable=['path'];
 
     public function announcement(){
-        
+
         return $this->belongsTo(Announcement::class);
     }
 
@@ -25,7 +25,7 @@ class Image extends Model
 
         $path=dirname($filePath);
         $fileName=basename($filePath);
-        $file="{$path}/crop_{$w}x{$h}_{$fileName}";
+        $file="$path/" . pathinfo($fileName)['filename'] . "-{$w}x{$h}." . pathinfo($fileName)['extension'];
         return Storage::url($file);
 
     }
