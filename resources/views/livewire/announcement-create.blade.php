@@ -6,7 +6,7 @@
           <div class="col-12 col-md-8">
             <div class="row bg-light rounded-3 shadow py-3">
               <div class="col-12 mb-3">
-                <label for="title">Titolo annuncio</label>
+                <label for="title">{{__('ann_create.title')}}</label>
                 <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror" wire:model="title" wire:model="previewTitle">
                 @error('title')
                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
@@ -14,7 +14,7 @@
               </div>
 
               <div class="col-12 mb-3">
-                <label for="description">Descrizione annuncio</label>
+                <label for="description">{{__('ann_create.description')}}</label>
                 <textarea name="description" id="description" cols="3" rows="3" class="form-control input-form @error('description') is-invalid @enderror" wire:model="description"></textarea>
                 @error('description')
                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
@@ -22,7 +22,7 @@
               </div>
 
               <div class="col-6 mb-3">
-                <label for="price">Prezzo</label>
+                <label for="price">{{__('ann_create.price')}}</label>
                 <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="price" class="form-control @error('price') is-invalid @enderror" name="price" wire:model="price">
                 @error('price')
                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
@@ -31,7 +31,7 @@
 
               <div class="col-6 mb-3">
                 <select class="form-select mt-4 @error('category') is-invalid @enderror" wire:model="category" name="categoria" id="categoria">
-                  <option value="">Seleziona una categoria</option>
+                  <option value="">{{__('ann_create.select')}}</option>
                   @foreach ($categories as $category)
                     <option value="{{ $category->id }}"> {{ $category->name }} </option>
                   @endforeach
@@ -41,7 +41,7 @@
                 @enderror
               </div>
               <div class="col-12 mb-3">
-                <label for="images">Titolo annuncio</label>
+                <label for="images">{{__('ann_create.picture')}}</label>
                 <input type="file" id="images" name="images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" wire:model="temporary_images">
                 @error('temporary_images.*')
                   <span class="small text-danger">Oh cavolo! {{ $message }} </span>
@@ -66,7 +66,7 @@
             @endif
 
             <div class="col-2 mb-3">
-              <button wire:click="store" class="btn btn-primary m-2 mx-auto">Aggiungi</button>
+              <button wire:click="store" class="btn btn-primary m-2 mx-auto">{{__('ann_create.add')}}</button>
             </div>
           </div>
 
