@@ -5,5 +5,6 @@ return [
     'this'=>'Questo prodotto',
     'page'=>'Questa pagina',
     'all'=>'Tutti i nostri annunci',
-    'edit'=>'Modifica il tuo annuncio'
+    'edit'=>'Modifica il tuo annuncio',
+    'with'=>'Con noi dal'
 ];

@@ -7,7 +7,7 @@
           <img class="rounded-circle" src="https://picsum.photos/90/90" alt="Immagine di {{ Auth::user()->name }}">
         </div>
         <div class="ps-3">
-          <h3 class="h5 mb-2 text-light">{{ Auth::user()->name }}</h3><span class="d-block text-light small">Con noi dal
+          <h3 class="h5 mb-2 text-light">{{ Auth::user()->name }}</h3><span class="d-block text-light small">{{__('band.with')}}
             {{ Auth::user()->created_at->format('d/m/Y') }}</span>
         </div>
       </div>

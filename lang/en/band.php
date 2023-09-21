@@ -5,5 +5,6 @@ return [
     'this'=>'This product',
     'page'=>'That page',
     'all'=>'All our ads',
-    'edit'=>'Edit your ad'
+    'edit'=>'Edit your ad',
+    'with'=>'With us since'
 ];
