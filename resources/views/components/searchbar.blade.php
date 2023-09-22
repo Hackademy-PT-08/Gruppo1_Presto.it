@@ -3,7 +3,7 @@
     <div class="bg-light shadow rounded p-4 mt-4 mb-4 ">
       <div class="row gy-3 gx-4 justify-content-between">
         <div class="col-xl-5 col-12 ">
-          <input id="searchInput" type="text" class="form-control" placeholder="Cosa ti serve?" name="searched"
+          <input id="searchInput" type="text" class="form-control" placeholder="{{__('search.need')}}" name="searched"
             value="{{ request('searched') }}">
         </div>
         <div class="col-xl-2 col-md-4 col-sm-6 col-12">

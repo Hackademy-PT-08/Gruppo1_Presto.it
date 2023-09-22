@@ -23,13 +23,13 @@
             <div class="carousel-inner px-2" tabindex="-1">
               @foreach ($random_announcements as $random_announcement)
                 <div class="carousel-item @if($loop->first) active @endif px-2" data-bs-interval="2000">
-                  <img src="{{  $random_announcement->images()->first()->getUrl(400,300)}}" class="d-block w-100 rounded" alt="...">
+                  <img src="{{ $random_announcement->images()->first()->getUrl(400,300)}}" class="d-block w-100 rounded" alt="...">
                   <div class="position-relative">
                     <div class="position-absolute bottom-0 w-100 mb-6  p-sm-4 p-3">
                       <div class="pt-2 px-sm-4 bg-white rounded ">
                         <div class="row gx-5">
-                          <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
-                            <h6 class="mb-1 text-muted small">{{__('home.card_title')}}</h6><span class="h6 mb-0">{{ $random_announcement->title }}</span>
+                          <div class="col-sm-4 col-6 position-relative py-sm-3 py-2 text-truncate">
+                            <h6 class="mb-1 text-muted small ">{{__('home.card_title')}}</h6 ><span class="h6  mb-0">{{ $random_announcement->title }}</span>
                           </div>
                           <div class="col-sm-4 col-6 position-relative py-sm-3 py-2">
                             <hr class="hr-vertical position-absolute start-0 top-0 ml-n4">

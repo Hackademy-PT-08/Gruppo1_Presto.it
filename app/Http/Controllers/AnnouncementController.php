@@ -93,7 +93,7 @@ class AnnouncementController extends Controller
 
         $revised_announcements=$query->where('is_revised',true)->paginate(8);
     
-        return view('announcements.searchByCategory', compact('revised_announcements'));
+        return view('announcements.index', compact('revised_announcements'));
     }
 
 

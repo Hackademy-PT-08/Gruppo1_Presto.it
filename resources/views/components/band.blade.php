@@ -7,7 +7,7 @@
           <img class="rounded-circle" src="https://picsum.photos/90/90" alt="Immagine di {{ Auth::user()->name }}">
         </div>
         <div class="ps-3">
-          <h3 class="h5 mb-2 text-light">{{ Auth::user()->name }}</h3><span class="d-block text-light small">Con noi dal
+          <h3 class="h5 mb-2 text-light">{{ Auth::user()->name }}</h3><span class="d-block text-light small">{{__('band.with')}}
             {{ Auth::user()->created_at->format('d/m/Y') }}</span>
         </div>
       </div>
@@ -18,15 +18,15 @@
     <div
       class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center mb-2 pt-2">
       <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
-        <div class="h3 text-light">Crea un nuovo annuncio</div>
+        <div class="h3 text-light">{{__('band.create')}}</div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
             <li class="breadcrumb-item">
               <a class="text-nowrap" href="{{ route('homepage') }}"><i class="fa-solid fa-house me-2"></i>Home</a>
             </li>
-            <li class="breadcrumb-item text-nowrap"><a href="{{ route('announcements.index') }}">Annunci</a>
+            <li class="breadcrumb-item text-nowrap"><a href="{{ route('announcements.index') }}">{{__('band.ads')}}</a>
             </li>
-            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">Questo prodotto </li>
+            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">{{__('band.this')}}</li>
           </ol>
         </nav>
       </div>
@@ -43,9 +43,9 @@
             <li class="breadcrumb-item">
               <a class="text-nowrap" href="{{ route('homepage') }}"><i class="fa-solid fa-house me-2"></i>Home</a>
             </li>
-            <li class="breadcrumb-item text-nowrap"><a href="{{ route('announcements.index') }}">Annunci</a>
+            <li class="breadcrumb-item text-nowrap"><a href="{{ route('announcements.index') }}">{{__('band.ads')}}</a>
             </li>
-            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">Questo prodotto </li>
+            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">{{__('band.this')}}</li>
           </ol>
         </nav>
       </div>
@@ -56,15 +56,15 @@
     <div
       class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center mb-2 pt-2">
       <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
-        <div class="h3 text-light">Modifica il tuo annuncio</div>
+        <div class="h3 text-light">{{__('band.edit')}}</div>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
             <li class="breadcrumb-item">
               <a class="text-nowrap" href="{{ route('homepage') }}"><i class="fa-solid fa-house me-2"></i>Home</a>
             </li>
-            <li class="breadcrumb-item text-nowrap"><a href="{{ route('announcements.index') }}">Annunci</a>
+            <li class="breadcrumb-item text-nowrap"><a href="{{ route('announcements.index') }}">{{__('band.ads')}}</a>
             </li>
-            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">Questo prodotto </li>
+            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">{{__('band.this')}}</li>
           </ol>
         </nav>
       </div>
@@ -74,7 +74,7 @@
   <div class="page-title-overlap bg-primary pt-4">
     <div class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center mb-2 pt-2">
       <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
-        <h1 class="text-white">Tutti i nostri annunci</h1>
+        <h1 class="text-white">{{__('band.all')}}</h1>
       </div>
     </div>
   </div>
@@ -93,7 +93,7 @@
             </li>
             <li class="breadcrumb-item text-nowrap"><a href="{{ route('dashboard.announcements') }}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">Questa pagina</li>
+            <li class="breadcrumb-item text-nowrap active text-white" aria-current="page">{{__('band.page')}}</li>
           </ol>
         </nav>
       </div>
