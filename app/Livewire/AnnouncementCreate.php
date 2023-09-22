@@ -21,8 +21,9 @@ class AnnouncementCreate extends Component
         'description' => 'required|min:10',
         'price' => 'required|numeric',
         'category' => 'required',
-        'images.*'=>"image|max:1024",
-        'temporary_images.*'=>'image|max:1024'
+        'images.*'=>'image|max:1024',
+        'temporary_images.*'=>'image|max:1024',
+        'images'=>'required'
     ];
 
     protected $messages=
@@ -34,13 +35,15 @@ class AnnouncementCreate extends Component
         'price.required' => 'Questo campo è obbligatorio',
         'price.numeric' => 'Questo campo deve essere un numero',
         'category.required' => 'Questo campo è obbligatorio',
+        'images.*.required'=>'Devi inserire un\'immagine',
         'temporary_images.*.image'=>'Devi inserire un file di tipo immagine',
         'temporary_images.*.max'=>'La dimensione dell\'immagine inserita supera il limite consetito di 1mb',
+        'images.required'=>'Devi inserire un\' immagine',
     ];
 
     public function updatedTemporaryImages()
     {
-        if ($this->validate(['temporary_images.*'=>'image|max:1024'])) {
+        if ($this->validate(['temporary_images.*'=>'required|image|max:1024'])) {
             foreach ($this->temporary_images as $image) {
                 $this->images[]=$image;
             }
