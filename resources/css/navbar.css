@@ -102,6 +102,8 @@
     align-items: center;
 }
 
+
+
 @keyframes slide-up {
     0% {
         transform: translateY(0.5rem);
@@ -152,4 +154,5 @@
         -webkit-animation: slide-up 0.25s ease-in-out;
         animation: slide-up 0.25s ease-in-out;
     }
+
 }

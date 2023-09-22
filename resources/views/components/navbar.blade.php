@@ -12,7 +12,7 @@
             <li>
                 <a class="navbar-tool d-none d-lg-flex me-2" href="javascript:void(0)" data-bs-toggle="collapse"
                     data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox">
-                    <span class="navbar-tool-tooltip">{{__('nav.research')}}</span>
+                    <span class="navbar-tool-tooltip">{{ __('nav.research') }}</span>
                     <div class="navbar-tool-icon-box">
                         <i class="fa-solid fa-magnifying-glass fw-bolder"></i>
                     </div>
@@ -26,8 +26,9 @@
                     </div>
                     <ul class="dropdown-menu">
                         @auth
-                            <li><a class="dropdown-item" href="{{ route('user.profile') }}">{{__('nav.profile')}}</a></li>
-                            <li><a class="dropdown-item" href="{{ route('user.profile-announcements') }}">{{__('nav.myAds')}}</a>
+                            <li><a class="dropdown-item" href="{{ route('user.profile') }}">{{ __('nav.profile') }}</a></li>
+                            <li><a class="dropdown-item"
+                                    href="{{ route('user.profile-announcements') }}">{{ __('nav.myAds') }}</a>
                             </li>
                             @if (Auth::user()->is_admin || Auth::user()->is_reviewer)
                                 <li><a class="dropdown-item" href="{{ route('dashboard.announcements') }}">Dashboard</a>
@@ -45,14 +46,15 @@
                             </li>
                         @endauth
                         @guest
-                            <li><a class="dropdown-item" href="/register">{{__('nav.register')}}</a></li>
+                            <li><a class="dropdown-item" href="/register">{{ __('nav.register') }}</a></li>
                             <li><a class="dropdown-item" href="/login">Login</a></li>
                         @endguest
                     </ul>
                 </a>
             </li>
             <li>
-                <a class="btn btn-sm btn-primary rounded-1 ms-lg-4 ms-2" href="{{ route('announcements.create') }}">{{__('nav.create')}}</a>
+                <a class="btn btn-sm btn-primary rounded-1 ms-lg-4 ms-2"
+                    href="{{ route('announcements.create') }}">{{ __('nav.create') }}</a>
             </li>
         </ul>
 
@@ -69,21 +71,32 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="{{ route('homepage') }}">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">{{__('nav.category')}}</a>
+                    <a class="nav-link dropdown-toggle" href="#"
+                        data-bs-toggle="dropdown">{{ __('nav.category') }}</a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
                             <li><a class="dropdown-item"
-                                    href="{{ route('searchByCategory', $category->id) }}">{{ $category->name }}</a></li>
+                                    href="{{ route('searchByCategory', $category->id) }}">{{ $category->name }}</a>
+                            </li>
                         @endforeach
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('announcements.index') }}">{{__('nav.allAnnouncement')}}</a>
+                <li class="nav-item"><a class="nav-link"
+                        href="{{ route('announcements.index') }}">{{ __('nav.allAnnouncement') }}</a>
                 </li>
-                <li class="nav-item"><x-_locale lang='it' nation='it' /></li>
-                <li class="nav-item"><x-_locale lang='en' nation='gb' /></li>
-                <li class="nav-item"><x-_locale lang='es' nation='es' /></li>
-                <li class="nav-item"><a class="nav-link no-desktop" href="{{ route('user.profile') }}">{{__('nav.profile')}}</a></li>
-            </ul>
+
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href=""
+                        data-bs-toggle="dropdown">Lingua</a>
+                    <ul class="dropdown-menu ">
+                        <li class="nav-item"><x-_locale lang='it' nation='it' /></li>
+                        <li class="nav-item"><x-_locale lang='en' nation='gb' /></li>
+                        <li class="nav-item"><x-_locale lang='es' nation='es' /></li> </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link no-desktop"
+                        href="{{ route('user.profile') }}">{{ __('nav.profile') }}</a></li>
+
         </div>
     </div>
     <!-- Search collapse-->
@@ -94,7 +107,7 @@
                         class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                     <input class="form-control rounded-start" name="searched" type="text"
                         placeholder="Cosa stavi cercando?">
-                    <button type="submit" class="btn btn-primary">{{__('nav.find')}}</button>
+                    <button type="submit" class="btn btn-primary">{{ __('nav.find') }}</button>
                 </div>
             </div>
         </div>
