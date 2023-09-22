@@ -1,11 +1,11 @@
 <?php
 return [
-    'category'=>'Category',
-    'allAnnouncement'=>'All ads',
+    'category'=>'Categories',
+    'allAnnouncement'=>'All annoucements',
     'profile'=>'Profile',
-    'myAds'=>'My ads',
+    'myAds'=>'My announcements',
     'register'=>'Register',
     'research'=>'Research',
-    'create'=>'Create ad',
+    'create'=>'Create announcement',
     'find'=>'Find'
 ];
