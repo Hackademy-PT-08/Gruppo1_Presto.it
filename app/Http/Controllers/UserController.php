@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -41,4 +42,22 @@ class UserController extends Controller
             'user_announcements_count' => $this->user_announcements_count,
         ]);
     }
+
+    // public function updateProfileImage(Request $request){
+    //     $newFileName="user/{$this->user->id}";
+        
+    //     $uploadedImage=$request->file('profile_image');
+        
+    //     $path=$uploadedImage->store($newFileName,'public');
+
+    //     $newImage=$this->user->image()->create(['path'=>$path]);
+        
+        
+    //     dispatch(new ResizeImage($newImage->path,200,200));
+
+
+        
+    //     return redirect()->back();
+    
+    // }
 }

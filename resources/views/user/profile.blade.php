@@ -13,14 +13,32 @@
             <h1 class="h3 mb-4 pt-2 text-center text-sm-start">Informazioni</h1>
             <div class="bg-secondary rounded-3 p-4 mb-4 text-center text-sm-start">
               <div class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center">
-                <img class="rounded mb-sm-0 mb-3" src="https://picsum.photos/90/90" width="90" alt="Createx Studio">
+                <img class="rounded mb-sm-0 mb-3" src="" width="90" alt="Createx Studio">
                 <div class="ms-n2 ps-sm-4">
-                  <button class="btn btn-sm btn-primary mb-2" type="button">
+                  <form id="update_profile_image" action="{{route('user.profile-change_avatar')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input name="profile_image" id="profile_image" type="file" style="display:none">
+                    <label class="btn btn-sm btn-primary mb-2" for="profile_image">
+                      <i class="fa-solid fa-rotate me-2"></i>Cambia immagine
+                    </label>
+                  </form>
+                  <script>
+                    document.getElementById("profile_image").onchange = function() {
+                      document.getElementById("update_profile_image").submit();
+                    };
+                  </script>
+                  <form>
+                    <input name="profile_image_delete" id="profile_image_delete" type="file" style="display: none">
+                    <label class="btn btn-sm btn-outline-danger mb-2 ms-2" type="submit">
+                      <i class="fa-solid fa-trash-can me-2"></i>Cancella immagine
+                    </label>
+                  </form>
+                  {{-- <button class="btn btn-sm btn-primary mb-2" type="button">
                     <i class="fa-solid fa-rotate"></i>Cambia immagine
-                  </button>
-                  <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">
+                  </button> --}}
+                  {{-- <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">
                     <i class="fa-solid fa-trash-can"></i>Cancella immagine
-                </button>
+                  </button> --}}
                   <div class="pt-1 mb-0 small text-muted">Ti consigliamo di mettere immagini 400x400 :)
                   </div>
                 </div>

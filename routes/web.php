@@ -15,7 +15,7 @@ use App\Http\Controllers\Auth\LoginWithSocialsController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
+| routes are loaded by the Route{{ Serv }}iceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
 */
@@ -59,6 +59,14 @@ Route::get('/utente/profilo',[UserController::class,'profile'])
 Route::get('/utente/annunci',[UserController::class,'announcements'])
 ->name('user.profile-announcements')
 ->middleware(['auth','verified']);
+
+Route::post('/utente/cambia_avatar',[UserController::class, 'updateProfileImage'])
+->name('user.profile-change_avatar')
+->middleware(['auth','verified']);
+
+// Route::delete('/utente/elimina_avatar',[UserController::class, 'deleteProfileImage'])
+// ->name('user.profile-elimina_avatar')
+// ->middleware(['auth','verified']);
 
 //! Dashboard
 Route::get('/dashboard' , [DashboardController::class, 'redirectToAnnouncements'])

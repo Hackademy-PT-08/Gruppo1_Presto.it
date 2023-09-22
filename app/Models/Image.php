@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Announcement;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -12,9 +13,12 @@ class Image extends Model
     use HasFactory;
     protected $fillable=['path'];
 
-    public function announcement(){
-
+    public function announcement() {
         return $this->belongsTo(Announcement::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
     public static function geturlByFilePatch ($filePath,$w=null,$h=null)
@@ -25,7 +29,7 @@ class Image extends Model
 
         $path=dirname($filePath);
         $fileName=basename($filePath);
-        $file="$path/" . pathinfo($fileName)['filename'] . "-{$w}x{$h}." . pathinfo($fileName)['extension'];
+        $file="$path/". "crop-{$w}x{$h}." . $fileName;
         return Storage::url($file);
 
     }

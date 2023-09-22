@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Image;
 use App\Models\Revisor;
 use App\Models\Announcement;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -26,6 +28,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'google_id',
         'github_id',
         'email_verified_at',
+        
     ];
 
     /**
@@ -53,5 +56,13 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function revisor(){
         return $this->hasOne(Revisor::class);
+
     }
+
+    public function image(){
+        return $this->hasOne(Image::class);
+
+    }
+
+
 }

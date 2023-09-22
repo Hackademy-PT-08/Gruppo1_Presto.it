@@ -21,13 +21,13 @@ class LoginWithSocialsController extends Controller
 
         try {
             $socialUser = Socialite::driver($provider)->user();
-
+        
             if($socialUser->email == null){
                 return redirect('/login')->withErrors(['socialEmailError' => 'Rendi pubblica l\'email di '. $provider .' per continuare']);
             }
 
             $user = User::where('email', $socialUser->email)->first();
-
+            
             if($user){
                 $user->update([
                     $provider.'_id' => $socialUser->id,
@@ -48,7 +48,7 @@ class LoginWithSocialsController extends Controller
 
             Auth::login($user);
 
-            return redirect()->route('homepage');
+            return redirect()->route('announcements.create');
 
         } catch (\Throwable $th) {
             return redirect('/login');
