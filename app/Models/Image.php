@@ -38,4 +38,6 @@ class Image extends Model
     {
         return Image::geturlByFilePatch($this->path,$w,$h);
     }
+
+    
 }

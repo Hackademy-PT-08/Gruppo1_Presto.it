@@ -58,6 +58,19 @@
                 <h2 class="h3 mb-1"> € {{ $announcement->price }}</h2>
               </div>
             </div>
+
+            <div class="col-md-3">
+              <div class="card-body">
+                <h5 class="tc-accent">Revisione immagini</h5>
+                @foreach ($announcement->images as $image)
+                <p>Adulti: <span class="{{  $image->adult}}"></span></p>
+                <p>Medicina: <span class="{{  $image->medical}}"></span></p>
+                <p>Satira: <span class="{{  $image->spoof}}"></span></p>
+                <p>Violenza: <span class="{{  $image->violence}}"></span></p>
+                <p>Contenuto Amiccante: <span class="{{  $image->racy}}"></span></p>
+                @endforeach
+              </div>
+            </div>
           </div>
         </div>
       </div>
