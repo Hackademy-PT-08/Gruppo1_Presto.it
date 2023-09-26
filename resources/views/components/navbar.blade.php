@@ -88,7 +88,7 @@
                 <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href=""
                         data-bs-toggle="dropdown">Lingua</a>
-                    <ul class="dropdown-menu ">
+                    <ul class="dropdown-menu language">
                         <li class="nav-item"><x-_locale lang='it' nation='it' /></li>
                         <li class="nav-item"><x-_locale lang='en' nation='gb' /></li>
                         <li class="nav-item"><x-_locale lang='es' nation='es' /></li> </ul>

@@ -102,7 +102,9 @@
     align-items: center;
 }
 
-
+.navbar .dropdown-menu.language {
+    min-width: fit-content;
+}
 
 @keyframes slide-up {
     0% {
