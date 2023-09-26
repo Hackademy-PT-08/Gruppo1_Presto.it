@@ -26,13 +26,14 @@
             <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 gy-sm-4 gy-3 gx-3 mb-4">
               @forelse ($announcements as $announcement)
                 <div class="col mb-2">
-                  <x-card userId="{{ $announcement->id }}" image="{{$announcement->images()->first()->getUrl(400,300)}}"
+                  <x-card userId="{{ $announcement->id }}" image="{{$announcement->images()->first()->getUrl()}}"
                     title="{{ $announcement->title }}" description="{{ $announcement->description }}"
                     price="{{ $announcement->price }}" category="{{ $announcement->category->name }}"
                     hrefCategory="{{ route('searchByCategory', $announcement->category->id) }}"
                     hrefSingle="{{ route('dashboard.single', $announcement->id) }}"
                     creator="{{ $announcement->user->name }}" />
                 </div>
+               
               @empty
                 <span class="h6 w-100 text-sm-start text-center">Cavoli! Non ci sono annunci da revisionare</span>
               @endforelse
