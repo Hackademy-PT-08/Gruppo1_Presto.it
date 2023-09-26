@@ -15,7 +15,6 @@
               <div class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center">
                 <img class="rounded mb-sm-0 mb-3" src="" width="90" alt="Createx Studio">
                 <div class="ms-n2 ps-sm-4">
-<<<<<<< HEAD
                   <form id="update_profile_image" action="{{route('user.profile-change_avatar')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input name="profile_image" id="profile_image" type="file" style="display:none">
@@ -41,15 +40,6 @@
                     <i class="fa-solid fa-trash-can"></i>Cancella immagine
                   </button> --}}
                   <div class="pt-1 mb-0 small text-muted">Ti consigliamo di mettere immagini 400x400 :)
-=======
-                  <button class="btn btn-sm btn-primary mb-2" type="button">
-                    <i class="fa-solid fa-rotate"></i>{{__('profile.change')}}
-                  </button>
-                  <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">
-                    <i class="fa-solid fa-trash-can"></i>{{__('profile.delete')}}
-                </button>
-                  <div class="pt-1 mb-0 small text-muted">{{__('profile.advise')}} 400x400 :)
->>>>>>> 4f56ae2793fee9d69aecbb68a1f0e1cd8ccb6ec2
                   </div>
                 </div>
               </div>
