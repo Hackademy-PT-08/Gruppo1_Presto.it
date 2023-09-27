@@ -44,7 +44,14 @@ class AnnouncementCreate extends Component
             'temporary_images.*.max' => 'La dimensione dell\'immagine inserita supera il limite consetito di 1mb',
             'images.required' => 'Devi inserire un\' immagine',
         ];
+      
+        
+    public function updated($propertyName)
+    {
+            $this->validateOnly($propertyName);
+    }
 
+    
     public function updatedTemporaryImages()
     {
         if ($this->validate(['temporary_images.*' => 'required|image|max:1024'])) {

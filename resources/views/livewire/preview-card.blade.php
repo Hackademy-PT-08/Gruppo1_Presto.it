@@ -15,11 +15,11 @@
         </div>
         <div class="card-body">
           <h3 class="product-title mb-2 fs-6">
-            <a class="d-block text-truncate" href="">{{$previewTitle}}</a>
+            <a class="d-block text-truncate" href=""></a>
           </h3>
           <div class="row">
             <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">Categoria</h4></div>
-            <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker">{{$previewPrice}}</h4></div>
+            <div class="col-6 small"><h4 class="mt-1 mb-0 fs-6 text-darker"></h4></div>
           </div>
           <span class="fs-sm text-muted"></span>
         </div>
