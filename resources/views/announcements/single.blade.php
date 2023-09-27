@@ -78,13 +78,14 @@
                 <div class="col-md-3">
                   <h5 class="tc-accent mt-3">Tags</h5>
 
-                  @foreach ($announcement->images() as $image)
+                 
+                  
                      @foreach ($image->labels as $label)
                      
                      <p class="d-inline"> {{$label}} </p>
                      
                      @endforeach
-                  @endforeach
+                  
                 </div>
               </div>
             </div>

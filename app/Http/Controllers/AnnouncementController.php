@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
@@ -35,8 +36,9 @@ class AnnouncementController extends Controller
     public function show($id)
     {
         $announcement = Announcement::find($id);
+        $image=Image::find($announcement->id);
 
-        return view('announcements.single', ['announcement' => $announcement]);
+        return view('announcements.single', ['announcement' => $announcement,'image'=>$image]);
     }
 
     /**
