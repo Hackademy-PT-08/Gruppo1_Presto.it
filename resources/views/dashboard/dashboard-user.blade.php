@@ -11,7 +11,7 @@
 
           <!-- Sezione informazioni -->
           <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
-            <h1 class="h3 mb-4 pt-2 text-center text-sm-start">Informazioni</h1>
+            <h1 class="h3 mb-4 pt-2 text-center text-sm-start">{{__('dash.information')}}</h1>
             <div class="bg-secondary rounded-3 p-4 mb-4 text-center text-sm-start">
               <div class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center">
                 <img class="rounded mb-sm-0 mb-3" src="https://picsum.photos/90/90" width="90" alt="Createx Studio">
@@ -19,7 +19,7 @@
                   @if ($revisor != null)
                     <a class="btn btn-sm btn-success mb-2"
                       onclick="event.preventDefault();getElementById('form-accept-reviewer').submit()">
-                      <i class="fa-solid fa-check me-2"></i>Accetta Revisore
+                      <i class="fa-solid fa-check me-2"></i>{{__('dash.rev_accept')}}
                     </a>
                     <form action="{{ route('dashboard.accept-reviewer', $user->id) }}" method="post" class="d-none"
                       id="form-accept-reviewer">
@@ -28,7 +28,7 @@
                     </form>
                     <a class="btn btn-sm btn-danger mb-2 ms-2 me-3"
                       onclick="event.preventDefault();getElementById('form-reject-reviewer').submit()">
-                      <i class="fa-solid fa-xmark me-2"></i>Rifiuta Revisore
+                      <i class="fa-solid fa-xmark me-2"></i>{{__('dash.rev_reject')}}
                     </a>
                     <form action="{{ route('dashboard.reject-reviewer', $user->id) }}" method="post" class="d-none"
                       id="form-reject-reviewer">
@@ -37,14 +37,14 @@
                     </form>
                   @endif
                   <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">
-                    <i class="fa-solid fa-ban"></i>Blocca utente
+                    <i class="fa-solid fa-ban"></i>{{__('dash.block')}}
                   </button>
                 </div>
               </div>
             </div>
             <div class="row gy-3 pb-md-3">
               <div class="col-sm-6">
-                <label class="form-label" for="name">Nome</label>
+                <label class="form-label" for="name">{{__('dash.name')}}</label>
                 <input readonly class="form-control-plaintext" name="name" id="name" type="text"
                   value="{{ $user->name }}">
                 @error('name')
@@ -58,7 +58,7 @@
               </div>
               @if ($revisor != null)
               <div class="col-12">
-                <label class="form-label" for="bio">Messaggio di presentazione</label><br>
+                <label class="form-label" for="bio">{{__('dash.message')}}</label><br>
                 <span>{{ $revisor->first()->about_you }}</span>
               @endif
               </div>
