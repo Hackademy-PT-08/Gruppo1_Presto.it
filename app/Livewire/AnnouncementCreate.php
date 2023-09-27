@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
+use App\Jobs\addWatermark;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
 use App\Jobs\GoogleVisionLabelImage;
@@ -82,6 +83,7 @@ class AnnouncementCreate extends Component
                 $newImage = $announcement->images()->create(['path' => $path]);
 
                 RemoveFaces::withChain([
+                    new addWatermark($newImage->id),
                     new ResizeImage($newImage->path, 400, 300),
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisionLabelImage($newImage->id)
