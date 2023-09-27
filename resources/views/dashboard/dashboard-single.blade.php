@@ -32,7 +32,7 @@
                 <div>
                   <a class="btn btn-sm btn-success mb-2"
                     onclick="event.preventDefault();getElementById('form-accept-announcement').submit()">
-                    <i class="fa-solid fa-check me-2"></i>Accetta
+                    <i class="fa-solid fa-check me-2"></i>{{__('dash.accept')}}
                   </a>
                   <form action="{{ route('dashboard.accept-announcement', $announcement->id) }}" method="post"
                     class="d-none" id="form-accept-announcement">
@@ -41,7 +41,7 @@
                   </form>
                   <a class="btn btn-sm btn-danger mb-2 ms-2 me-3"
                     onclick="event.preventDefault();getElementById('form-reject-announcement').submit()">
-                    <i class="fa-solid fa-xmark me-2"></i>Rifiuta
+                    <i class="fa-solid fa-xmark me-2"></i>{{__('dash.reject')}}
                   </a>
                   <form action="{{ route('dashboard.reject-announcement', $announcement->id) }}" method="post"
                     class="d-none" id="form-reject-announcement">
@@ -88,12 +88,12 @@
                 </div>
                 {{-- price --}}
                 <div class="col">
-                  <h3 class="h6 mb-2 fs-sm text-muted">Prezzo</h3>
+                  <h3 class="h6 mb-2 fs-sm text-muted">{{__('dash.price')}}</h3>
                   <h2 class="h3 mb-1"> € {{ $announcement->price }}</h2>
                 </div>
                 {{-- category --}}
                 <div class="col">
-                  <h3 class="h6 mb-2 fs-sm text-muted">Categoria</h3>
+                  <h3 class="h6 mb-2 fs-sm text-muted">{{__('dash.category')}}</h3>
                   <h2 class="h3 mb-1"> {{ $announcement->category->name }}</h2>
                 </div>
               </div>

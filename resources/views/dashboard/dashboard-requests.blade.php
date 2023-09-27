@@ -9,7 +9,7 @@
         <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
           <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
             <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4">
-              <h1 class="h3 mb-sm-0 mb-2 pb-1 text-sm-start text-center">Richieste revisionatori</h1>
+              <h1 class="h3 mb-sm-0 mb-2 pb-1 text-sm-start text-center">{{__('dash.request')}}</h1>
             </div>
             <!-- Items grid-->
             <div class="row gy-sm-4 gy-3 gx-3 mb-4">
@@ -30,7 +30,7 @@
                   </div>
                 </a>
               @empty
-                <span class="h6 w-100 text-sm-start text-center">Nessuno vuole lavorare con noi :(</span>
+                <span class="h6 w-100 text-sm-start text-center">{{__('dash.nobody')}}</span>
               @endforelse
             </div>
           </div>

@@ -9,20 +9,20 @@
       <ul class="list-unstyled mb-0">
         <li class="border-bottom mb-0">
           <a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{ route('dashboard.announcements') }}">
-            <i class="fa-solid fa-images"></i>Annunci da revisionare
+            <i class="fa-solid fa-images"></i>{{__('dash.revision')}}
             <span class="text-muted ms-auto small">{{ $announcementToRevisedCount }}</span>
           </a>
         </li>
         @if (Auth::user()->is_admin)
         <li class="border-bottom mb-0">
           <a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{ route('dashboard.requests') }}">
-            <i class="fa-solid fa-envelope"></i>Richieste revisionatori
+            <i class="fa-solid fa-envelope"></i>{{__('dash.request')}}
             <span class="text-muted ms-auto small">{{ $requestsCount }}</span>
           </a>
         </li>
         <li class="border-bottom mb-0">
           <a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{ route('dashboard.users') }}">
-            <i class="fa-solid fa-users"></i>Utenti
+            <i class="fa-solid fa-users"></i>{{__('dash.users')}}
             <span class="text-muted ms-auto small">{{ $usersCount }}</span>
           </a>
         </li>
