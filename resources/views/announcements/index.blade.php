@@ -28,5 +28,5 @@
   </div>
   </div>
   </div>
- {{$revised_announcements->links()}}
+
 </x-layout-with-band>

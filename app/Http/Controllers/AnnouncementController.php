@@ -93,7 +93,7 @@ class AnnouncementController extends Controller
             $query->where('price','<=',$request->input('max_price'));
         }
 
-        $revised_announcements=$query->where('is_revised',true)->paginate(8);
+        $revised_announcements=$query->where('is_revised',true);
     
         return view('announcements.index', compact('revised_announcements'));
     }
