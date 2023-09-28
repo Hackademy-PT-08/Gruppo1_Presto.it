@@ -4,9 +4,9 @@
         <!-- Sezione di destra -->
 
         <ul class="navbar-right-side navbar-toolbar d-flex align-items-center order-lg-3">
-            <li class="nav-item dropdown" >
-                <a class="nav-link dropdown-toggle" href=""
-                    data-bs-toggle="dropdown"><span class="{{ __('nav.lang') }}"></span></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown"><span
+                        class="{{ __('nav.lang') }}"></span></a>
                 <ul class="dropdown-menu language">
                     <li class="nav-item"><x-_locale lang='it' nation='it' /></li>
                     <li class="nav-item"><x-_locale lang='en' nation='gb' /></li>
@@ -14,7 +14,8 @@
                 </ul>
             </li>
             <li>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </li>
@@ -84,8 +85,15 @@
                         data-bs-toggle="dropdown">{{ __('nav.category') }}</a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item"
-                                    href="{{ route('searchByCategory', $category->id) }}">{{ $category->name }}</a>
+                            <li><a class="dropdown-item" href="{{ route('searchByCategory', $category->id) }}">
+                                    @if (session()->get('locale') == 'it')
+                                        {{ $category->name }}
+                                    @elseif (session()->get('locale') == 'en')
+                                        {{ $category->name_en }}
+                                    @else
+                                        {{ $category->name_es }}
+                                    @endif
+                                </a>
                             </li>
                         @endforeach
                     </ul>
