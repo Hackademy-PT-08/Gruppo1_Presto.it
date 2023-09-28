@@ -36,9 +36,6 @@
                       @method('PATCH')
                     </form>
                   @endif
-                  <button class="btn btn-sm btn-outline-danger mb-2 ms-2" type="button">
-                    <i class="fa-solid fa-ban"></i>{{__('dash.block')}}
-                  </button>
                 </div>
               </div>
             </div>
