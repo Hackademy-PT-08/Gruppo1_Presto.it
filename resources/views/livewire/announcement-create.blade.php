@@ -36,8 +36,8 @@
                             </div>
 
                             <div class="col-6 mb-3">
-                                <select class="form-select mt-4 @error('category') is-invalid @enderror"
-                                    wire:model="category"  name="categoria" id="categoria">
+                                <select class="form-select mt-4 @error('category') is-invalid @enderror" wire:model.lazy="categoryName"
+                                    wire:model="category"   name="categoria" id="categoria">
                                     <option value="">{{ __('ann_create.select') }}</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"> {{ $category->name }} </option>
@@ -73,7 +73,7 @@
                                                     style="background-image: url({{ $image->temporaryUrl() }})"></div>
                                                 <input type="button"
                                                     class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
-                                                    wire:click.lazy="removeImage({{ $key }})" value="Cancella">
+                                                    wire:click="removeImage({{ $key }})" value="Cancella">
                                             </div>
                                         @endforeach
                                     </div>
@@ -121,7 +121,9 @@
                             @endif
                             
                             <span class="badge text-bg-secondary position-absolute bottom-0 start-0 m-2">
-                                {{$category->name}}
+
+                                 <x-category_name categoryName="{{$categoryName}}"/>  
+                                 
                             </span>
                         </div>
                         <div class="card-body">

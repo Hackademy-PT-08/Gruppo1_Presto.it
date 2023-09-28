@@ -10,12 +10,16 @@
 
               <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-inner">
-
+                  @if (!$announcement->images)
+                      <img src="https://picsum.photos/536/354" alt="immagine">
+                  @else
                   @foreach ($announcement->images as $key=> $image)
                   <div class="carousel-item @if($loop->first) active @endif">
                     <img src="{{$image->getUrl(400,300)}} " class="d-block w-100" alt="immagine {{ $key + 1 }}">
                   </div>
-                  @endforeach
+                  @endforeach 
+                  @endif
+
 
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">

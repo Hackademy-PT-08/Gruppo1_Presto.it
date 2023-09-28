@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\File;
 class AnnouncementCreate extends Component
 {
     use WithFileUploads;
-    public $title, $description, $price, $category, $temporary_images, $images = [];
+    public $title, $description, $price, $category, $temporary_images, $images = [],$categoryName;
 
     protected $rules =
         [
@@ -27,7 +27,8 @@ class AnnouncementCreate extends Component
             'category' => 'required',
             'images.*' => 'image|max:1024',
             'temporary_images.*' => 'image|max:1024',
-            'images' => 'required'
+            'images' => 'required',
+            'categoryName'=>'required'
         ];
 
     protected $messages =
@@ -50,6 +51,8 @@ class AnnouncementCreate extends Component
     {
             $this->validateOnly($propertyName);
     }
+
+
     public function updatedTemporaryImages()
     {
         if ($this->validate(['temporary_images.*' => 'required|image|max:1024'])) {
@@ -79,6 +82,8 @@ class AnnouncementCreate extends Component
         $announcement->user_id = auth()->user()->id;
         $announcement->category_id = $this->category;
         $announcement->save();
+        
+        $this->categoryName=$announcement->category_id;
 
         if (count($this->images)) {
             foreach ($this->images as $image) {
@@ -123,6 +128,6 @@ class AnnouncementCreate extends Component
 
     public function render()
     {
-        return view('livewire.announcement-create');
+        return view('livewire.announcement-create',['categoryName'=>$this->categoryName]);
     }
 }

@@ -1,7 +1,12 @@
 <article class="card h-100 border-0 shadow">
   <div class="card-img-top position-relative overflow-hidden">
     <a class="d-block" href="{{ $hrefSingle }}">
+      @if (!$image)
+          <img src="https://picsum.photos/536/354" alt="">
+      @else
       <img src="{{ $image }}" alt="Product image">
+      @endif
+      
     </a>
     <!-- Edit button-->
     @if (Auth::user() && Auth::user()->id == $userId && isset($hrefModify))
