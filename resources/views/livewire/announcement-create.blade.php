@@ -89,70 +89,48 @@
 
                   <aside class="col-lg-3 offset-lg-1 col-md-4 mt-md-0 mt-4">
                     <h5 class="h2 text-white">Preview Card</h5>
-                    @if (!$images)
-                    <article class="card border-0 shadow">
-                        <div class="card-img-top position-relative overflow-hidden">
-                          
-                            <img src="https://picsum.photos/536/354" alt="Product image">
-                          </a>
-                          <!-- Edit button-->
-                          <span class="badge text-bg-secondary position-absolute bottom-0 start-0 m-2">Categoria</span>
-                        </div>
-                        <div class="card-body">
-                          <h3 class="product-title mb-2">
-                            <a class="d-block text-truncate" href="">Titolo</a>
-                          </h3>
-                          {{-- <span class="fs-sm text-muted text-truncate " style="max-width: 200px">{{ $description }}</span> --}}
-                          <p class="text-truncate"> Descrizione</p>
-                        </div>
-                        <div class="card-footer mt-n1 py-0 border-0">
-                          <div class="d-flex align-items-center justify-content-between position-relative mb-1 py-3 border-top">
-                            <div class="user">
-                              <a class="nav-link-style d-flex align-items-center text-truncate" href="#">
-                                <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" style="width: 32px; height: 32px" alt="Avatar">
-                                <span class="small">{{auth()->user()->name}}</span>
-                              </a>
-                            </div>
-                            <span class="small mb-0 text-darker">800€</span>
-                          </div>
-                        </div>
-                      </article>
-                    @else
+
+
+
                     <article class="card  border-0 shadow">
                         <div class="card-img-top position-relative overflow-hidden"> 
+
+                            @if (!$images)
+
+                            <img src="https://picsum.photos/536/354" alt="">
+                            @else
                             <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-                            <div class="carousel-inner">
-            
-                                @foreach ($images as $image)
-                                <div class="carousel-item @if($loop->first) active @endif" style="width:400px;height:300px ">
-                                <img src="{{$image->temporaryUrl()}}" alt="immagine " style="max-height: 100%;max-width:100%;">
+                                <div class="carousel-inner">
+                
+                                    @foreach ($images as $image)
+                                    <div class="carousel-item @if($loop->first) active @endif" style="width:400px;height:300px ">
+                                    <img src="{{$image->temporaryUrl()}}" alt="immagine " style="max-height: 100%;max-width:100%;">
+                                    </div>
+                                    @endforeach
+                
                                 </div>
-                                @endforeach
-            
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                            </div>
+                            @endif
                             
-                            
-                            <!-- Edit button-->
-  
                             <span class="badge text-bg-secondary position-absolute bottom-0 start-0 m-2">
                                 {{$category->name}}
                             </span>
                         </div>
                         <div class="card-body">
                             <h3 class="product-title mb-2">
-                                <a class="d-block text-truncate" href="">{{ $title }}</a>
+                                
+                                <a class="d-block text-truncate" href="">{{!$title ? "Titolo" : $title }}</a>
                             </h3>
   
-                            <p class="text-truncate"> {{ $description }}</p>
+                            <p class="text-truncate"> {{!$description ? "Descrizione" : $description}}</p>
                         </div>
                         <div class="card-footer mt-n1 py-0 border-0">
                             <div
@@ -165,11 +143,11 @@
                                         <span class="small">{{ auth()->user()->name }}</span>
                                     </a>
                                 </div>
-                                <span class="small mb-0 text-darker">{{ $price }}€</span>
+                                <span class="small mb-0 text-darker">{{!$price ? "Prezzo" : $price}} €</span>
                             </div>
                         </div>
                     </article>
-                    @endif
+                   
 
                  </aside>
                 </div>

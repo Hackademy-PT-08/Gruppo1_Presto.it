@@ -50,8 +50,6 @@ class AnnouncementCreate extends Component
     {
             $this->validateOnly($propertyName);
     }
-
-    
     public function updatedTemporaryImages()
     {
         if ($this->validate(['temporary_images.*' => 'required|image|max:1024'])) {
