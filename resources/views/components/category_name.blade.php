@@ -1,27 +1,44 @@
 <div>
-@if ($categoryName==1)
+
+@switch($categoryName)
+    @case(1)
     {{$categoryName='Motori'}}
+        @break
+    @case(2)
+    {{$categoryName='Elettronica'}}
+        @break
+    @case(3)
+    {{$categoryName='Arredamento'}}
+    @break
+    @case(4)
+    {{$categoryName='Elettrodomestici'}}
+    @break
+    @case(5)    
+    {{$categoryName='Musica e film'}}
+    @break
+    @case(6)    
+    {{$categoryName='Animali'}}
+    @break
+    @case(7) 
 
-@elseif($categoryName==2)   
-{{$categoryName='Elettronica'}}
+    {{$categoryName='Libri'}}
+    @break   
+    @case(8)  
+    {{$categoryName='Riviste'}}
+    @break
+    @case(9)  
+    {{$categoryName='Collezionismo'}}
+    @break  
+    @case(10) 
+    
+    {{$categoryName='Sport'}}
+    @break
 
-@elseif($categoryName==3)   
-{{$categoryName='Arredamento'}}
-@elseif($categoryName==4)   
-{{$categoryName='Elettrodomestici'}}
-@elseif($categoryName==5)   
-{{$categoryName='Musica e film'}}
-@elseif($categoryName==6)   
-{{$categoryName='Animali'}}
-@elseif($categoryName==7)   
-{{$categoryName='Libri'}}
-@elseif($categoryName==8)   
-{{$categoryName='Riviste'}}
-@elseif($categoryName==9)   
-{{$categoryName='Collezionismo'}}
-@elseif($categoryName==10)   
-{{$categoryName='Sport'}}
-@endif
+    @default
+    
+    {{$categoryName='Categoria'}}   
+        @break
+    @endswitch
 
 
 </div>
