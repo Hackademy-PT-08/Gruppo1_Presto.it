@@ -19,9 +19,8 @@
 
       @empty
         <div class="w-100 d-flex flex-column align-items-center">
-          <span class="h6">Non ci sono ancora annunci</span>
-          <a class="btn btn-sm btn-primary rounded-1" href="{{ route('announcements.create') }}">Crea
-            annuncio</a>
+          <span class="h6">{{ __('search.no-ann') }}</span>
+          <a class="btn btn-sm btn-primary rounded-1" href="{{ route('announcements.create') }}">{{ __('search.create-ann') }}</a>
         </div>
       @endforelse
 

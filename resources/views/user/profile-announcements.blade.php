@@ -10,7 +10,7 @@
         <section class="col-lg-9 pt-lg-4 pb-4 mb-3">
           <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
             <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4">
-              <h1 class="h3 mb-sm-0 mb-2 pb-1 text-sm-start text-center">I miei annunci</h1>
+              <h1 class="h3 mb-sm-0 mb-2 pb-1 text-sm-start text-center">{{ __('profile.my_ann') }}</h1>
             </div>
             <!-- Items grid-->
             <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 gy-sm-4 gy-3 gx-3 mb-4">
@@ -27,12 +27,12 @@
 
                 </div>
               @empty
-                <span class="h6 w-100 text-sm-start text-center">Non hai ancora creato nessun annuncio</span>
+                <span class="h6 w-100 text-sm-start text-center">{{ __('profile.no_ann') }}</span>
               @endforelse
             </div>
             <!-- Create new item-->
             <div class="d-flex flex-sm-row flex-column">
-              <a class="btn btn-sm btn-primary" href="{{ route('announcements.create') }}">Crea nuovo annuncio</a>
+              <a class="btn btn-sm btn-primary" href="{{ route('announcements.create') }}">{{ __('profile.create_ann') }}</a>
             </div>
           </div>
       </div>

@@ -4,6 +4,15 @@
         <!-- Sezione di destra -->
 
         <ul class="navbar-right-side navbar-toolbar d-flex align-items-center order-lg-3">
+            <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" href=""
+                    data-bs-toggle="dropdown"><span class="{{ __('nav.lang') }}"></span></a>
+                <ul class="dropdown-menu language">
+                    <li class="nav-item"><x-_locale lang='it' nation='it' /></li>
+                    <li class="nav-item"><x-_locale lang='en' nation='gb' /></li>
+                    <li class="nav-item"><x-_locale lang='es' nation='es' /></li>
+                </ul>
+            </li>
             <li>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -85,15 +94,6 @@
                         href="{{ route('announcements.index') }}">{{ __('nav.allAnnouncement') }}</a>
                 </li>
 
-                <li class="nav-item dropdown" >
-                    <a class="nav-link dropdown-toggle" href=""
-                        data-bs-toggle="dropdown">Lingua</a>
-                    <ul class="dropdown-menu language">
-                        <li class="nav-item"><x-_locale lang='it' nation='it' /></li>
-                        <li class="nav-item"><x-_locale lang='en' nation='gb' /></li>
-                        <li class="nav-item"><x-_locale lang='es' nation='es' /></li> </ul>
-                </li>
-
                 <li class="nav-item"><a class="nav-link no-desktop"
                         href="{{ route('user.profile') }}">{{ __('nav.profile') }}</a></li>
 
@@ -106,7 +106,7 @@
                 <div class="input-group"><i
                         class="ci-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                     <input class="form-control rounded-start" name="searched" type="text"
-                        placeholder="Cosa stavi cercando?">
+                        placeholder="{{ __('nav.what_you_search') }}">
                     <button type="submit" class="btn btn-primary">{{ __('nav.find') }}</button>
                 </div>
             </div>

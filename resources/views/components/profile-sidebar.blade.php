@@ -9,11 +9,11 @@
       <ul class="list-unstyled mb-0">
         <li class="border-bottom mb-0">
           <a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{ route('user.profile') }}">
-            <i class="fa-solid fa-id-card"></i>Informazioni</a>
+            <i class="fa-solid fa-id-card"></i>{{ __('profile.information') }}</a>
       </li>
         <li class="border-bottom mb-0">
           <a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{ route('user.profile-announcements') }}">
-            <i class="fa-solid fa-file-image"></i>I miei annunci<span class="small text-muted ms-auto">{{ $userAnnouncementsCount }}</span>
+            <i class="fa-solid fa-file-image"></i>{{ __('profile.my_ann') }}<span class="small text-muted ms-auto">{{ $userAnnouncementsCount }}</span>
           </a>
         </li>
         <li class="border-bottom mb-0">

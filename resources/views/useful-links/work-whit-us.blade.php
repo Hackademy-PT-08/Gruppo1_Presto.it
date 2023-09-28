@@ -33,7 +33,7 @@
                             <div class="row row-cols-sm-2 row-cols-1 gy-3 gx-4 mb-4 pb-md-2">
                                 {{-- creators --}}
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--primary-color)" >
                                         <div class="card-body p-3"  >
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-regular fa-eye fa-2xl mt-3"></i>
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--primary-color)" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-solid fa-stamp fa-2xl mt-3"></i>
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--primary-color)" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-solid fa-shield-halved fa-2xl mt-3"></i>
@@ -75,7 +75,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <div class="card position-relative h-100" style="border: 1px solid var(--secondary-color)" >
+                                    <div class="card position-relative h-100" style="border: 1px solid var(--primary-color)" >
                                         <div class="card-body p-3">
                                             <h3 class="h6 mb-2 fs-sm text-center">
                                                 <i class="fa-solid fa-arrow-down fa-2xl mt-3"></i>
@@ -103,7 +103,7 @@
 
     {{-- Section  revisor --}}
     @if (auth()->user()->is_admin==1)
-        
+
     @else
     <section class="my-5 container">
         <div class="container py-2">
@@ -114,13 +114,10 @@
 
 
                             @if (auth()->user()->is_reviewer == 1 )
-                                <div class="col-12" style="width: 100% !important">
-                                    <div class="alert alert-warning py-3 shadow">
-                                        <p class="lead text-center">
-                                            Fai già parte del nostro team di revisori!
-                                        </p>
-                                    </div>
-                                </div>
+                            <div class="w-100 d-flex flex-column align-items-center">
+                                <span class="h6">Sei già un revisore</span>
+                                <a class="btn btn-sm btn-primary rounded-1" href="{{ route('dashboard') }}">Vai alla Dashboard</a>
+                              </div>
                             @else
                                 <h1 class="h2 text-center"> Candidati </h1>
                                 <form class="" action="{{route('revisor.store')}}" method="POST" id="myForm">
@@ -148,7 +145,7 @@
             </div>
         </div>
 
-    </section> 
+    </section>
     @endif
 
 

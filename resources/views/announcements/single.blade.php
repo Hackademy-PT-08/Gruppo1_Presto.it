@@ -17,7 +17,7 @@
                   <div class="carousel-item @if($loop->first) active @endif">
                     <img src="{{$image->getUrl(400,300)}} " class="d-block w-100" alt="immagine {{ $key + 1 }}">
                   </div>
-                  @endforeach 
+                  @endforeach
                   @endif
 
 
@@ -82,17 +82,18 @@
                 <div class="col-md-3">
                   <h5 class="tc-accent mt-3">Tags</h5>
 
-                 
-                  
+
+
                      @foreach ($image->labels as $label)
-                     
+
                      <p class="d-inline"> {{$label}} </p>
-                     
+
                      @endforeach
-                  
+
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@
           <div class="input-group">
             <select id="categorySelect" class="form-control" name="category">
               <option value="">
-                Categorie
+                {{ __('search.select') }}
               </option>
               @foreach ($categories as $category)
                 <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-12">
-          <input type="submit" class="btn btn-sm btn-primary w-100" value="Cerca">
+          <input type="submit" class="btn btn-sm btn-primary w-100" value="{{ __('search.search') }}">
         </div>
       </div>
     </div>

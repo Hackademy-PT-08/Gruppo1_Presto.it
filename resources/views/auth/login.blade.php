@@ -9,6 +9,11 @@
           </div>
           <div class="col py-4 px-4">
             <h1 class="h2 text-center"> Login </h1>
+            <div class="d-grid gap-2 mb-3">
+              <a style="" class="btn btn-google btn-sm" href="auth/google/redirect"><i class="fa-brands fa-google"></i> Accedi con Google</a>
+              <a class="btn btn-github btn-sm" href="auth/github/redirect"><i class="fa-brands fa-github"></i> Accedi con Github</a>
+            </div>
+            <hr>
             <form class="form" action="/login" method="post">
               @csrf
 
@@ -44,10 +49,6 @@
               </div>
               <div class="d-flex flex-sm-row flex-column">
                 <button class="btn btn-sm btn-primary" type="submit">Accedi</button>
-              </div>
-              <div class="d-flex flex-sm-row flex-column mt-2 justify-content-between">
-                <a class="small" href="auth/github/redirect">Accedi con github</a>
-                <a class="small" href="auth/google/redirect">Accedi con google</a>
               </div>
               <div class="d-flex flex-sm-row flex-column mt-2">
                 @error('socialEmailError')

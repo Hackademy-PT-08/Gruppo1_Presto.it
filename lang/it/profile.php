@@ -9,5 +9,8 @@ return [
     'pass'=>'Password attuale',
     'new_pass'=>'Nuova Password',
     'confirm'=>'Conferma nuova password',
-    'up_pass'=>'Aggiorna password'
+    'up_pass'=>'Aggiorna password',
+    'my_ann'=>'I miei annunci',
+    'no_ann'=>'Non hai ancora creato nessun annuncio',
+    'create_ann'=>'Crea annuncio',
 ];

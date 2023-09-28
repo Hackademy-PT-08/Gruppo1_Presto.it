@@ -1,5 +1,6 @@
 <?php
-return [
+return[
+    'lang' => 'fi fi-it',
     'category'=>'Categorie',
     'allAnnouncement'=>'Tutti gli annunci',
     'profile'=>'Profilo',
@@ -7,5 +8,6 @@ return [
     'register'=>'Registrati',
     'research'=>'Ricerca',
     'create'=>'Crea annuncio',
+    'what_you_search' => 'Cosa stai cercando?',
     'find'=>'Cerca'
 ];
