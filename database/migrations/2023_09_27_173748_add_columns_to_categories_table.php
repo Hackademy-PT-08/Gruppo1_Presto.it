@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_admin')->default(false);
-            $table->boolean('is_reviewer')->default(false);
-
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('name_en');
+            $table->string('name_es');
         });
     }
 
@@ -23,9 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_admin');
-            $table->dropColumn('is_reviewer');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropColumn('name_en');
+            $table->dropColumn('name_es');
         });
     }
 };

@@ -1,10 +1,10 @@
-<?php 
+<?php
 return [
     'users'=>'Usuarios',
     'revision'=>'Anuncios por revisar',
     'undo'=>'Deshacer la última revisión',
     'oh'=>'¡Hombre! No hay anuncios para revisar',
-    'request'=>'Peticiones revisionistas',,
+    'request'=>'Peticiones revisionistas',
     'nobody'=>'Nadie quiere trabajar con nosotros :(',
     'accept'=>'Acepte',
     'reject'=>'Rechazar',
