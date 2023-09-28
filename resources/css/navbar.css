@@ -176,6 +176,7 @@
 
     .navbar .navbar-right-side > .dropdown:first-child ul.show,
     .navbar .navbar-right-side > .dropdown:first-child:hover ul{
+        background-color: #fff;
         display: flex;
         gap: 1rem;
         margin-left: -2.85rem;

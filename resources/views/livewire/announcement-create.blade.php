@@ -60,6 +60,10 @@
                                     <span class="small text-danger">Oh cavolo! {{ $message }} </span>
                                 @enderror
                             </div>
+
+                            <div class="d-flex flex-sm-row flex-column">
+                                <button wire:click="store" class="btn btn-sm btn-primary">{{ __('ann_create.add') }}</button>
+                            </div>
                         </div>
 
                         @if (!empty($images))
@@ -82,10 +86,6 @@
                             </div>
                         @endif
 
-                        <div class="col-2 mb-3">
-                            <button wire:click="store"
-                                class="btn btn-primary m-2 mx-auto">{{ __('ann_create.add') }}</button>
-                        </div>
                   </div>
 
                   <aside class="col-lg-3 offset-lg-1 col-md-4 mt-md-0 mt-4">
@@ -94,7 +94,7 @@
 
 
                     <article class="card  border-0 shadow">
-                        <div class="card-img-top position-relative overflow-hidden"> 
+                        <div class="card-img-top position-relative overflow-hidden">
 
                             @if (!$images)
 
@@ -102,13 +102,13 @@
                             @else
                             <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
                                 <div class="carousel-inner">
-                
+
                                     @foreach ($images as $image)
                                     <div class="carousel-item @if($loop->first) active @endif" style="width:400px;height:300px ">
                                     <img src="{{$image->temporaryUrl()}}" alt="immagine " style="max-height: 100%;max-width:100%;">
                                     </div>
                                     @endforeach
-                
+
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -120,7 +120,7 @@
                                 </button>
                             </div>
                             @endif
-                            
+
                             <span class="badge text-bg-secondary position-absolute bottom-0 start-0 m-2">
 
                                 <x-category_name categoryName="{{$categoryName}}"/>  
@@ -129,10 +129,10 @@
                         </div>
                         <div class="card-body">
                             <h3 class="product-title mb-2">
-                                
+
                                 <a class="d-block text-truncate" href="">{{!$title ? "Titolo" : $title }}</a>
                             </h3>
-  
+
                             <p class="text-truncate"> {{!$description ? "Descrizione" : $description}}</p>
                         </div>
                         <div class="card-footer mt-n1 py-0 border-0">
@@ -141,8 +141,8 @@
                                 <div class="user">
                                     <a class="nav-link-style d-flex align-items-center text-truncate"
                                         href="#">
-                                        <img class="me-2 rounded-circle" src="https://picsum.photos/300/300"
-                                            style="width: 32px; height: 32px" alt="Avatar">
+                                        {{-- <img class="me-2 rounded-circle" src="https://picsum.photos/300/300"
+                                            style="width: 32px; height: 32px" alt="Avatar"> --}}
                                         <span class="small">{{ auth()->user()->name }}</span>
                                     </a>
                                 </div>
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                     </article>
-                   
+
 
                  </aside>
                 </div>

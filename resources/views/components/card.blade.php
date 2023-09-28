@@ -6,7 +6,7 @@
       @else
       <img src="{{ $image }}" alt="Product image">
       @endif
-      
+
     </a>
     <!-- Edit button-->
     @if (Auth::user() && Auth::user()->id == $userId && isset($hrefModify))
@@ -27,10 +27,10 @@
   <div class="card-footer mt-n1 py-0 border-0">
     <div class="d-flex align-items-center justify-content-between position-relative mb-1 py-3 border-top">
       <div class="user">
-        <a class="nav-link-style d-flex align-items-center text-truncate" href="#">
-          <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" style="width: 32px; height: 32px" alt="Avatar">
+        <span class="nav-link-style d-flex align-items-center text-truncate" href="#">
+          {{-- <img class="me-2 rounded-circle" src="https://picsum.photos/300/300" style="width: 32px; height: 32px" alt="Avatar"> --}}
           <span class="small">{{$creator}}</span>
-        </a>
+        </span>
       </div>
       <span class="small mb-0 text-darker">{{ $price }}€</span>
     </div>
