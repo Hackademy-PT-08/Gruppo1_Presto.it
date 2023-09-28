@@ -130,7 +130,7 @@ class DashboardController extends Controller
 
         session()->flash('message', [
             'title' => 'Annuncio rifiutato',
-            'content' => $announcement->title . ' ora fa parte degli annunci!',
+            'content' => $announcement->title . 'L\'annuncio è stato rifiutato!',
             'status' => 'deleted',
         ]);
 

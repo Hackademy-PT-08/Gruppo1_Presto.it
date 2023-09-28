@@ -34,7 +34,7 @@ class AnnouncementCreate extends Component
     protected $messages =
         [
             'title.required' => 'Questo campo è obbligatorio',
-            'title.min' => 'Questo campo deve avere almeno 8 caratteri',
+            'title.min' => 'Questo campo deve avere almeno 5 caratteri',
             'description.required' => 'Questo campo è obbligatorio',
             'description.min' => 'Questo campo deve avere almeno 8 caratteri',
             'price.required' => 'Questo campo è obbligatorio',
@@ -93,8 +93,9 @@ class AnnouncementCreate extends Component
                 $newImage = $announcement->images()->create(['path' => $path]);
 
                 RemoveFaces::withChain([
-                    new addWatermark($newImage->id),
+                    
                     new ResizeImage($newImage->path, 400, 300),
+                    new addWatermark($newImage->id),
                     new GoogleVisionSafeSearch($newImage->id),
                     new GoogleVisionLabelImage($newImage->id)
                 ])->dispatch($newImage->id);

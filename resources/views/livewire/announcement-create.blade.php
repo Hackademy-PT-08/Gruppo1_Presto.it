@@ -65,8 +65,9 @@
                         @if (!empty($images))
                             <div class="row">
                                 <div class="col-12">
-                                    <p>Preview</p>
+                                    <p class="h5 mt-3 text-center">Preview immagini</p>
                                     <div class="row border border-4 border-info rounded shadow py-4">
+                                        
                                         @foreach ($images as $key => $image)
                                             <div class="col my-3">
                                                 <div class="mx-auto shadow rounded preview-images"
@@ -122,7 +123,7 @@
                             
                             <span class="badge text-bg-secondary position-absolute bottom-0 start-0 m-2">
 
-                                 <x-category_name categoryName="{{$categoryName}}"/>  
+                                <x-category_name categoryName="{{$categoryName}}"/>  
                                  
                             </span>
                         </div>
